@@ -6,6 +6,13 @@ test('snapshot consistente y sin IDs duplicados',()=>{
  assert.ok(data.features.length>100);assert.equal(new Set(data.features.map(f=>f.id)).size,data.features.length);
  for(const f of data.features){assert.ok(f.title&&f.note&&f.category);for(const b of ['staging','main']){assert.equal(typeof f[b],'boolean');assert.equal(f[b],f.evidence[b].kind==='implementation');assert.ok(f.evidence[b].url.startsWith('https://github.com/'));assert.ok(f.evidence[b].line>0);}}
 });
+test('comando de actualización ofrece ayuda sin tocar estado',async()=>{
+ const {execFileSync}=await import('node:child_process');
+ const root=new URL('.',import.meta.url).pathname;
+ const help=execFileSync('./bin/update-rifero-status',['--help'],{cwd:root,encoding:'utf8'});
+ assert.match(help,/Actualiza y publica el catálogo/);
+ assert.match(help,/--dry-run/);
+});
 test('búsqueda sin acentos, múltiples términos y vacío',()=>{
  assert.ok(filterFeatures(data.features,{query:'verificacion CORREO'}).length>0);
  assert.equal(filterFeatures(data.features,{query:'zzzzsincoincidencia'}).length,0);

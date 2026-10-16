@@ -177,6 +177,14 @@ for title,note in [
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
-payload={'generatedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'refs':refs,'repos':repos,'features':rows,'method':'Revisión de código y documentación versionados; checks = implementación presente, no activación ni despliegue. Pendientes curados del roadmap y especificaciones. No consulta DB, flags activos ni infraestructura.'}
+method='Revisión de código y documentación versionados; checks = implementación presente, no activación ni despliegue. Pendientes curados del roadmap y especificaciones. No consulta DB, flags activos ni infraestructura.'
+previous=None
+try:
+    previous=json.loads((ROOT/'data.js').read_text().removeprefix('export default ').rstrip().removesuffix(';'))
+except (OSError,ValueError):
+    pass
+same_snapshot=(previous is not None and previous.get('refs')==refs and previous.get('repos')==repos and previous.get('features')==rows and previous.get('method')==method)
+generated_at=previous['generatedAt'] if same_snapshot else datetime.datetime.now(datetime.timezone.utc).isoformat()
+payload={'generatedAt':generated_at,'refs':refs,'repos':repos,'features':rows,'method':method}
 (ROOT/'data.js').write_text('export default '+json.dumps(payload,ensure_ascii=False,indent=2)+';\n')
 print(f'{len(rows)} capacidades; '+', '.join(f'{b}: {sum(r[b] for r in rows)} implementadas' for b in ['staging','main']))
