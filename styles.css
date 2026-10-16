@@ -48,3 +48,18 @@
 .feature-timeline time{font-variant-numeric:tabular-nums;color:var(--text)}
 @media(max-width:1000px){.timeline-layout{grid-template-columns:minmax(0,1.2fr) minmax(230px,1fr);gap:30px}}
 @media(max-width:640px){.site-header{gap:10px}.local-badge{margin-left:0}.header-links{display:flex;gap:8px;margin-left:auto}.header-links .method-link{display:inline-flex;white-space:nowrap;font-size:11px}.header-links .method-link:last-child{display:none}.header-links .method-link span{margin-left:5px}.timeline-section{margin:0 0 40px;padding-top:22px}.timeline-heading{display:block}.timeline-heading h2{font-size:21px}.timeline-count{display:block;margin-top:10px}.timeline-layout{display:block;margin-top:21px}.timeline-baseline{margin-top:25px}.timeline-baseline ul{max-height:300px}.timeline-item{padding-bottom:22px}.timeline-event-title{font-size:14px}.timeline-empty{font-size:12px}.feature-timeline li{font-size:10px}}
+
+/* Fila plegable para capacidades presentes en ambas ramas. */
+.shared-summary-row th,.shared-summary-row td{border-bottom:1px solid var(--line);background:#102031}
+.shared-summary-row th{padding:0;text-align:left}
+.shared-summary-row .state-cell{vertical-align:middle;padding-top:14px;padding-bottom:14px}
+.shared-toggle{width:100%;min-height:58px;display:flex;align-items:center;gap:12px;padding:14px 23px;background:transparent;border:0;text-align:left}
+.shared-toggle:hover{background:#15283a}
+.shared-expand{flex:0 0 18px;color:#92a7bd;font-size:19px;text-align:center;transition:transform .18s ease,color .18s ease}
+.shared-toggle[aria-expanded="true"] .shared-expand{transform:rotate(45deg);color:var(--brand)}
+.shared-title{font-weight:600;line-height:1.4}
+.shared-count{margin-left:auto;color:var(--muted);font-size:11px;font-weight:400;white-space:nowrap}
+#shared-feature-rows[hidden]{display:none}
+@media(max-width:1000px){.shared-toggle{padding-left:16px;padding-right:16px}}
+@media(max-width:640px){.shared-toggle{min-height:58px;flex-wrap:wrap;column-gap:6px;row-gap:3px;padding:12px 8px}.shared-expand{flex-basis:15px}.shared-title{flex:1 1 calc(100% - 21px);font-size:11px}.shared-count{margin-left:21px;font-size:10px}.shared-summary-row .state-cell{padding:17px 3px}}
+@media(prefers-reduced-motion:reduce){.shared-expand{transition:none}}

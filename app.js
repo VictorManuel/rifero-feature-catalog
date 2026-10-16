@@ -1,5 +1,5 @@
 import data from './data.js';
-import {filterFeatures,toCSV} from './model.mjs';
+import {filterFeatures,partitionFeaturesByImplementation,toCSV} from './model.mjs';
 const $=id=>document.getElementById(id);
 const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
 const date=new Intl.DateTimeFormat('es-AR',{dateStyle:'long',timeStyle:'short',timeZone:'America/Argentina/Buenos_Aires'}).format(new Date(data.generatedAt));
@@ -9,9 +9,10 @@ const categories=[...new Set(data.features.map(f=>f.category))];
 const featureById=new Map(data.features.map(f=>[f.id,f]));
 const featureByTimelineKey=new Map(data.features.map(f=>[f.timelineKey,f]));
 const baselineByKey=new Map(data.timeline.baseline.filter(f=>f.key).map(f=>[f.key,f]));
+let sharedGroupExpanded=false;
 function featureLink(feature){
  const link=node('a',feature.title);link.href=`#feature-${feature.id}`;
- link.addEventListener('click',()=>{$('filters').reset();render();const detail=$(`feature-${feature.id}`);if(detail)detail.open=true;});
+ link.addEventListener('click',()=>{$('filters').reset();if(feature.staging&&feature.main)sharedGroupExpanded=true;render();const detail=$(`feature-${feature.id}`);if(detail)detail.open=true;});
  return link;
 }
 $('total').textContent=`${data.features.length} capacidades`;
@@ -66,52 +67,71 @@ function renderTimeline(){
  }
 }
 let visible=[];
+function statusCell(present){
+ const cell=node('td',undefined,'state-cell');const state=node('span',undefined,`state ${present?'implemented':'pending'}`);state.append(node('span',present?'✓':'×','status-icon'),node('span',present?'Implementado':'No implementado','state-label'));state.querySelector('.status-icon').setAttribute('aria-hidden','true');cell.append(state);return cell;
+}
+function featureRow(f){
+ const row=node('tr',undefined,f.staging!==f.main?'feature-row different':'feature-row');
+ const label=node('th');label.scope='row';
+ const details=node('details',undefined,'feature-detail');details.id=`feature-${f.id}`;const summary=node('summary');
+ summary.append(node('span',f.id,'feature-id'),node('span',f.title,'feature-title'),node('span','+','expand'));details.append(summary);
+ const content=node('div',undefined,'detail-content');content.append(node('p',f.note));
+ if(f.staging!==f.main)content.append(node('p','Esta capacidad tiene distinto estado entre las dos ramas.','difference-note'));
+ for(const branch of ['staging','main']){
+  const e=f.evidence[branch];const p=node('p',undefined,'source');p.append(node('strong',`${branch} · `));
+  if(e.kind==='absent'){p.append(document.createTextNode('Implementación no presente en esta rama.'));}
+  else {const a=node('a',`${e.kind==='plan'?'Plan, no implementación':e.kind==='general-plan'?'Roadmap general (sin spec específica en esta rama)':'Ver código'} · ${e.repo}/${e.path}:${e.line}`);a.href=e.url;a.target='_blank';a.rel='noopener noreferrer';p.append(a);}
+  content.append(p);
+ }
+ const history=node('div',undefined,'feature-timeline');history.append(node('p','Primera observación de implementación','feature-timeline-heading'));
+ const historyList=node('ul');const baseline=baselineByKey.get(f.timelineKey);
+ for(const branch of ['staging','main']){
+  const item=node('li');item.append(node('strong',`${branch}: `));const detectedAt=f.implementationDates?.[branch];
+  if(detectedAt){
+   item.append(document.createTextNode(`${f[branch]?'detectada el':'registrada el'} `));const time=node('time',formatTimelineDate(detectedAt));time.dateTime=detectedAt;item.append(time);
+   if(!f[branch])item.append(document.createTextNode('; actualmente pendiente'));
+  }else if(baseline?.branches.includes(branch)){
+   item.append(document.createTextNode(`ya implementada al inicio; fecha histórica no disponible${f[branch]?'':'; actualmente pendiente'}`));
+  }
+  else if(f[branch])item.append(document.createTextNode('implementada, sin fecha registrada'));
+  else item.append(document.createTextNode('sin implementación registrada'));
+  historyList.append(item);
+ }
+ history.append(historyList);content.append(history);
+ details.append(content);label.append(details);row.append(label);
+ for(const branch of ['staging','main'])row.append(statusCell(f[branch]));
+ return row;
+}
+function appendCategoryGroups(target,features){
+ for(const category of categories){
+  const items=features.filter(f=>f.category===category);if(!items.length)continue;
+  const group=node('tr',undefined,'group-row');const groupHead=node('th');groupHead.scope='rowgroup';groupHead.colSpan=3;groupHead.append(node('span',category),node('span',`${items.length}`, 'group-count'));group.append(groupHead);target.append(group);
+  for(const f of items)target.append(featureRow(f));
+ }
+}
 function render(){
  visible=filterFeatures(data.features,{query:$('search').value,category:$('category').value,status:$('status').value});
- const fragment=document.createDocumentFragment();
- for(const category of categories){
-  const items=visible.filter(f=>f.category===category);if(!items.length)continue;
-  const group=node('tr',undefined,'group-row');const groupHead=node('th');groupHead.scope='rowgroup';groupHead.colSpan=3;groupHead.append(node('span',category),node('span',`${items.length}`, 'group-count'));group.append(groupHead);fragment.append(group);
-  for(const f of items){
-   const row=node('tr',undefined,f.staging!==f.main?'feature-row different':'feature-row');
-   const label=node('th');label.scope='row';
-   const details=node('details',undefined,'feature-detail');details.id=`feature-${f.id}`;const summary=node('summary');
-   summary.append(node('span',f.id,'feature-id'),node('span',f.title,'feature-title'),node('span','+','expand'));details.append(summary);
-   const content=node('div',undefined,'detail-content');content.append(node('p',f.note));
-   if(f.staging!==f.main)content.append(node('p','Esta capacidad tiene distinto estado entre las dos ramas.','difference-note'));
-   for(const branch of ['staging','main']){
-    const e=f.evidence[branch];const p=node('p',undefined,'source');p.append(node('strong',`${branch} · `));
-    if(e.kind==='absent'){p.append(document.createTextNode('Implementación no presente en esta rama.'));}
-    else {const a=node('a',`${e.kind==='plan'?'Plan, no implementación':e.kind==='general-plan'?'Roadmap general (sin spec específica en esta rama)':'Ver código'} · ${e.repo}/${e.path}:${e.line}`);a.href=e.url;a.target='_blank';a.rel='noopener noreferrer';p.append(a);}
-    content.append(p);
-   }
-   const history=node('div',undefined,'feature-timeline');history.append(node('p','Primera observación de implementación','feature-timeline-heading'));
-   const historyList=node('ul');const baseline=baselineByKey.get(f.timelineKey);
-   for(const branch of ['staging','main']){
-    const item=node('li');item.append(node('strong',`${branch}: `));const detectedAt=f.implementationDates?.[branch];
-    if(detectedAt){
-     item.append(document.createTextNode(`${f[branch]?'detectada el':'registrada el'} `));const time=node('time',formatTimelineDate(detectedAt));time.dateTime=detectedAt;item.append(time);
-     if(!f[branch])item.append(document.createTextNode('; actualmente pendiente'));
-    }else if(baseline?.branches.includes(branch)){
-     item.append(document.createTextNode(`ya implementada al inicio; fecha histórica no disponible${f[branch]?'':'; actualmente pendiente'}`));
-    }
-    else if(f[branch])item.append(document.createTextNode('implementada, sin fecha registrada'));
-    else item.append(document.createTextNode('sin implementación registrada'));
-    historyList.append(item);
-   }
-   history.append(historyList);content.append(history);
-   details.append(content);label.append(details);row.append(label);
-   for(const branch of ['staging','main']){
-    const present=f[branch];const cell=node('td',undefined,'state-cell');const state=node('span',undefined,`state ${present?'implemented':'pending'}`);state.append(node('span',present?'✓':'×','status-icon'),node('span',present?'Implementado':'No implementado','state-label'));state.querySelector('.status-icon').setAttribute('aria-hidden','true');cell.append(state);row.append(cell);
-   }fragment.append(row);
-  }
- }
+ const {implementedBoth:both,other}=partitionFeaturesByImplementation(visible);
+ const summaryRows=$('shared-summary-rows');
+ const sharedRows=$('shared-feature-rows');
+ summaryRows.replaceChildren();sharedRows.replaceChildren();
+ if(both.length){
+  const row=node('tr',undefined,'shared-summary-row');
+  const label=node('th');label.scope='row';
+  const toggle=node('button',undefined,'shared-toggle');toggle.id='shared-toggle';toggle.type='button';toggle.setAttribute('aria-expanded',String(sharedGroupExpanded));toggle.setAttribute('aria-controls','shared-feature-rows');toggle.setAttribute('aria-label',`${sharedGroupExpanded?'Ocultar':'Mostrar'} ${both.length===1?'1 funcionalidad implementada':`${both.length} funcionalidades implementadas`} en staging y main`);
+  toggle.append(node('span','+','shared-expand'),node('span','Implementadas en staging y main','shared-title'),node('span',`${both.length} ${both.length===1?'funcionalidad':'funcionalidades'}`,'shared-count'));
+  toggle.addEventListener('click',()=>{sharedGroupExpanded=!sharedGroupExpanded;render();$('shared-toggle')?.focus({preventScroll:true});});
+  label.append(toggle);row.append(label,statusCell(true),statusCell(true));summaryRows.append(row);
+  appendCategoryGroups(sharedRows,both);sharedRows.hidden=!sharedGroupExpanded;
+ }else{sharedRows.hidden=true;}
+ const fragment=document.createDocumentFragment();appendCategoryGroups(fragment,other);
  $('feature-rows').replaceChildren(fragment);$('results').textContent=`${visible.length} de ${data.features.length} funcionalidades`;
  $('empty').hidden=visible.length!==0;
 }
 $('filters').addEventListener('submit',e=>e.preventDefault());
-for(const id of ['search','category','status'])$(id).addEventListener(id==='search'?'input':'change',render);
-$('reset').addEventListener('click',()=>{$('filters').reset();render();$('search').focus();});
+$('search').addEventListener('input',()=>{sharedGroupExpanded=Boolean($('search').value.trim());render();});
+for(const id of ['category','status'])$(id).addEventListener('change',render);
+$('reset').addEventListener('click',()=>{$('filters').reset();sharedGroupExpanded=false;render();$('search').focus();});
 $('export').addEventListener('click',()=>{const blob=new Blob([toCSV(visible)],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=node('a');a.href=url;a.download='rifero-funcionalidades.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
 render();
 renderTimeline();

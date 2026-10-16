@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import data from './data.js';
-import {filterFeatures,toCSV} from './model.mjs';
+import {filterFeatures,partitionFeaturesByImplementation,toCSV} from './model.mjs';
 test('snapshot consistente y sin IDs duplicados',()=>{
  assert.ok(data.features.length>100);assert.equal(new Set(data.features.map(f=>f.id)).size,data.features.length);
  for(const f of data.features){assert.ok(f.title&&f.note&&f.category);for(const b of ['staging','main']){assert.equal(typeof f[b],'boolean');assert.equal(f[b],f.evidence[b].kind==='implementation');assert.ok(f.evidence[b].url.startsWith('https://github.com/'));assert.ok(f.evidence[b].line>0);}}
@@ -41,6 +41,16 @@ test('filtros de estado y categoría se combinan',()=>{
  for(const f of matches)assert.ok({both:f.main&&f.staging,differences:f.main!==f.staging,pending:!f.main&&!f.staging,staging:f.staging,main:f.main}[status]);
  }
  const cat=data.features[0].category;assert.ok(filterFeatures(data.features,{category:cat,status:'both'}).every(f=>f.category===cat&&f.main&&f.staging));
+});
+test('el grupo común contiene sólo capacidades implementadas en ambas ramas',()=>{
+ const visible=filterFeatures(data.features);
+ const {implementedBoth,other}=partitionFeaturesByImplementation(visible);
+ assert.ok(implementedBoth.length>0);
+ assert.ok(implementedBoth.every(f=>f.staging&&f.main));
+ assert.ok(other.every(f=>!(f.staging&&f.main)));
+ assert.equal(implementedBoth.length+other.length,visible.length);
+ const filtered=filterFeatures(data.features,{status:'both',category:data.features[0].category});
+ assert.equal(partitionFeaturesByImplementation(filtered).implementedBoth.length,filtered.length);
 });
 test('roadmap de pagos no se marca implementado por existir una spec',()=>{
  const payments=data.features.filter(f=>f.category==='Pagos y lotería · roadmap');assert.equal(payments.length,10);assert.ok(payments.every(f=>!f.main&&!f.staging));
