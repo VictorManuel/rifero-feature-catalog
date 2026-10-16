@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.impeccable/review/
+.impeccable/cache/
+.env
+.env.*
+.DS_Store
+VERIFICATION.md
+PRODUCT.md
+SURFACE.md
+DESIGN.md
+.impeccable/
