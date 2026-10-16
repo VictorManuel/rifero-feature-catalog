@@ -6,6 +6,23 @@ test('snapshot consistente y sin IDs duplicados',()=>{
  assert.ok(data.features.length>100);assert.equal(new Set(data.features.map(f=>f.id)).size,data.features.length);
  for(const f of data.features){assert.ok(f.title&&f.note&&f.category);for(const b of ['staging','main']){assert.equal(typeof f[b],'boolean');assert.equal(f[b],f.evidence[b].kind==='implementation');assert.ok(f.evidence[b].url.startsWith('https://github.com/'));assert.ok(f.evidence[b].line>0);}}
 });
+test('timeline incluye fecha inicial, estados y eventos trazables',()=>{
+ assert.ok(Number.isFinite(Date.parse(data.timeline.startedAt)));
+ assert.ok(Array.isArray(data.timeline.events));assert.ok(Array.isArray(data.timeline.baseline));
+ assert.ok(data.features.every(f=>typeof f.timelineKey==='string'&&f.timelineKey.length>0));
+ assert.equal(new Set(data.features.map(f=>f.timelineKey)).size,data.features.length);
+ for(const f of data.features){
+  for(const branch of ['staging','main']){
+   const date=f.implementationDates[branch];assert.ok(date===null||Number.isFinite(Date.parse(date)));
+  }
+ }
+ for(const event of data.timeline.events){
+  assert.ok(data.features.some(f=>f.id===event.id));
+  assert.ok(data.features.some(f=>f.timelineKey===event.key));
+  assert.ok(['staging','main'].includes(event.branch));
+  assert.ok(Number.isFinite(Date.parse(event.implementedAt)));
+ }
+});
 test('comando de actualización ofrece ayuda sin tocar estado',async()=>{
  const {execFileSync}=await import('node:child_process');
  const root=new URL('.',import.meta.url).pathname;
@@ -31,6 +48,7 @@ test('roadmap de pagos no se marca implementado por existir una spec',()=>{
 test('exportación filtrada con notas, UTF8 y escape CSV',()=>{
  const features=filterFeatures(data.features,{status:'differences'});const csv=toCSV(features);
  assert.ok(csv.startsWith('\uFEFF'));assert.equal(csv.split('\r\n').length,features.length+1);
+ assert.ok(csv.startsWith('\uFEFF"ID";"Categoría";"Funcionalidad";"Staging";"Main (producción)";"Primera detección staging";"Primera detección main";'));
  assert.ok(toCSV([{...data.features[0],title:'=SUM(1)',note:'Texto "citado"; ñ'}]).includes('"\'=SUM(1)"'));
  assert.ok(toCSV([{...data.features[0],title:'X',note:'Texto "citado"'}]).includes('"Texto ""citado"""'));
 });

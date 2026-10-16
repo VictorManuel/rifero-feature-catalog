@@ -6,7 +6,7 @@
     "start": "node server.mjs",
     "refresh": "python3 generate.py",
     "update-status": "./bin/update-rifero-status",
-    "test": "node --test tests.test.mjs",
+    "test": "node --test tests.test.mjs && python3 -m unittest test_timeline.py",
     "build": "node build.mjs"
   },
   "packageManager": "pnpm@10.28.0"

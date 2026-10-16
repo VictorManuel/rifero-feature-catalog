@@ -1,5 +1,6 @@
 """Snapshot local de refs ya descargadas. No fetch, red ni escritura a repos fuente."""
 import subprocess,json,pathlib,datetime
+from implementation_timeline import track_implementations
 ROOT=pathlib.Path(__file__).resolve().parent
 WORKSPACE=ROOT.parent
 repos={'web':'VictorManuel/rifero','backend':'VictorManuel/rifero-backend','email-worker':'VictorManuel/rifero-email-worker'}
@@ -7,7 +8,7 @@ def git(repo,*args):
     return subprocess.check_output(['git','-C',str(WORKSPACE/repo),*args],text=True,stderr=subprocess.DEVNULL)
 refs={r:{b:git(r,'rev-parse',f'origin/{b}').strip() for b in ['staging','main']} for r in repos}
 rows=[]
-def add(category,title,note,path,repo='web',pattern=None):
+def add(category,title,note,path,repo='web',pattern=None,timeline_key=None):
     statuses={}; evidence={}
     for b,sha in refs[repo].items():
         try: source=git(repo,'show',f'{sha}:{path}')
@@ -17,8 +18,10 @@ def add(category,title,note,path,repo='web',pattern=None):
         matched = pattern is None or pattern in source
         line=next((i for i,s in enumerate(source.splitlines(),1) if pattern and pattern in s),1)
         evidence[b]={'repo':repo,'path':path,'line':line,'url':f'https://github.com/{repos[repo]}/blob/{sha}/{path}#L{line}','match':pattern,'kind':'implementation' if present else 'absent'}
-    rows.append(dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,**statuses,evidence=evidence))
-def future(category,title,note,path='ROADMAP_EXECUTION_PLAN.md',pattern=None):
+    row=dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,**statuses,evidence=evidence)
+    if timeline_key: row['timelineKey']=timeline_key
+    rows.append(row)
+def future(category,title,note,path='ROADMAP_EXECUTION_PLAN.md',pattern=None,timeline_key=None):
     evidence={}
     for b,sha in refs['web'].items():
         actual=path
@@ -28,7 +31,9 @@ def future(category,title,note,path='ROADMAP_EXECUTION_PLAN.md',pattern=None):
         matched = pattern is None or pattern in source
         line=next((i for i,s in enumerate(source.splitlines(),1) if pattern and pattern in s),1)
         evidence[b]={'repo':'web','path':actual,'line':line,'url':f'https://github.com/{repos["web"]}/blob/{sha}/{actual}#L{line}','match':pattern if matched else None,'kind':'plan' if matched and actual==path else 'general-plan'}
-    rows.append(dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,staging=False,main=False,evidence=evidence))
+    row=dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,staging=False,main=False,evidence=evidence)
+    if timeline_key: row['timelineKey']=timeline_key
+    rows.append(row)
 # Cada entrada representa una capacidad concreta, no una promesa del roadmap histórico.
 C='Cuentas y acceso'
 for title,note,path in [
@@ -47,24 +52,26 @@ for title,note,path in [
 ('Restablecimiento por SUPERADMIN','Soporte asigna contraseña temporal e invalida sesiones.','src/app/api/admin/users/reset-password/route.ts'),
 ('Términos y privacidad','Páginas legales públicas; registro exige aceptación y edad mínima.','src/lib/legal.ts')]:add(C,title,note,path)
 C='Sorteos y publicación'
-for title,note,path in [
+for feature in [
 ('Crear un sorteo','Generación de números y membresía ADMIN del creador en una transacción.','src/app/api/raffles/route.ts'),
 ('Editar configuración','Título, descripción, fecha, precio, estado y slug.','src/components/forms/raffle-settings-form.tsx'),
 ('Premios múltiples','Configuración de premios e imágenes por posición.','src/lib/prizes.ts'),
-('Portada y fotos de premios','Carga y reemplazo de imágenes del sorteo.','src/lib/uploads.ts'),
+('Portada y fotos de premios','Carga y reemplazo de imágenes del sorteo.','src/lib/uploads.ts','prize-cover-gallery'),
 ('Punto focal de portada','Ajusta el encuadre de las miniaturas sin recortar la imagen original.','src/components/image-focal-point-picker.tsx'),
 ('Galería accesible','Portada y premios con flechas, miniaturas, teclado y Escape.','src/components/raffle-image-gallery.tsx'),
 ('Listado público en home','Sorteos ACTIVE vigentes o sin fecha; excluye borradores y moderados.','src/app/page.tsx'),
-('Landing pública por sorteo','Consulta de premios, números, fecha y resultados por enlace.','src/app/r/[slug]/page.tsx'),
+('Landing pública por sorteo','Consulta de premios, números, fecha y resultados por enlace.','src/app/r/[slug]/page.tsx','public-raffle-landing'),
 ('Vista previa de borradores','Landing directa disponible si está aprobada; no aparece en home.','src/lib/raffle-moderation-policy.ts'),
-('Metadatos al compartir','Título, descripción e imagen propios en vistas previas sociales.','src/app/r/[slug]/page.tsx'),
+('Metadatos al compartir','Título, descripción e imagen propios en vistas previas sociales.','src/app/r/[slug]/page.tsx','social-share-metadata'),
 ('Disponibilidad en tiempo real','SSE refresca la grilla después de vender o revertir. Broker en memoria: una instancia.','src/lib/raffle-events.ts'),
-('Compradores públicos por número','Sólo primer nombre; sin apellido, correo, teléfono ni identificadores internos.','src/lib/public-raffle-page.ts'),
+('Compradores públicos por número','Sólo primer nombre; sin apellido, correo, teléfono ni identificadores internos.','src/lib/public-raffle-page.ts','public-number-buyers'),
 ('Panel privado y métricas','Números vendidos/disponibles y estadísticas según rol.','src/app/app/raffles/[raffleId]/page.tsx'),
 ('Navegación contextual móvil','Accesos a resumen, ventas, equipo y sorteo según permisos.','src/components/raffle-context-navigation.tsx'),
 ('Modificar cantidad de números','Amplía o reduce sólo el tramo libre; protege ventas, reservas y asignaciones.','src/app/api/raffles/[raffleId]/number-count/route.ts'),
 ('Cancelar sorteo','Sólo ADMIN; preserva historial y bloquea ventas posteriores.','src/app/api/raffles/[raffleId]/cancel/route.ts'),
-('Historial de sorteos terminados','Distingue sorteos en curso de sorteados y cancelados.','src/app/app/page.tsx')]:add(C,title,note,path)
+('Historial de sorteos terminados','Distingue sorteos en curso de sorteados y cancelados.','src/app/app/page.tsx')]:
+    title,note,path,*keys=feature
+    add(C,title,note,path,timeline_key=keys[0] if keys else None)
 C='Equipo y vendedores'
 for title,note,path in [
 ('Alta de vendedores','Crea cuenta o reutiliza existente; correo opcional y usuario obligatorio.','src/components/forms/seller-form.tsx'),
@@ -96,14 +103,16 @@ for title,note,path in [
 ('Revertir una venta','Preserva historial y libera el número con control de acceso.','src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts')]:add(C,title,note,path)
 future(C,'Compra agrupada con Purchase','La venta múltiple existe, pero aún no tiene una entidad Purchase para agrupar compras y pagos.',pattern='Purchase')
 C='Sorteo y resultados'
-for title,note,path in [
+for feature in [
 ('Sorteo de prueba y oficial','Distingue simulación de ejecución oficial y su estado.','src/components/forms/raffle-draw-form.tsx'),
 ('Aleatoriedad segura y auditable','HMAC-SHA256, seed y manifiesto de candidatos para reproducibilidad.','src/lib/draw-random.ts'),
 ('Historial de ejecuciones','Conserva sorteos y resultados por premio.','src/app/api/raffles/[raffleId]/draws/route.ts'),
 ('Exportar resultados','Archivo de resultados preservando las posiciones lógicas de premios.','src/app/api/raffles/[raffleId]/draws/export/route.ts'),
-('Publicación de ganadores','Publica premio, posición y número oficial sin identidad del comprador.','src/lib/public-raffle-page.ts')]:add(C,title,note,path)
+('Publicación de ganadores','Publica premio, posición y número oficial sin identidad del comprador.','src/lib/public-raffle-page.ts','winner-publication')]:
+    title,note,path,*keys=feature
+    add(C,title,note,path,timeline_key=keys[0] if keys else None)
 C='Administración y seguridad'
-for title,note,path in [
+for feature in [
 ('Gestión global de usuarios','Listado y búsqueda sólo para SUPERADMIN.','src/app/app/admin/users/page.tsx'),
 ('Moderación global de sorteos','Aprobar, ocultar, rechazar o solicitar cambios con motivo obligatorio.','src/components/raffle-moderation-form.tsx'),
 ('Restricción de sorteos rechazados','Sólo el propietario conserva acceso privado; inspección SUPERADMIN.','src/lib/raffle-inspection.ts'),
@@ -111,18 +120,20 @@ for title,note,path in [
 ('Auditoría persistente','AuditLog sanitizado; mutaciones sensibles auditadas en transacción.','src/lib/audit.ts'),
 ('Rate limiting persistente','Límites PostgreSQL para autenticación, uploads y operaciones sensibles.','src/lib/rate-limit.ts'),
 ('Tokens de un solo uso','Hashes, expiración y consumo seguro para flujos de cuenta.','src/lib/tokens.ts'),
-('Validación fuerte de imágenes','Tipo real, peso, dimensiones y normalización con Sharp.','src/lib/uploads.ts'),
+('Validación fuerte de imágenes','Tipo real, peso, dimensiones y normalización con Sharp.','src/lib/uploads.ts','image-upload-validation'),
 ('Validación de comprobantes','Contenido real, formatos y tamaño con descarga privada.','src/lib/sale-receipts.ts'),
 ('Modo mantenimiento sin DB','Servidor mínimo 503 antes de Prisma; health check operativo.','scripts/start-deploy.mjs'),
 ('Mantenimiento de auditoría','Retención y limpieza con dry-run; existencia de código no implica ejecución programada.','src/lib/maintenance.ts'),
-('Logging estructurado','Registro de errores operativos sin secretos ni PII innecesaria.','src/lib/logger.ts')]:add(C,title,note,path)
+('Logging estructurado','Registro de errores operativos sin secretos ni PII innecesaria.','src/lib/logger.ts')]:
+    title,note,path,*keys=feature
+    add(C,title,note,path,timeline_key=keys[0] if keys else None)
 future(C,'Explorador global de auditoría','AuditLog existe; falta una consola global completa con filtros y búsqueda.',pattern='Auditoria Completa')
-for title,note,pattern in [
-('Verificación de exposición RSC','SEC.EDGE.1: revisión de versión realmente desplegada y superficie expuesta.','SEC.EDGE.1'),
-('Aislamiento del origen y administración','SEC.EDGE.2: cierre de acceso directo al origen y panel del VPS.','SEC.EDGE.2'),
-('TLS Full (strict) validado','SEC.EDGE.3: configuración y pruebas previas al corte.','SEC.EDGE.3'),
-('Antiabuso en Cloudflare','SEC.EDGE.4: reglas que no rompan auth, SSE ni pagos.','SEC.EDGE.4'),
-('Alertas y runbook de incidentes','SEC.EDGE.5: observación, evidencias y recuperación.','SEC.EDGE.5')]:future(C,title,note,'docs/CLOUDFLARE_SECURITY_REVIEW.md',pattern)
+for title,note,pattern,timeline_key in [
+('Verificación de exposición RSC','SEC.EDGE.1: revisión de versión realmente desplegada y superficie expuesta.','SEC.EDGE.1','edge-rsc-exposure-check'),
+('Aislamiento del origen y administración','SEC.EDGE.2: cierre de acceso directo al origen y panel del VPS.','SEC.EDGE.2','edge-origin-isolation'),
+('TLS Full (strict) validado','SEC.EDGE.3: configuración y pruebas previas al corte.','SEC.EDGE.3','edge-tls-full-strict'),
+('Antiabuso en Cloudflare','SEC.EDGE.4: reglas que no rompan auth, SSE ni pagos.','SEC.EDGE.4','edge-cloudflare-abuse'),
+('Alertas y runbook de incidentes','SEC.EDGE.5: observación, evidencias y recuperación.','SEC.EDGE.5','edge-incident-runbook')]:future(C,title,note,'docs/CLOUDFLARE_SECURITY_REVIEW.md',pattern,timeline_key)
 C='Emails transaccionales'
 for title,note,path in [
 ('Cola persistente EmailJob','Los flujos de cuenta encolan mensajes para no depender del envío inmediato.','src/lib/email-jobs.ts'),
@@ -133,12 +144,12 @@ add(C,'Worker independiente','Servicio separado, con build y ciclo de release pr
 worker_tree=git('email-worker','ls-tree','-r','--name-only',refs['email-worker']['main']).splitlines()
 worker_source=next(p for p in worker_tree if p.endswith('.ts') and ('worker' in p or 'queue' in p))
 add(C,'Reintentos, locks y backoff','Procesamiento de cola independiente; consultar configuración del worker para su política concreta.',worker_source,'email-worker')
-for title,note in [
-('Email de confirmación de compra','Pendiente; depende de agrupación Purchase y definición de entrega.'),
-('Email de comprobante o resumen','Adjuntar un archivo a una venta no envía un resumen automáticamente.'),
-('Email de ganadores','Pendiente; no hay envío automático agregado por A2.5.'),
-('Emails de estado de pago','Pendiente de pagos, conciliación y contratos de eventos.'),
-('Consola operativa de emails','Vista global de cola, fallos y reintentos aún pendiente.')]:future(C,title,note,pattern='Emails')
+for title,note,timeline_key in [
+('Email de confirmación de compra','Pendiente; depende de agrupación Purchase y definición de entrega.','purchase-confirmation-email'),
+('Email de comprobante o resumen','Adjuntar un archivo a una venta no envía un resumen automáticamente.','purchase-receipt-email'),
+('Email de ganadores','Pendiente; no hay envío automático agregado por A2.5.','winners-email'),
+('Emails de estado de pago','Pendiente de pagos, conciliación y contratos de eventos.','payment-status-emails'),
+('Consola operativa de emails','Vista global de cola, fallos y reintentos aún pendiente.','email-operations-console')]:future(C,title,note,pattern='Emails',timeline_key=timeline_key)
 C='Arquitectura e infraestructura'
 add(C,'API backend independiente','Next.js API-only con dominio separado; su presencia no implica corte de tráfico productivo.','package.json','backend')
 add(C,'Contratos HTTP v1','Contratos versionados para lecturas y mutaciones entre servicios.','src/contracts/http/v1/index.ts')
@@ -149,31 +160,31 @@ add(C,'Storage privado R2 en backend','Implementación A2.6 y evidencia de ensay
 add(C,'Política CI de migrador único','A2.7: política y validación de schema/SQL; web aún conserva Prisma.','scripts/migration-policy.mjs')
 add(C,'Lista pública de home vía backend','A2.7: adaptador de home; integración de rama no implica deploy ni flag activo.','src/contracts/http/v1/public-upcoming-raffles.ts')
 add(C,'Lista privada de sorteos vía backend','A2.7: contrato y adaptador de dashboard; no equivale a retirar Prisma del resto de web.','src/lib/private-reads.ts',pattern='fetchUserRaffleMembershipsReadFromBackend')
-for title,note,pattern in [
-('Frontend independiente sin Prisma','A3 pendiente: web conserva acceso directo a datos y dependencias servidor.','A3'),
-('Backend como único acceso a datos','A2 no cerrada: faltan callers y ownership completos; no confundir con API independiente existente.','Inventario de persistencia'),
-('Corte productivo al VPS','A4: pendiente de gates A2/A3, migración de datos y autorización.','A4'),
-('Realtime entre múltiples réplicas','Redis/PubSub o equivalente pendiente; SSE actual usa memoria.','Redis'),
-('Observabilidad centralizada','Integración Sentry/pino y alertas unificadas aún pendiente.','Sentry')]:future(C,title,note,pattern=pattern)
+for title,note,pattern,timeline_key in [
+('Frontend independiente sin Prisma','A3 pendiente: web conserva acceso directo a datos y dependencias servidor.','A3',None),
+('Backend como único acceso a datos','A2 no cerrada: faltan callers y ownership completos; no confundir con API independiente existente.','Inventario de persistencia','backend-data-ownership'),
+('Corte productivo al VPS','A4: pendiente de gates A2/A3, migración de datos y autorización.','A4',None),
+('Realtime entre múltiples réplicas','Redis/PubSub o equivalente pendiente; SSE actual usa memoria.','Redis',None),
+('Observabilidad centralizada','Integración Sentry/pino y alertas unificadas aún pendiente.','Sentry',None)]:future(C,title,note,pattern=pattern,timeline_key=timeline_key)
 C='Analytics y publicidad'
-for title,note,pattern in [
-('Analytics de navegación','Proveedor de métricas de uso pendiente; distinto de las métricas operativas ya visibles.','Analytics'),
-('Embudo y conversión','Eventos de visita, selección y conversión sin datos personales.','Analytics'),
-('Integración AdSense','Sin script/publisher activo; requiere aprobación y validación de políticas.','AdSense'),
-('Control de anuncios por ruta','Flags, exclusión de áreas privadas y apagado rápido pendientes.','Ads'),
-('Consentimiento publicitario','Política y consentimiento pendientes antes de publicidad.','consentimiento')]:future(C,title,note,pattern=pattern)
+for title,note,pattern,timeline_key in [
+('Analytics de navegación','Proveedor de métricas de uso pendiente; distinto de las métricas operativas ya visibles.','Analytics','navigation-analytics'),
+('Embudo y conversión','Eventos de visita, selección y conversión sin datos personales.','Analytics','conversion-funnel'),
+('Integración AdSense','Sin script/publisher activo; requiere aprobación y validación de políticas.','AdSense',None),
+('Control de anuncios por ruta','Flags, exclusión de áreas privadas y apagado rápido pendientes.','Ads',None),
+('Consentimiento publicitario','Política y consentimiento pendientes antes de publicidad.','consentimiento',None)]:future(C,title,note,pattern=pattern,timeline_key=timeline_key)
 C='Pagos y lotería · roadmap'
-for title,note in [
-('Compra de talonario especial','Especificado: ARS 10.000, una rifa monetizada y hasta 1.000 números. No implementado.'),
-('Vincular cuenta Mercado Pago','OAuth del organizador y tokens sólo del lado servidor. No implementado.'),
-('Checkout de uno o varios números','Cobro al organizador; sin comisión Rifero por número. Pendiente y sujeto a gates.'),
-('Conciliación y webhooks idempotentes','Validar destinatario, importe, moneda y notificaciones; retorno del navegador no confirma pago.'),
-('Reembolsos y contracargos','Reglas y manejo de devoluciones aún por definir e implementar.'),
-('Elección de Quiniela de la Ciudad','Alternativa futura al sorteo propio, también para rifas sin pago.'),
-('Calendario oficial de sorteos','Fuente aprobada, zona horaria y suspensiones; no asumir calendario fijo.'),
-('Extracto completo de 20 posiciones','Ingesta validada conservando ceros iniciales y evidencia oficial.'),
-('Adjudicación por lotería','Premios 1/2/3 con posiciones 1/2/3; número no vendido o fuera de rango deja vacante.'),
-('Tipo de sorteo inmutable tras venta','Bloqueo UI/API posterior a la primera venta; reglas exactas aún pendientes.')]:future(C,title,note,'docs/MERCADOPAGO_LOTTERY_SPEC.md')
+for title,note,timeline_key in [
+('Compra de talonario especial','Especificado: ARS 10.000, una rifa monetizada y hasta 1.000 números. No implementado.','lottery-booklet-purchase'),
+('Vincular cuenta Mercado Pago','OAuth del organizador y tokens sólo del lado servidor. No implementado.','mercadopago-account-link'),
+('Checkout de uno o varios números','Cobro al organizador; sin comisión Rifero por número. Pendiente y sujeto a gates.','lottery-checkout'),
+('Conciliación y webhooks idempotentes','Validar destinatario, importe, moneda y notificaciones; retorno del navegador no confirma pago.','payment-reconciliation-webhooks'),
+('Reembolsos y contracargos','Reglas y manejo de devoluciones aún por definir e implementar.','payment-refunds-chargebacks'),
+('Elección de Quiniela de la Ciudad','Alternativa futura al sorteo propio, también para rifas sin pago.','quiniela-source-selection'),
+('Calendario oficial de sorteos','Fuente aprobada, zona horaria y suspensiones; no asumir calendario fijo.','official-lottery-calendar'),
+('Extracto completo de 20 posiciones','Ingesta validada conservando ceros iniciales y evidencia oficial.','lottery-results-extract'),
+('Adjudicación por lotería','Premios 1/2/3 con posiciones 1/2/3; número no vendido o fuera de rango deja vacante.','lottery-prize-awarding'),
+('Tipo de sorteo inmutable tras venta','Bloqueo UI/API posterior a la primera venta; reglas exactas aún pendientes.','immutable-draw-type')]:future(C,title,note,'docs/MERCADOPAGO_LOTTERY_SPEC.md',timeline_key=timeline_key)
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
@@ -183,8 +194,10 @@ try:
     previous=json.loads((ROOT/'data.js').read_text().removeprefix('export default ').rstrip().removesuffix(';'))
 except (OSError,ValueError):
     pass
-same_snapshot=(previous is not None and previous.get('refs')==refs and previous.get('repos')==repos and previous.get('features')==rows and previous.get('method')==method)
-generated_at=previous['generatedAt'] if same_snapshot else datetime.datetime.now(datetime.timezone.utc).isoformat()
-payload={'generatedAt':generated_at,'refs':refs,'repos':repos,'features':rows,'method':method}
+now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+timeline=track_implementations(rows,previous,now)
+same_snapshot=(previous is not None and previous.get('refs')==refs and previous.get('repos')==repos and previous.get('features')==rows and previous.get('timeline')==timeline and previous.get('method')==method)
+generated_at=previous['generatedAt'] if same_snapshot else now
+payload={'generatedAt':generated_at,'refs':refs,'repos':repos,'features':rows,'timeline':timeline,'method':method}
 (ROOT/'data.js').write_text('export default '+json.dumps(payload,ensure_ascii=False,indent=2)+';\n')
 print(f'{len(rows)} capacidades; '+', '.join(f'{b}: {sum(r[b] for r in rows)} implementadas' for b in ['staging','main']))

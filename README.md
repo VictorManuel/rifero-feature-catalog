@@ -1,10 +1,10 @@
 # Rifero · catálogo de funcionalidades
 
-Tabla comparativa de funcionalidades y roadmap de Rifero, con columnas **staging** y **main (producción)**.
+Tabla comparativa de funcionalidades y roadmap de Rifero, con columnas **staging** y **main (producción)**, más una timeline de primeras detecciones de implementación.
 
 **Web:** https://victormanuel.github.io/rifero-feature-catalog/
 
-119 capacidades en 10 categorías. Incluye búsqueda sin acentos, filtros combinados, evidencia fijada a commits y exportación CSV.
+119 capacidades en 10 categorías. Incluye búsqueda sin acentos, filtros combinados, evidencia fijada a commits, timeline y exportación CSV con fechas registradas.
 
 ## Leer los estados
 
@@ -14,6 +14,8 @@ Tabla comparativa de funcionalidades y roadmap de Rifero, con columnas **staging
 - Es un snapshot curado: refleja `main` y `staging` remotos de los repositorios fuente, no ramas sin integrar ni cambios locales.
 - Los enlaces de evidencia apuntan a repositorios privados y requieren acceso. No se publica su código fuente aquí.
 - Los checks detectan cambios de las capacidades ya catalogadas. Descubrir una función nueva o reinterpretar una nota del roadmap requiere revisar y actualizar `generate.py`.
+- La timeline comienza con una línea base: no reconstruye fechas históricas. Desde ese punto registra cuándo el refresco detecta por primera vez una implementación en cada rama; esto también aplica a una capacidad agregada al catálogo que ya estuviera implementada. La hora puede ser posterior al cambio real de código.
+- La identidad histórica usa la evidencia de código, no el ID secuencial ni el título. Las capacidades que comparten evidencia declaran una `timeline_key` inmutable junto a su entrada en `generate.py`; hay que conservar esa clave aunque se renombre la función.
 
 ## Desarrollo local
 
@@ -36,7 +38,7 @@ Para reflejar cambios subidos a los repositorios privados y publicar el snapshot
 update-rifero-status
 ```
 
-El comando descarga las referencias `main` y `staging` de `web/`, `backend/` y `email-worker/` por HTTPS, regenera el inventario, corre tests y build, y si cambió `data.js` crea un commit de ese archivo y lo publica en `main`. GitHub Actions despliega el sitio. En la primera instalación, agrega el ejecutable al PATH:
+El comando descarga las referencias `main` y `staging` de `web/`, `backend/` y `email-worker/` por HTTPS, regenera el inventario y la timeline, corre tests y build, y si cambió `data.js` crea un commit de ese archivo y lo publica en `main`. GitHub Actions despliega el sitio. Una transición de pendiente a implementado genera una fecha para esa rama; una función que ya existía al iniciar el seguimiento aparece sin fecha histórica. En la primera instalación, agrega el ejecutable al PATH:
 
 ```sh
 ln -s "$(pwd)/bin/update-rifero-status" "$HOME/Library/pnpm/update-rifero-status"

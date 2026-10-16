@@ -5,6 +5,6 @@ export function filterFeatures(features, {query='',category='all',status='all'}=
 }
 export function toCSV(features) {
  const cell=v=>'"'+String(v).replace(/^[=+@\-\t\r]/,"'$&").replaceAll('"','""')+'"';
- const rows=[['ID','Categoría','Funcionalidad','Staging','Main (producción)','Notas','Evidencia staging','Evidencia main'],...features.map(f=>[f.id,f.category,f.title,f.staging?'Implementado':'No implementado',f.main?'Implementado':'No implementado',f.note,f.evidence.staging.url,f.evidence.main.url])];
+ const rows=[['ID','Categoría','Funcionalidad','Staging','Main (producción)','Primera detección staging','Primera detección main','Notas','Evidencia staging','Evidencia main'],...features.map(f=>[f.id,f.category,f.title,f.staging?'Implementado':'No implementado',f.main?'Implementado':'No implementado',f.implementationDates?.staging??'',f.implementationDates?.main??'',f.note,f.evidence.staging.url,f.evidence.main.url])];
  return '\uFEFF'+rows.map(row=>row.map(cell).join(';')).join('\r\n');
 }

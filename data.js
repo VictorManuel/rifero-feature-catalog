@@ -1,12 +1,12 @@
 export default {
-  "generatedAt": "2026-10-16T04:09:46.658252+00:00",
+  "generatedAt": "2026-10-16T11:01:21.094898+00:00",
   "refs": {
     "web": {
-      "staging": "5f2a2b603b149003153d0d8334315a60f1d44709",
+      "staging": "64431f75391b0b59fa4c8581ce76a803aca0e254",
       "main": "038cb0ae090f455914dbd4dc851a6ad924ba606e"
     },
     "backend": {
-      "staging": "f25330030b0b2aece363120894d307653a00b42e",
+      "staging": "d3a0f56403e5b059ecd96dbf34819b67dde4c2ea",
       "main": "6207e838c39246291d832ffde7f82a96c3a999f4"
     },
     "email-worker": {
@@ -32,7 +32,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/register-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/forms/register-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/forms/register-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -44,6 +44,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-ff7dc8902b8f5d47864a",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -58,7 +63,7 @@ export default {
           "repo": "web",
           "path": "src/lib/auth-identity.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/auth-identity.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/auth-identity.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -70,6 +75,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-464f70e88263b2876870",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -84,7 +94,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/profile/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/account/profile/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/account/profile/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -96,6 +106,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-15bfd14f72a595121ac6",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -110,7 +125,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/email/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/account/email/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/account/email/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -122,6 +137,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-8b48432b84bdb019e9b2",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -136,7 +156,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/password/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/account/password/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/account/password/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -148,6 +168,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-f74aebe2db1805937a3f",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -162,7 +187,7 @@ export default {
           "repo": "web",
           "path": "src/components/initial-password-decision.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/initial-password-decision.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/initial-password-decision.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -174,6 +199,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-2a4f5b2d7906fe1f1961",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -188,7 +218,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/email-verification/verify/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/email-verification/verify/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/email-verification/verify/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -200,6 +230,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-24de5af6cd3e2443f0e9",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -214,7 +249,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/email-verification/resend/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/email-verification/resend/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/email-verification/resend/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -226,6 +261,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-11a1723531af2e66f1f4",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -240,7 +280,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/password/forgot/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/password/forgot/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/password/forgot/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -252,6 +292,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-d150b39858ff7185b24a",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -266,7 +311,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/password/reset/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/password/reset/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/password/reset/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -278,6 +323,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-4671e431368a492fdaa8",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -292,7 +342,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/my-numbers/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/app/my-numbers/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/app/my-numbers/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -304,6 +354,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-14e3080727026c9da96e",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -318,7 +373,7 @@ export default {
           "repo": "web",
           "path": "src/lib/permissions.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/permissions.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/permissions.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -330,6 +385,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-175da0466fba27a4ab23",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -344,7 +404,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/admin/users/reset-password/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/admin/users/reset-password/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/admin/users/reset-password/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -356,6 +416,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-8016c91999d18c152b7e",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -370,7 +435,7 @@ export default {
           "repo": "web",
           "path": "src/lib/legal.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/legal.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/legal.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -382,6 +447,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-e1765a74dc2ed7ed238a",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -396,7 +466,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -408,6 +478,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-d370fa890173d9ad10f3",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -422,7 +497,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/raffle-settings-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/forms/raffle-settings-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/forms/raffle-settings-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -434,6 +509,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-d95bb01d18190fcf2639",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -448,7 +528,7 @@ export default {
           "repo": "web",
           "path": "src/lib/prizes.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/prizes.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/prizes.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -460,6 +540,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-c148a05c893892ff353a",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -474,7 +559,7 @@ export default {
           "repo": "web",
           "path": "src/lib/uploads.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/uploads.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/uploads.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -486,6 +571,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "prize-cover-gallery",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -500,7 +590,7 @@ export default {
           "repo": "web",
           "path": "src/components/image-focal-point-picker.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/image-focal-point-picker.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/image-focal-point-picker.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -512,6 +602,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-7bfab905b36f2e7d8a7b",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -526,7 +621,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-image-gallery.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/raffle-image-gallery.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/raffle-image-gallery.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -538,6 +633,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-e0bd79080776c0943f7a",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -552,7 +652,7 @@ export default {
           "repo": "web",
           "path": "src/app/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -564,6 +664,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-4e3d339e4b10b06aedcf",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -578,7 +683,7 @@ export default {
           "repo": "web",
           "path": "src/app/r/[slug]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/r/[slug]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/r/[slug]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -590,6 +695,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "public-raffle-landing",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -604,7 +714,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-moderation-policy.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/raffle-moderation-policy.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/raffle-moderation-policy.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -616,6 +726,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-6268eee35ba79b49efe5",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -630,7 +745,7 @@ export default {
           "repo": "web",
           "path": "src/app/r/[slug]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/r/[slug]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/r/[slug]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -642,6 +757,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "social-share-metadata",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -656,7 +776,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-events.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/raffle-events.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/raffle-events.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -668,6 +788,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-cf4a5a2a5c7ebcc940ae",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -682,7 +807,7 @@ export default {
           "repo": "web",
           "path": "src/lib/public-raffle-page.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/public-raffle-page.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/public-raffle-page.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -694,6 +819,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "public-number-buyers",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -708,7 +838,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/raffles/[raffleId]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/app/raffles/[raffleId]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/app/raffles/[raffleId]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -720,6 +850,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-f35a93033081723ed2d4",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -734,7 +869,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-context-navigation.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/raffle-context-navigation.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/raffle-context-navigation.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -746,6 +881,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-490e18e1a051c92ba7bf",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -760,7 +900,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/number-count/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/number-count/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/number-count/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -772,6 +912,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-e1ffc997f67449d5f1f8",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -786,7 +931,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/cancel/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/cancel/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/cancel/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -798,6 +943,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-a7c2684850ee46dc8806",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -812,7 +962,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/app/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/app/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -824,6 +974,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-9ebe7c9b9841ebeace3e",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -838,7 +993,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/seller-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/forms/seller-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/forms/seller-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -850,6 +1005,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-3aeabf0f892af3e9ad2c",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -864,7 +1024,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sellers/import/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/sellers/import/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/sellers/import/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -876,6 +1036,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-433cab2d2dd2f71b1a6a",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -890,7 +1055,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-selling-mode-manager.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/seller-selling-mode-manager.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/seller-selling-mode-manager.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -902,6 +1067,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-bf10cfca221c54f21b57",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -916,7 +1086,7 @@ export default {
           "repo": "web",
           "path": "src/lib/number-allocation.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/number-allocation.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/number-allocation.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -928,6 +1098,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-c9b7fd5f6c1c7ad4b6b9",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -942,7 +1117,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/number-assignments/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/number-assignments/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/number-assignments/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -954,6 +1129,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-d957bde60f24c8188aca",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -968,7 +1148,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-number-unassignment-manager.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/seller-number-unassignment-manager.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/seller-number-unassignment-manager.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -980,6 +1160,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-9864bdbf1785a9a2455e",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -994,7 +1179,7 @@ export default {
           "repo": "web",
           "path": "src/lib/seller-team-stats.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/seller-team-stats.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/seller-team-stats.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1006,6 +1191,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-1960ebe6eaa47808f556",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1020,7 +1210,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-sales-modal.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/seller-sales-modal.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/seller-sales-modal.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1032,6 +1222,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-b95caffd0240e4303a3b",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1046,7 +1241,7 @@ export default {
           "repo": "web",
           "path": "src/lib/out-of-assignment-sales.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/out-of-assignment-sales.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/out-of-assignment-sales.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1058,6 +1253,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-9765ee047feced912280",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1072,7 +1272,7 @@ export default {
           "repo": "web",
           "path": "src/components/share-seller-numbers-button.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/share-seller-numbers-button.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/share-seller-numbers-button.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1084,6 +1284,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-1eed2f96fb797676a784",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1098,7 +1303,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/invitations/accept/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/invitations/accept/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/invitations/accept/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1110,6 +1315,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-40a9ea0bbab85fbdb152",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1124,7 +1334,7 @@ export default {
           "repo": "web",
           "path": "src/components/invitation-actions.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/invitation-actions.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/invitation-actions.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1136,6 +1346,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-4ad1f027c46783f0907c",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1150,7 +1365,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/sale-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/forms/sale-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/forms/sale-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1162,6 +1377,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-46560c2bb837c0a6e3a6",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1176,7 +1396,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-registration.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/sale-registration.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/sale-registration.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1188,6 +1408,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-1b443ae70547c62cb786",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1202,7 +1427,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-modal.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/sale-modal.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/sale-modal.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1214,6 +1439,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-c60930973ef7e1583ec9",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1228,7 +1458,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/reservations/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/reservations/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/reservations/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1240,6 +1470,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-402336c063303b016581",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1254,7 +1489,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/sales/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/sales/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1266,6 +1501,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-a5446c715f2e3ce06560",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1280,7 +1520,7 @@ export default {
           "repo": "web",
           "path": "src/lib/validators.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/validators.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/validators.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1292,6 +1532,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-138af12b87f65a9a1b98",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1306,7 +1551,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-receipt-field.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/sale-receipt-field.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/sale-receipt-field.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1318,6 +1563,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-dbec1f041c42d2f3c1cd",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1332,7 +1582,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1344,6 +1594,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-0acc945ef2c584ebd2c2",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1358,7 +1613,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1370,6 +1625,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-983e8f848a98110bb232",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1384,7 +1644,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/raffles/[raffleId]/sales/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/app/raffles/[raffleId]/sales/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/app/raffles/[raffleId]/sales/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1396,6 +1656,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-e45af271710738b62d87",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1410,7 +1675,7 @@ export default {
           "repo": "web",
           "path": "src/lib/sale-sorting.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/sale-sorting.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/sale-sorting.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1422,6 +1687,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-9b0bd3593b7736de5afe",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1436,7 +1706,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/export/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/sales/export/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/sales/export/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1448,6 +1718,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-52e6d0f852e840cb0ede",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1462,7 +1737,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1474,6 +1749,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-a5345f6081bbdf2190d1",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1488,7 +1768,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 97,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L97",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L97",
           "match": "Purchase",
           "kind": "plan"
         },
@@ -1500,6 +1780,11 @@ export default {
           "match": "Purchase",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-4b78fef8a32e3a682e98",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1514,7 +1799,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/raffle-draw-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/forms/raffle-draw-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/forms/raffle-draw-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1526,6 +1811,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-63b539507f453aacc9aa",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1540,7 +1830,7 @@ export default {
           "repo": "web",
           "path": "src/lib/draw-random.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/draw-random.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/draw-random.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1552,6 +1842,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-deb29a4fb79b49b3715e",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1566,7 +1861,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/draws/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/draws/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/draws/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1578,6 +1873,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-b3ac70e4f0e98e35f510",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1592,7 +1892,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/draws/export/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/api/raffles/[raffleId]/draws/export/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/api/raffles/[raffleId]/draws/export/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1604,6 +1904,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-ad20b6eb517f1aff0ee2",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1618,7 +1923,7 @@ export default {
           "repo": "web",
           "path": "src/lib/public-raffle-page.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/public-raffle-page.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/public-raffle-page.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1630,6 +1935,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "winner-publication",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1644,7 +1954,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/admin/users/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/app/app/admin/users/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/app/app/admin/users/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1656,6 +1966,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-6cebd3502ff2ff9b600d",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1670,7 +1985,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-moderation-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/components/raffle-moderation-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/components/raffle-moderation-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1682,6 +1997,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-25b394f6262c53e37c26",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1696,7 +2016,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-inspection.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/raffle-inspection.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/raffle-inspection.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1708,6 +2028,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-170b9b89065e2aee20ca",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1722,7 +2047,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-activity.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/raffle-activity.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/raffle-activity.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1734,6 +2059,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-7bf1eadbc1a71811ef9b",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1748,7 +2078,7 @@ export default {
           "repo": "web",
           "path": "src/lib/audit.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/audit.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/audit.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1760,6 +2090,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-4d79b44d2ee962a96815",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1774,7 +2109,7 @@ export default {
           "repo": "web",
           "path": "src/lib/rate-limit.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/rate-limit.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/rate-limit.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1786,6 +2121,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-cd583d564ba27f4d0988",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1800,7 +2140,7 @@ export default {
           "repo": "web",
           "path": "src/lib/tokens.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/tokens.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/tokens.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1812,6 +2152,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-02d745f1a005ebeade1d",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1826,7 +2171,7 @@ export default {
           "repo": "web",
           "path": "src/lib/uploads.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/uploads.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/uploads.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1838,6 +2183,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "image-upload-validation",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1852,7 +2202,7 @@ export default {
           "repo": "web",
           "path": "src/lib/sale-receipts.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/sale-receipts.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/sale-receipts.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1864,6 +2214,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-c10fd37e795a4ca37b59",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1878,7 +2233,7 @@ export default {
           "repo": "web",
           "path": "scripts/start-deploy.mjs",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/scripts/start-deploy.mjs#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/scripts/start-deploy.mjs#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1890,6 +2245,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-c6ef912f234a729f0188",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1904,7 +2264,7 @@ export default {
           "repo": "web",
           "path": "src/lib/maintenance.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/maintenance.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/maintenance.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1916,6 +2276,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-10914fc9bcadd709f53b",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1930,7 +2295,7 @@ export default {
           "repo": "web",
           "path": "src/lib/logger.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/logger.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/logger.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1942,6 +2307,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-66306302df9cf636e22e",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1956,7 +2326,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1319,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L1319",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L1319",
           "match": "Auditoria Completa",
           "kind": "plan"
         },
@@ -1968,6 +2338,11 @@ export default {
           "match": "Auditoria Completa",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-ff257e4af89420e52448",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -1982,7 +2357,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 58,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/CLOUDFLARE_SECURITY_REVIEW.md#L58",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/CLOUDFLARE_SECURITY_REVIEW.md#L58",
           "match": "SEC.EDGE.1",
           "kind": "plan"
         },
@@ -1994,6 +2369,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "edge-rsc-exposure-check",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2008,7 +2388,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 70,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/CLOUDFLARE_SECURITY_REVIEW.md#L70",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/CLOUDFLARE_SECURITY_REVIEW.md#L70",
           "match": "SEC.EDGE.2",
           "kind": "plan"
         },
@@ -2020,6 +2400,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "edge-origin-isolation",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2034,7 +2419,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 84,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/CLOUDFLARE_SECURITY_REVIEW.md#L84",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/CLOUDFLARE_SECURITY_REVIEW.md#L84",
           "match": "SEC.EDGE.3",
           "kind": "plan"
         },
@@ -2046,6 +2431,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "edge-tls-full-strict",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2060,7 +2450,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 97,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/CLOUDFLARE_SECURITY_REVIEW.md#L97",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/CLOUDFLARE_SECURITY_REVIEW.md#L97",
           "match": "SEC.EDGE.4",
           "kind": "plan"
         },
@@ -2072,6 +2462,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "edge-cloudflare-abuse",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2086,7 +2481,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 112,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/CLOUDFLARE_SECURITY_REVIEW.md#L112",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/CLOUDFLARE_SECURITY_REVIEW.md#L112",
           "match": "SEC.EDGE.5",
           "kind": "plan"
         },
@@ -2098,6 +2493,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "edge-incident-runbook",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2112,7 +2512,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email-jobs.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/email-jobs.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/email-jobs.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2124,6 +2524,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-8f32ac18216b7a2e74cb",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2138,7 +2543,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email/resend-provider.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/email/resend-provider.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/email/resend-provider.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2150,6 +2555,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-3bfc3739a9dec1eee05e",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2164,7 +2574,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email/templates.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/email/templates.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/email/templates.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2176,6 +2586,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-60f2d7b4e30026e82b2f",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2202,6 +2617,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-e67dc54474d4dd3f66de",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2228,6 +2648,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-ee994cdededd7f10d2ed",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2242,7 +2667,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2254,6 +2679,11 @@ export default {
           "match": "Emails",
           "kind": "plan"
         }
+      },
+      "timelineKey": "purchase-confirmation-email",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2268,7 +2698,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2280,6 +2710,11 @@ export default {
           "match": "Emails",
           "kind": "plan"
         }
+      },
+      "timelineKey": "purchase-receipt-email",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2294,7 +2729,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2306,6 +2741,11 @@ export default {
           "match": "Emails",
           "kind": "plan"
         }
+      },
+      "timelineKey": "winners-email",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2320,7 +2760,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2332,6 +2772,11 @@ export default {
           "match": "Emails",
           "kind": "plan"
         }
+      },
+      "timelineKey": "payment-status-emails",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2346,7 +2791,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2358,6 +2803,11 @@ export default {
           "match": "Emails",
           "kind": "plan"
         }
+      },
+      "timelineKey": "email-operations-console",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2372,7 +2822,7 @@ export default {
           "repo": "backend",
           "path": "package.json",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero-backend/blob/f25330030b0b2aece363120894d307653a00b42e/package.json#L1",
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/d3a0f56403e5b059ecd96dbf34819b67dde4c2ea/package.json#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2384,6 +2834,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-717fed6f9c20d277648d",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2398,7 +2853,7 @@ export default {
           "repo": "web",
           "path": "src/contracts/http/v1/index.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/contracts/http/v1/index.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/contracts/http/v1/index.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2410,6 +2865,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-66e05f1fa0f61c92ee5c",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2424,7 +2884,7 @@ export default {
           "repo": "web",
           "path": "src/lib/backend-api.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/backend-api.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/backend-api.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2436,6 +2896,11 @@ export default {
           "match": null,
           "kind": "implementation"
         }
+      },
+      "timelineKey": "source-9f0402205fff093c0d3c",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2450,7 +2915,7 @@ export default {
           "repo": "web",
           "path": "src/lib/session-bridge.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/session-bridge.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/session-bridge.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2462,6 +2927,11 @@ export default {
           "match": null,
           "kind": "absent"
         }
+      },
+      "timelineKey": "source-0eec17e8a71c3f8f7eff",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2476,7 +2946,7 @@ export default {
           "repo": "web",
           "path": "src/lib/backend-runtime.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/backend-runtime.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/backend-runtime.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2488,6 +2958,11 @@ export default {
           "match": null,
           "kind": "absent"
         }
+      },
+      "timelineKey": "source-f75e78a9ddf130a53425",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2502,7 +2977,7 @@ export default {
           "repo": "backend",
           "path": "src/infrastructure/storage/r2-object-store.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero-backend/blob/f25330030b0b2aece363120894d307653a00b42e/src/infrastructure/storage/r2-object-store.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/d3a0f56403e5b059ecd96dbf34819b67dde4c2ea/src/infrastructure/storage/r2-object-store.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2514,6 +2989,11 @@ export default {
           "match": null,
           "kind": "absent"
         }
+      },
+      "timelineKey": "source-5de5e8b58f4de6971a5b",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2528,7 +3008,7 @@ export default {
           "repo": "web",
           "path": "scripts/migration-policy.mjs",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/scripts/migration-policy.mjs#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/scripts/migration-policy.mjs#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2540,6 +3020,11 @@ export default {
           "match": null,
           "kind": "absent"
         }
+      },
+      "timelineKey": "source-13c35157133adee55ec9",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2554,7 +3039,7 @@ export default {
           "repo": "web",
           "path": "src/contracts/http/v1/public-upcoming-raffles.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/contracts/http/v1/public-upcoming-raffles.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/contracts/http/v1/public-upcoming-raffles.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2566,6 +3051,11 @@ export default {
           "match": null,
           "kind": "absent"
         }
+      },
+      "timelineKey": "source-557e3bf289b90a783b8c",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2579,8 +3069,8 @@ export default {
         "staging": {
           "repo": "web",
           "path": "src/lib/private-reads.ts",
-          "line": 18,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/src/lib/private-reads.ts#L18",
+          "line": 30,
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/src/lib/private-reads.ts#L30",
           "match": "fetchUserRaffleMembershipsReadFromBackend",
           "kind": "implementation"
         },
@@ -2592,6 +3082,11 @@ export default {
           "match": "fetchUserRaffleMembershipsReadFromBackend",
           "kind": "absent"
         }
+      },
+      "timelineKey": "source-cb997d54245dee672768",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2606,7 +3101,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 351,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L351",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L351",
           "match": "A3",
           "kind": "plan"
         },
@@ -2618,6 +3113,11 @@ export default {
           "match": "A3",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-a9c5541265817bb6abcb",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2632,7 +3132,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1718,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L1718",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L1718",
           "match": "Inventario de persistencia",
           "kind": "plan"
         },
@@ -2644,6 +3144,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "backend-data-ownership",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2658,7 +3163,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 369,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L369",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L369",
           "match": "A4",
           "kind": "plan"
         },
@@ -2670,6 +3175,11 @@ export default {
           "match": "A4",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-ddb3bc4708e996db5ac8",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2684,7 +3194,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 12,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L12",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L12",
           "match": "Redis",
           "kind": "plan"
         },
@@ -2696,6 +3206,11 @@ export default {
           "match": "Redis",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-ba5dec74d3c400e37ba9",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2710,7 +3225,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 571,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L571",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L571",
           "match": "Sentry",
           "kind": "plan"
         },
@@ -2722,6 +3237,11 @@ export default {
           "match": "Sentry",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-234369d2ad7c027569c5",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2736,7 +3256,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 18,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L18",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L18",
           "match": "Analytics",
           "kind": "plan"
         },
@@ -2748,6 +3268,11 @@ export default {
           "match": "Analytics",
           "kind": "plan"
         }
+      },
+      "timelineKey": "navigation-analytics",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2762,7 +3287,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 18,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L18",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L18",
           "match": "Analytics",
           "kind": "plan"
         },
@@ -2774,6 +3299,11 @@ export default {
           "match": "Analytics",
           "kind": "plan"
         }
+      },
+      "timelineKey": "conversion-funnel",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2788,7 +3318,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 484,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L484",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L484",
           "match": "AdSense",
           "kind": "plan"
         },
@@ -2800,6 +3330,11 @@ export default {
           "match": "AdSense",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-ecb48813a6a9beb69e47",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2814,7 +3349,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 22,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L22",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L22",
           "match": "Ads",
           "kind": "plan"
         },
@@ -2826,6 +3361,11 @@ export default {
           "match": "Ads",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-98e8a1d1d8d487f03c27",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2840,7 +3380,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 508,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/ROADMAP_EXECUTION_PLAN.md#L508",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/ROADMAP_EXECUTION_PLAN.md#L508",
           "match": "consentimiento",
           "kind": "plan"
         },
@@ -2852,6 +3392,11 @@ export default {
           "match": "consentimiento",
           "kind": "plan"
         }
+      },
+      "timelineKey": "source-56290e1f0140dec5badd",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2866,7 +3411,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -2878,6 +3423,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "lottery-booklet-purchase",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2892,7 +3442,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -2904,6 +3454,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "mercadopago-account-link",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2918,7 +3473,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -2930,6 +3485,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "lottery-checkout",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2944,7 +3504,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -2956,6 +3516,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "payment-reconciliation-webhooks",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2970,7 +3535,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -2982,6 +3547,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "payment-refunds-chargebacks",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -2996,7 +3566,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3008,6 +3578,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "quiniela-source-selection",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -3022,7 +3597,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3034,6 +3609,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "official-lottery-calendar",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -3048,7 +3628,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3060,6 +3640,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "lottery-results-extract",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -3074,7 +3659,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3086,6 +3671,11 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "lottery-prize-awarding",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     },
     {
@@ -3100,7 +3690,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/5f2a2b603b149003153d0d8334315a60f1d44709/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/64431f75391b0b59fa4c8581ce76a803aca0e254/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3112,8 +3702,883 @@ export default {
           "match": null,
           "kind": "general-plan"
         }
+      },
+      "timelineKey": "immutable-draw-type",
+      "implementationDates": {
+        "staging": null,
+        "main": null
       }
     }
   ],
+  "timeline": {
+    "startedAt": "2026-10-16T10:55:06.414360+00:00",
+    "baseline": [
+      {
+        "id": "F001",
+        "category": "Cuentas y acceso",
+        "title": "Registro público",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-ff7dc8902b8f5d47864a"
+      },
+      {
+        "id": "F002",
+        "category": "Cuentas y acceso",
+        "title": "Ingreso por correo o usuario",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-464f70e88263b2876870"
+      },
+      {
+        "id": "F003",
+        "category": "Cuentas y acceso",
+        "title": "Perfil y nombre de usuario",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-15bfd14f72a595121ac6"
+      },
+      {
+        "id": "F004",
+        "category": "Cuentas y acceso",
+        "title": "Agregar y verificar correo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-8b48432b84bdb019e9b2"
+      },
+      {
+        "id": "F005",
+        "category": "Cuentas y acceso",
+        "title": "Cambio de contraseña",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-f74aebe2db1805937a3f"
+      },
+      {
+        "id": "F006",
+        "category": "Cuentas y acceso",
+        "title": "Decisión sobre contraseña inicial",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-2a4f5b2d7906fe1f1961"
+      },
+      {
+        "id": "F007",
+        "category": "Cuentas y acceso",
+        "title": "Verificación de correo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-24de5af6cd3e2443f0e9"
+      },
+      {
+        "id": "F008",
+        "category": "Cuentas y acceso",
+        "title": "Reenvío de verificación",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-11a1723531af2e66f1f4"
+      },
+      {
+        "id": "F009",
+        "category": "Cuentas y acceso",
+        "title": "Recuperación de contraseña",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-d150b39858ff7185b24a"
+      },
+      {
+        "id": "F010",
+        "category": "Cuentas y acceso",
+        "title": "Restablecer por enlace seguro",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-4671e431368a492fdaa8"
+      },
+      {
+        "id": "F011",
+        "category": "Cuentas y acceso",
+        "title": "Mis números comprados",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-14e3080727026c9da96e"
+      },
+      {
+        "id": "F012",
+        "category": "Cuentas y acceso",
+        "title": "Roles y permisos por sorteo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-175da0466fba27a4ab23"
+      },
+      {
+        "id": "F013",
+        "category": "Cuentas y acceso",
+        "title": "Restablecimiento por SUPERADMIN",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-8016c91999d18c152b7e"
+      },
+      {
+        "id": "F014",
+        "category": "Cuentas y acceso",
+        "title": "Términos y privacidad",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-e1765a74dc2ed7ed238a"
+      },
+      {
+        "id": "F015",
+        "category": "Sorteos y publicación",
+        "title": "Crear un sorteo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-d370fa890173d9ad10f3"
+      },
+      {
+        "id": "F016",
+        "category": "Sorteos y publicación",
+        "title": "Editar configuración",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-d95bb01d18190fcf2639"
+      },
+      {
+        "id": "F017",
+        "category": "Sorteos y publicación",
+        "title": "Premios múltiples",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-c148a05c893892ff353a"
+      },
+      {
+        "id": "F018",
+        "category": "Sorteos y publicación",
+        "title": "Portada y fotos de premios",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "prize-cover-gallery"
+      },
+      {
+        "id": "F019",
+        "category": "Sorteos y publicación",
+        "title": "Punto focal de portada",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-7bfab905b36f2e7d8a7b"
+      },
+      {
+        "id": "F020",
+        "category": "Sorteos y publicación",
+        "title": "Galería accesible",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-e0bd79080776c0943f7a"
+      },
+      {
+        "id": "F021",
+        "category": "Sorteos y publicación",
+        "title": "Listado público en home",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-4e3d339e4b10b06aedcf"
+      },
+      {
+        "id": "F022",
+        "category": "Sorteos y publicación",
+        "title": "Landing pública por sorteo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "public-raffle-landing"
+      },
+      {
+        "id": "F023",
+        "category": "Sorteos y publicación",
+        "title": "Vista previa de borradores",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-6268eee35ba79b49efe5"
+      },
+      {
+        "id": "F024",
+        "category": "Sorteos y publicación",
+        "title": "Metadatos al compartir",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "social-share-metadata"
+      },
+      {
+        "id": "F025",
+        "category": "Sorteos y publicación",
+        "title": "Disponibilidad en tiempo real",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-cf4a5a2a5c7ebcc940ae"
+      },
+      {
+        "id": "F026",
+        "category": "Sorteos y publicación",
+        "title": "Compradores públicos por número",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "public-number-buyers"
+      },
+      {
+        "id": "F027",
+        "category": "Sorteos y publicación",
+        "title": "Panel privado y métricas",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-f35a93033081723ed2d4"
+      },
+      {
+        "id": "F028",
+        "category": "Sorteos y publicación",
+        "title": "Navegación contextual móvil",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-490e18e1a051c92ba7bf"
+      },
+      {
+        "id": "F029",
+        "category": "Sorteos y publicación",
+        "title": "Modificar cantidad de números",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-e1ffc997f67449d5f1f8"
+      },
+      {
+        "id": "F030",
+        "category": "Sorteos y publicación",
+        "title": "Cancelar sorteo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-a7c2684850ee46dc8806"
+      },
+      {
+        "id": "F031",
+        "category": "Sorteos y publicación",
+        "title": "Historial de sorteos terminados",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-9ebe7c9b9841ebeace3e"
+      },
+      {
+        "id": "F032",
+        "category": "Equipo y vendedores",
+        "title": "Alta de vendedores",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-3aeabf0f892af3e9ad2c"
+      },
+      {
+        "id": "F033",
+        "category": "Equipo y vendedores",
+        "title": "Importación masiva CSV",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-433cab2d2dd2f71b1a6a"
+      },
+      {
+        "id": "F034",
+        "category": "Equipo y vendedores",
+        "title": "Modo de venta libre o restringido",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-bf10cfca221c54f21b57"
+      },
+      {
+        "id": "F035",
+        "category": "Equipo y vendedores",
+        "title": "Asignación por cantidad o números",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-c9b7fd5f6c1c7ad4b6b9"
+      },
+      {
+        "id": "F036",
+        "category": "Equipo y vendedores",
+        "title": "Reasignar números disponibles",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-d957bde60f24c8188aca"
+      },
+      {
+        "id": "F037",
+        "category": "Equipo y vendedores",
+        "title": "Desasignación de números",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-9864bdbf1785a9a2455e"
+      },
+      {
+        "id": "F038",
+        "category": "Equipo y vendedores",
+        "title": "Métricas del equipo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-1960ebe6eaa47808f556"
+      },
+      {
+        "id": "F039",
+        "category": "Equipo y vendedores",
+        "title": "Detalle de ventas por vendedor",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-b95caffd0240e4303a3b"
+      },
+      {
+        "id": "F040",
+        "category": "Equipo y vendedores",
+        "title": "Ventas fuera de asignación",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-9765ee047feced912280"
+      },
+      {
+        "id": "F041",
+        "category": "Equipo y vendedores",
+        "title": "Compartir mis números",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-1eed2f96fb797676a784"
+      },
+      {
+        "id": "F042",
+        "category": "Equipo y vendedores",
+        "title": "Aceptar invitaciones por correo",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-40a9ea0bbab85fbdb152"
+      },
+      {
+        "id": "F043",
+        "category": "Equipo y vendedores",
+        "title": "Reenviar o revocar invitaciones",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-4ad1f027c46783f0907c"
+      },
+      {
+        "id": "F044",
+        "category": "Ventas y comprobantes",
+        "title": "Venta simple y múltiple",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-46560c2bb837c0a6e3a6"
+      },
+      {
+        "id": "F045",
+        "category": "Ventas y comprobantes",
+        "title": "Selección desde grilla",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-1b443ae70547c62cb786"
+      },
+      {
+        "id": "F046",
+        "category": "Ventas y comprobantes",
+        "title": "Modal de venta por pasos",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-c60930973ef7e1583ec9"
+      },
+      {
+        "id": "F047",
+        "category": "Ventas y comprobantes",
+        "title": "Reservas temporales",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-402336c063303b016581"
+      },
+      {
+        "id": "F048",
+        "category": "Ventas y comprobantes",
+        "title": "Prevención de doble venta",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-a5446c715f2e3ce06560"
+      },
+      {
+        "id": "F049",
+        "category": "Ventas y comprobantes",
+        "title": "Datos del comprador",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-138af12b87f65a9a1b98"
+      },
+      {
+        "id": "F050",
+        "category": "Ventas y comprobantes",
+        "title": "Comprobante al vender",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-dbec1f041c42d2f3c1cd"
+      },
+      {
+        "id": "F051",
+        "category": "Ventas y comprobantes",
+        "title": "Adjuntar comprobante después",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-0acc945ef2c584ebd2c2"
+      },
+      {
+        "id": "F052",
+        "category": "Ventas y comprobantes",
+        "title": "Consulta privada de comprobantes",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-983e8f848a98110bb232"
+      },
+      {
+        "id": "F053",
+        "category": "Ventas y comprobantes",
+        "title": "Historial de ventas",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-e45af271710738b62d87"
+      },
+      {
+        "id": "F054",
+        "category": "Ventas y comprobantes",
+        "title": "Ordenar ventas",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-9b0bd3593b7736de5afe"
+      },
+      {
+        "id": "F055",
+        "category": "Ventas y comprobantes",
+        "title": "Exportar ventas",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-52e6d0f852e840cb0ede"
+      },
+      {
+        "id": "F056",
+        "category": "Ventas y comprobantes",
+        "title": "Revertir una venta",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-a5345f6081bbdf2190d1"
+      },
+      {
+        "id": "F058",
+        "category": "Sorteo y resultados",
+        "title": "Sorteo de prueba y oficial",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-63b539507f453aacc9aa"
+      },
+      {
+        "id": "F059",
+        "category": "Sorteo y resultados",
+        "title": "Aleatoriedad segura y auditable",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-deb29a4fb79b49b3715e"
+      },
+      {
+        "id": "F060",
+        "category": "Sorteo y resultados",
+        "title": "Historial de ejecuciones",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-b3ac70e4f0e98e35f510"
+      },
+      {
+        "id": "F061",
+        "category": "Sorteo y resultados",
+        "title": "Exportar resultados",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-ad20b6eb517f1aff0ee2"
+      },
+      {
+        "id": "F062",
+        "category": "Sorteo y resultados",
+        "title": "Publicación de ganadores",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "winner-publication"
+      },
+      {
+        "id": "F063",
+        "category": "Administración y seguridad",
+        "title": "Gestión global de usuarios",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-6cebd3502ff2ff9b600d"
+      },
+      {
+        "id": "F064",
+        "category": "Administración y seguridad",
+        "title": "Moderación global de sorteos",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-25b394f6262c53e37c26"
+      },
+      {
+        "id": "F065",
+        "category": "Administración y seguridad",
+        "title": "Restricción de sorteos rechazados",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-170b9b89065e2aee20ca"
+      },
+      {
+        "id": "F066",
+        "category": "Administración y seguridad",
+        "title": "Registro de actividad",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-7bf1eadbc1a71811ef9b"
+      },
+      {
+        "id": "F067",
+        "category": "Administración y seguridad",
+        "title": "Auditoría persistente",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-4d79b44d2ee962a96815"
+      },
+      {
+        "id": "F068",
+        "category": "Administración y seguridad",
+        "title": "Rate limiting persistente",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-cd583d564ba27f4d0988"
+      },
+      {
+        "id": "F069",
+        "category": "Administración y seguridad",
+        "title": "Tokens de un solo uso",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-02d745f1a005ebeade1d"
+      },
+      {
+        "id": "F070",
+        "category": "Administración y seguridad",
+        "title": "Validación fuerte de imágenes",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "image-upload-validation"
+      },
+      {
+        "id": "F071",
+        "category": "Administración y seguridad",
+        "title": "Validación de comprobantes",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-c10fd37e795a4ca37b59"
+      },
+      {
+        "id": "F072",
+        "category": "Administración y seguridad",
+        "title": "Modo mantenimiento sin DB",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-c6ef912f234a729f0188"
+      },
+      {
+        "id": "F073",
+        "category": "Administración y seguridad",
+        "title": "Mantenimiento de auditoría",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-10914fc9bcadd709f53b"
+      },
+      {
+        "id": "F074",
+        "category": "Administración y seguridad",
+        "title": "Logging estructurado",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-66306302df9cf636e22e"
+      },
+      {
+        "id": "F081",
+        "category": "Emails transaccionales",
+        "title": "Cola persistente EmailJob",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-8f32ac18216b7a2e74cb"
+      },
+      {
+        "id": "F082",
+        "category": "Emails transaccionales",
+        "title": "Proveedor Resend",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-3bfc3739a9dec1eee05e"
+      },
+      {
+        "id": "F083",
+        "category": "Emails transaccionales",
+        "title": "Plantillas seguras",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-60f2d7b4e30026e82b2f"
+      },
+      {
+        "id": "F084",
+        "category": "Emails transaccionales",
+        "title": "Worker independiente",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-e67dc54474d4dd3f66de"
+      },
+      {
+        "id": "F085",
+        "category": "Emails transaccionales",
+        "title": "Reintentos, locks y backoff",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-ee994cdededd7f10d2ed"
+      },
+      {
+        "id": "F091",
+        "category": "Arquitectura e infraestructura",
+        "title": "API backend independiente",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-717fed6f9c20d277648d"
+      },
+      {
+        "id": "F092",
+        "category": "Arquitectura e infraestructura",
+        "title": "Contratos HTTP v1",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-66e05f1fa0f61c92ee5c"
+      },
+      {
+        "id": "F093",
+        "category": "Arquitectura e infraestructura",
+        "title": "Adaptadores legacy / shadow / backend",
+        "branches": [
+          "staging",
+          "main"
+        ],
+        "key": "source-9f0402205fff093c0d3c"
+      },
+      {
+        "id": "F094",
+        "category": "Arquitectura e infraestructura",
+        "title": "Bridge de sesión firmado",
+        "branches": [
+          "staging"
+        ],
+        "key": "source-0eec17e8a71c3f8f7eff"
+      },
+      {
+        "id": "F095",
+        "category": "Arquitectura e infraestructura",
+        "title": "Proxy runtime de archivos y SSE",
+        "branches": [
+          "staging"
+        ],
+        "key": "source-f75e78a9ddf130a53425"
+      },
+      {
+        "id": "F096",
+        "category": "Arquitectura e infraestructura",
+        "title": "Storage privado R2 en backend",
+        "branches": [
+          "staging"
+        ],
+        "key": "source-5de5e8b58f4de6971a5b"
+      },
+      {
+        "id": "F097",
+        "category": "Arquitectura e infraestructura",
+        "title": "Política CI de migrador único",
+        "branches": [
+          "staging"
+        ],
+        "key": "source-13c35157133adee55ec9"
+      },
+      {
+        "id": "F098",
+        "category": "Arquitectura e infraestructura",
+        "title": "Lista pública de home vía backend",
+        "branches": [
+          "staging"
+        ],
+        "key": "source-557e3bf289b90a783b8c"
+      },
+      {
+        "id": "F099",
+        "category": "Arquitectura e infraestructura",
+        "title": "Lista privada de sorteos vía backend",
+        "branches": [
+          "staging"
+        ],
+        "key": "source-cb997d54245dee672768"
+      }
+    ],
+    "events": []
+  },
   "method": "Revisión de código y documentación versionados; checks = implementación presente, no activación ni despliegue. Pendientes curados del roadmap y especificaciones. No consulta DB, flags activos ni infraestructura."
 };
