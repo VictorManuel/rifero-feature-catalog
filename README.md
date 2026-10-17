@@ -53,3 +53,26 @@ El script no consulta DB, flags activos ni infraestructura, no toca archivos loc
 GitHub Actions verifica y publica al pushear a `main`. Los PR sólo ejecutan tests/build. El workflow despliega exclusivamente `dist/`, no el servidor, generador, documentación interna o capturas. Un push autorizado a main actualiza el sitio público.
 
 Para recuperar una versión anterior, revertir el commit correspondiente y pushear a main con autorización. También se puede desactivar Pages desde Settings. No afecta servicios de Rifero ni datos productivos.
+
+## Publicador aislado y recuperación
+
+`update-rifero-status` conserva intacto el checkout de trabajo aunque tenga
+cambios locales. Serializa ejecuciones con un lock del repositorio Git y usa
+exclusivamente el worktree hermano `worktree-rifero-status-publisher`, rama
+`codex/catalog-status-publisher`, con propiedad registrada en el Git común.
+No adopta carpetas existentes ni modifica ramas ajenas. La fuente del updater
+es esta instalación; el generador/datos se leen de `origin/main` en el worktree.
+Las mejoras al generador deben publicarse por separado, nunca como parte del
+permiso permanente para `data.js`.
+
+`--dry-run` tampoco commitea/publica y restaura su propio `data.js`. El worktree
+se conserva para reutilizarlo y para diagnóstico. Si falla, no se resetea, no
+se elimina ni se fuerza un push. Ante un árbol sucio, inspeccionar ese worktree;
+si existe un único commit de snapshot pendiente, el runner puede reintentar su
+push sin incluir otros archivos. Un origen/branch/propiedad inesperados bloquean
+la ejecución. Una segunda ejecución simultánea falla con mensaje accionable.
+No borrar manualmente el lock: el bloqueo del sistema se libera al salir.
+
+Pruebas: `pnpm test`, `pnpm build` y `bash -n scripts/update-status-in-place.sh`.
+Los tests del publicador usan repos temporales y un runner simulado: nunca red,
+push ni Pages. La comprobación operativa se realiza primero con `--dry-run`.
