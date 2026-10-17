@@ -1,17 +1,17 @@
 export default {
-  "generatedAt": "2026-10-17T05:22:48.447510+00:00",
+  "generatedAt": "2026-10-17T05:51:08.147213+00:00",
   "refs": {
     "web": {
-      "staging": "36dbef25a146aaeca90b2f16850de7ab0179b6f1",
-      "main": "379ea05cb15ee0224a7f408306e6d2f654b45eac"
+      "staging": "c1c7596c61166c909e7a07211a32a754c4bb1b45",
+      "main": "5da5add4f7fdc13bb86c1854df3f6c3867942d1a"
     },
     "backend": {
       "staging": "02fc8a41111d93070c8310b906405952ba80fa07",
-      "main": "ad65b1a2fed2f4612b113013787c107886c8eedc"
+      "main": "2f9cba69f7f15e9ed4490214752e28942301156d"
     },
     "email-worker": {
       "staging": "9d82e8c9dba845ce91f0d7b0cd408ab2b44d57b0",
-      "main": "3e8aeed5b6c9972acdd6c84b71625c35a592fe2b"
+      "main": "092232c88e43de43a553cffbf9e41fda20cd8b7b"
     }
   },
   "repos": {
@@ -32,7 +32,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/register-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/forms/register-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/forms/register-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -40,7 +40,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/register-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/forms/register-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/forms/register-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -63,7 +63,7 @@ export default {
           "repo": "web",
           "path": "src/lib/auth-identity.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/auth-identity.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/auth-identity.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -71,7 +71,7 @@ export default {
           "repo": "web",
           "path": "src/lib/auth-identity.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/auth-identity.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/auth-identity.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -94,7 +94,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/profile/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/account/profile/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/account/profile/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -102,7 +102,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/profile/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/account/profile/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/account/profile/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -125,7 +125,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/email/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/account/email/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/account/email/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -133,7 +133,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/email/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/account/email/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/account/email/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -156,7 +156,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/password/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/account/password/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/account/password/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -164,7 +164,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/account/password/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/account/password/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/account/password/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -187,7 +187,7 @@ export default {
           "repo": "web",
           "path": "src/components/initial-password-decision.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/initial-password-decision.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/initial-password-decision.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -195,7 +195,7 @@ export default {
           "repo": "web",
           "path": "src/components/initial-password-decision.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/initial-password-decision.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/initial-password-decision.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -218,7 +218,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/email-verification/verify/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/email-verification/verify/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/email-verification/verify/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -226,7 +226,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/email-verification/verify/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/email-verification/verify/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/email-verification/verify/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -249,7 +249,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/email-verification/resend/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/email-verification/resend/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/email-verification/resend/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -257,7 +257,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/email-verification/resend/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/email-verification/resend/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/email-verification/resend/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -280,7 +280,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/password/forgot/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/password/forgot/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/password/forgot/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -288,7 +288,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/password/forgot/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/password/forgot/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/password/forgot/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -311,7 +311,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/password/reset/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/password/reset/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/password/reset/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -319,7 +319,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/password/reset/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/password/reset/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/password/reset/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -342,7 +342,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/my-numbers/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/app/my-numbers/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/app/my-numbers/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -350,7 +350,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/my-numbers/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/app/my-numbers/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/app/my-numbers/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -373,7 +373,7 @@ export default {
           "repo": "web",
           "path": "src/lib/permissions.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/permissions.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/permissions.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -381,7 +381,7 @@ export default {
           "repo": "web",
           "path": "src/lib/permissions.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/permissions.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/permissions.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -404,7 +404,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/admin/users/reset-password/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/admin/users/reset-password/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/admin/users/reset-password/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -412,7 +412,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/admin/users/reset-password/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/admin/users/reset-password/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/admin/users/reset-password/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -435,7 +435,7 @@ export default {
           "repo": "web",
           "path": "src/lib/legal.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/legal.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/legal.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -443,7 +443,7 @@ export default {
           "repo": "web",
           "path": "src/lib/legal.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/legal.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/legal.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -466,7 +466,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -474,7 +474,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -497,7 +497,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/raffle-settings-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/forms/raffle-settings-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/forms/raffle-settings-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -505,7 +505,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/raffle-settings-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/forms/raffle-settings-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/forms/raffle-settings-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -528,7 +528,7 @@ export default {
           "repo": "web",
           "path": "src/lib/prizes.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/prizes.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/prizes.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -536,7 +536,7 @@ export default {
           "repo": "web",
           "path": "src/lib/prizes.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/prizes.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/prizes.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -559,7 +559,7 @@ export default {
           "repo": "web",
           "path": "src/lib/uploads.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/uploads.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/uploads.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -567,7 +567,7 @@ export default {
           "repo": "web",
           "path": "src/lib/uploads.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/uploads.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/uploads.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -590,7 +590,7 @@ export default {
           "repo": "web",
           "path": "src/components/image-focal-point-picker.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/image-focal-point-picker.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/image-focal-point-picker.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -598,7 +598,7 @@ export default {
           "repo": "web",
           "path": "src/components/image-focal-point-picker.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/image-focal-point-picker.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/image-focal-point-picker.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -621,7 +621,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-image-gallery.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/raffle-image-gallery.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/raffle-image-gallery.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -629,7 +629,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-image-gallery.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/raffle-image-gallery.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/raffle-image-gallery.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -652,7 +652,7 @@ export default {
           "repo": "web",
           "path": "src/app/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -660,7 +660,7 @@ export default {
           "repo": "web",
           "path": "src/app/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -683,7 +683,7 @@ export default {
           "repo": "web",
           "path": "src/app/r/[slug]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/r/[slug]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/r/[slug]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -691,7 +691,7 @@ export default {
           "repo": "web",
           "path": "src/app/r/[slug]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/r/[slug]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/r/[slug]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -714,7 +714,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-moderation-policy.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/raffle-moderation-policy.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/raffle-moderation-policy.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -722,7 +722,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-moderation-policy.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/raffle-moderation-policy.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/raffle-moderation-policy.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -745,7 +745,7 @@ export default {
           "repo": "web",
           "path": "src/app/r/[slug]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/r/[slug]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/r/[slug]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -753,7 +753,7 @@ export default {
           "repo": "web",
           "path": "src/app/r/[slug]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/r/[slug]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/r/[slug]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -776,7 +776,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-events.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/raffle-events.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/raffle-events.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -784,7 +784,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-events.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/raffle-events.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/raffle-events.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -807,7 +807,7 @@ export default {
           "repo": "web",
           "path": "src/lib/public-raffle-page.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/public-raffle-page.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/public-raffle-page.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -815,7 +815,7 @@ export default {
           "repo": "web",
           "path": "src/lib/public-raffle-page.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/public-raffle-page.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/public-raffle-page.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -838,7 +838,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/raffles/[raffleId]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/app/raffles/[raffleId]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/app/raffles/[raffleId]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -846,7 +846,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/raffles/[raffleId]/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/app/raffles/[raffleId]/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/app/raffles/[raffleId]/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -869,7 +869,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-context-navigation.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/raffle-context-navigation.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/raffle-context-navigation.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -877,7 +877,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-context-navigation.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/raffle-context-navigation.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/raffle-context-navigation.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -900,7 +900,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/number-count/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/number-count/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/number-count/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -908,7 +908,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/number-count/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/number-count/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/number-count/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -931,7 +931,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/cancel/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/cancel/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/cancel/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -939,7 +939,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/cancel/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/cancel/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/cancel/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -962,7 +962,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/app/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/app/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -970,7 +970,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/app/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/app/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -993,7 +993,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/seller-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/forms/seller-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/forms/seller-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1001,7 +1001,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/seller-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/forms/seller-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/forms/seller-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1024,7 +1024,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sellers/import/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/sellers/import/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/sellers/import/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1032,7 +1032,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sellers/import/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/sellers/import/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/sellers/import/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1055,7 +1055,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-selling-mode-manager.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/seller-selling-mode-manager.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/seller-selling-mode-manager.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1063,7 +1063,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-selling-mode-manager.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/seller-selling-mode-manager.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/seller-selling-mode-manager.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1086,7 +1086,7 @@ export default {
           "repo": "web",
           "path": "src/lib/number-allocation.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/number-allocation.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/number-allocation.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1094,7 +1094,7 @@ export default {
           "repo": "web",
           "path": "src/lib/number-allocation.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/number-allocation.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/number-allocation.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1117,7 +1117,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/number-assignments/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/number-assignments/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/number-assignments/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1125,7 +1125,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/number-assignments/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/number-assignments/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/number-assignments/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1148,7 +1148,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-number-unassignment-manager.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/seller-number-unassignment-manager.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/seller-number-unassignment-manager.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1156,7 +1156,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-number-unassignment-manager.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/seller-number-unassignment-manager.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/seller-number-unassignment-manager.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1179,7 +1179,7 @@ export default {
           "repo": "web",
           "path": "src/lib/seller-team-stats.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/seller-team-stats.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/seller-team-stats.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1187,7 +1187,7 @@ export default {
           "repo": "web",
           "path": "src/lib/seller-team-stats.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/seller-team-stats.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/seller-team-stats.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1210,7 +1210,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-sales-modal.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/seller-sales-modal.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/seller-sales-modal.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1218,7 +1218,7 @@ export default {
           "repo": "web",
           "path": "src/components/seller-sales-modal.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/seller-sales-modal.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/seller-sales-modal.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1241,7 +1241,7 @@ export default {
           "repo": "web",
           "path": "src/lib/out-of-assignment-sales.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/out-of-assignment-sales.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/out-of-assignment-sales.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1249,7 +1249,7 @@ export default {
           "repo": "web",
           "path": "src/lib/out-of-assignment-sales.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/out-of-assignment-sales.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/out-of-assignment-sales.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1272,7 +1272,7 @@ export default {
           "repo": "web",
           "path": "src/components/share-seller-numbers-button.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/share-seller-numbers-button.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/share-seller-numbers-button.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1280,7 +1280,7 @@ export default {
           "repo": "web",
           "path": "src/components/share-seller-numbers-button.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/share-seller-numbers-button.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/share-seller-numbers-button.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1303,7 +1303,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/invitations/accept/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/invitations/accept/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/invitations/accept/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1311,7 +1311,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/invitations/accept/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/invitations/accept/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/invitations/accept/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1334,7 +1334,7 @@ export default {
           "repo": "web",
           "path": "src/components/invitation-actions.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/invitation-actions.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/invitation-actions.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1342,7 +1342,7 @@ export default {
           "repo": "web",
           "path": "src/components/invitation-actions.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/invitation-actions.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/invitation-actions.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1365,7 +1365,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/sale-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/forms/sale-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/forms/sale-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1373,7 +1373,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/sale-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/forms/sale-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/forms/sale-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1396,7 +1396,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-registration.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/sale-registration.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/sale-registration.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1404,7 +1404,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-registration.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/sale-registration.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/sale-registration.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1427,7 +1427,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-modal.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/sale-modal.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/sale-modal.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1435,7 +1435,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-modal.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/sale-modal.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/sale-modal.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1458,7 +1458,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/reservations/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/reservations/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/reservations/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1466,7 +1466,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/reservations/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/reservations/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/reservations/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1489,7 +1489,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/sales/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/sales/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1497,7 +1497,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/sales/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/sales/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1520,7 +1520,7 @@ export default {
           "repo": "web",
           "path": "src/lib/validators.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/validators.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/validators.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1528,7 +1528,7 @@ export default {
           "repo": "web",
           "path": "src/lib/validators.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/validators.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/validators.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1551,7 +1551,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-receipt-field.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/sale-receipt-field.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/sale-receipt-field.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1559,7 +1559,7 @@ export default {
           "repo": "web",
           "path": "src/components/sale-receipt-field.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/sale-receipt-field.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/sale-receipt-field.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1582,7 +1582,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1590,7 +1590,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/sales/[saleId]/receipt/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1613,7 +1613,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1621,7 +1621,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/receipts/[receiptId]/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1644,7 +1644,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/raffles/[raffleId]/sales/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/app/raffles/[raffleId]/sales/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/app/raffles/[raffleId]/sales/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1652,7 +1652,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/raffles/[raffleId]/sales/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/app/raffles/[raffleId]/sales/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/app/raffles/[raffleId]/sales/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1675,7 +1675,7 @@ export default {
           "repo": "web",
           "path": "src/lib/sale-sorting.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/sale-sorting.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/sale-sorting.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1683,7 +1683,7 @@ export default {
           "repo": "web",
           "path": "src/lib/sale-sorting.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/sale-sorting.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/sale-sorting.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1706,7 +1706,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/export/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/sales/export/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/sales/export/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1714,7 +1714,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/export/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/sales/export/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/sales/export/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1737,7 +1737,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1745,7 +1745,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1768,7 +1768,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 97,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L97",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L97",
           "match": "Purchase",
           "kind": "plan"
         },
@@ -1776,7 +1776,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 97,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L97",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L97",
           "match": "Purchase",
           "kind": "plan"
         }
@@ -1799,7 +1799,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/raffle-draw-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/forms/raffle-draw-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/forms/raffle-draw-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1807,7 +1807,7 @@ export default {
           "repo": "web",
           "path": "src/components/forms/raffle-draw-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/forms/raffle-draw-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/forms/raffle-draw-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1830,7 +1830,7 @@ export default {
           "repo": "web",
           "path": "src/lib/draw-random.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/draw-random.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/draw-random.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1838,7 +1838,7 @@ export default {
           "repo": "web",
           "path": "src/lib/draw-random.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/draw-random.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/draw-random.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1861,7 +1861,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/draws/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/draws/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/draws/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1869,7 +1869,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/draws/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/draws/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/draws/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1892,7 +1892,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/draws/export/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/api/raffles/[raffleId]/draws/export/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/api/raffles/[raffleId]/draws/export/route.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1900,7 +1900,7 @@ export default {
           "repo": "web",
           "path": "src/app/api/raffles/[raffleId]/draws/export/route.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/api/raffles/[raffleId]/draws/export/route.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/api/raffles/[raffleId]/draws/export/route.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1923,7 +1923,7 @@ export default {
           "repo": "web",
           "path": "src/lib/public-raffle-page.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/public-raffle-page.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/public-raffle-page.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1931,7 +1931,7 @@ export default {
           "repo": "web",
           "path": "src/lib/public-raffle-page.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/public-raffle-page.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/public-raffle-page.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1954,7 +1954,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/admin/users/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/app/app/admin/users/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/app/app/admin/users/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1962,7 +1962,7 @@ export default {
           "repo": "web",
           "path": "src/app/app/admin/users/page.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/app/app/admin/users/page.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/app/app/admin/users/page.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -1985,7 +1985,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-moderation-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/components/raffle-moderation-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/components/raffle-moderation-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -1993,7 +1993,7 @@ export default {
           "repo": "web",
           "path": "src/components/raffle-moderation-form.tsx",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/components/raffle-moderation-form.tsx#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/components/raffle-moderation-form.tsx#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2016,7 +2016,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-inspection.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/raffle-inspection.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/raffle-inspection.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2024,7 +2024,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-inspection.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/raffle-inspection.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/raffle-inspection.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2047,7 +2047,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-activity.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/raffle-activity.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/raffle-activity.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2055,7 +2055,7 @@ export default {
           "repo": "web",
           "path": "src/lib/raffle-activity.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/raffle-activity.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/raffle-activity.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2078,7 +2078,7 @@ export default {
           "repo": "web",
           "path": "src/lib/audit.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/audit.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/audit.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2086,7 +2086,7 @@ export default {
           "repo": "web",
           "path": "src/lib/audit.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/audit.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/audit.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2109,7 +2109,7 @@ export default {
           "repo": "web",
           "path": "src/lib/rate-limit.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/rate-limit.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/rate-limit.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2117,7 +2117,7 @@ export default {
           "repo": "web",
           "path": "src/lib/rate-limit.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/rate-limit.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/rate-limit.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2140,7 +2140,7 @@ export default {
           "repo": "web",
           "path": "src/lib/tokens.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/tokens.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/tokens.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2148,7 +2148,7 @@ export default {
           "repo": "web",
           "path": "src/lib/tokens.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/tokens.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/tokens.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2171,7 +2171,7 @@ export default {
           "repo": "web",
           "path": "src/lib/uploads.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/uploads.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/uploads.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2179,7 +2179,7 @@ export default {
           "repo": "web",
           "path": "src/lib/uploads.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/uploads.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/uploads.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2202,7 +2202,7 @@ export default {
           "repo": "web",
           "path": "src/lib/sale-receipts.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/sale-receipts.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/sale-receipts.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2210,7 +2210,7 @@ export default {
           "repo": "web",
           "path": "src/lib/sale-receipts.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/sale-receipts.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/sale-receipts.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2233,7 +2233,7 @@ export default {
           "repo": "web",
           "path": "scripts/start-deploy.mjs",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/scripts/start-deploy.mjs#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/scripts/start-deploy.mjs#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2241,7 +2241,7 @@ export default {
           "repo": "web",
           "path": "scripts/start-deploy.mjs",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/scripts/start-deploy.mjs#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/scripts/start-deploy.mjs#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2264,7 +2264,7 @@ export default {
           "repo": "web",
           "path": "src/lib/maintenance.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/maintenance.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/maintenance.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2272,7 +2272,7 @@ export default {
           "repo": "web",
           "path": "src/lib/maintenance.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/maintenance.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/maintenance.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2295,7 +2295,7 @@ export default {
           "repo": "web",
           "path": "src/lib/logger.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/logger.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/logger.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2303,7 +2303,7 @@ export default {
           "repo": "web",
           "path": "src/lib/logger.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/logger.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/logger.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2326,7 +2326,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1319,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L1319",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L1319",
           "match": "Auditoria Completa",
           "kind": "plan"
         },
@@ -2334,7 +2334,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1303,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1303",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1303",
           "match": "Auditoria Completa",
           "kind": "plan"
         }
@@ -2357,7 +2357,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 58,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/CLOUDFLARE_SECURITY_REVIEW.md#L58",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/CLOUDFLARE_SECURITY_REVIEW.md#L58",
           "match": "SEC.EDGE.1",
           "kind": "plan"
         },
@@ -2365,7 +2365,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -2388,7 +2388,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 70,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/CLOUDFLARE_SECURITY_REVIEW.md#L70",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/CLOUDFLARE_SECURITY_REVIEW.md#L70",
           "match": "SEC.EDGE.2",
           "kind": "plan"
         },
@@ -2396,7 +2396,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -2419,7 +2419,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 84,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/CLOUDFLARE_SECURITY_REVIEW.md#L84",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/CLOUDFLARE_SECURITY_REVIEW.md#L84",
           "match": "SEC.EDGE.3",
           "kind": "plan"
         },
@@ -2427,7 +2427,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -2450,7 +2450,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 97,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/CLOUDFLARE_SECURITY_REVIEW.md#L97",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/CLOUDFLARE_SECURITY_REVIEW.md#L97",
           "match": "SEC.EDGE.4",
           "kind": "plan"
         },
@@ -2458,7 +2458,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -2481,7 +2481,7 @@ export default {
           "repo": "web",
           "path": "docs/CLOUDFLARE_SECURITY_REVIEW.md",
           "line": 112,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/CLOUDFLARE_SECURITY_REVIEW.md#L112",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/CLOUDFLARE_SECURITY_REVIEW.md#L112",
           "match": "SEC.EDGE.5",
           "kind": "plan"
         },
@@ -2489,7 +2489,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -2512,7 +2512,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email-jobs.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/email-jobs.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/email-jobs.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2520,7 +2520,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email-jobs.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/email-jobs.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/email-jobs.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2543,7 +2543,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email/resend-provider.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/email/resend-provider.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/email/resend-provider.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2551,7 +2551,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email/resend-provider.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/email/resend-provider.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/email/resend-provider.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2574,7 +2574,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email/templates.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/email/templates.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/email/templates.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2582,7 +2582,7 @@ export default {
           "repo": "web",
           "path": "src/lib/email/templates.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/email/templates.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/email/templates.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2613,7 +2613,7 @@ export default {
           "repo": "email-worker",
           "path": "package.json",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero-email-worker/blob/3e8aeed5b6c9972acdd6c84b71625c35a592fe2b/package.json#L1",
+          "url": "https://github.com/VictorManuel/rifero-email-worker/blob/092232c88e43de43a553cffbf9e41fda20cd8b7b/package.json#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2644,7 +2644,7 @@ export default {
           "repo": "email-worker",
           "path": "src/worker.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero-email-worker/blob/3e8aeed5b6c9972acdd6c84b71625c35a592fe2b/src/worker.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero-email-worker/blob/092232c88e43de43a553cffbf9e41fda20cd8b7b/src/worker.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2667,7 +2667,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2675,7 +2675,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         }
@@ -2698,7 +2698,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2706,7 +2706,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         }
@@ -2729,7 +2729,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2737,7 +2737,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         }
@@ -2760,7 +2760,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2768,7 +2768,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         }
@@ -2791,7 +2791,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         },
@@ -2799,7 +2799,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 15,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L15",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L15",
           "match": "Emails",
           "kind": "plan"
         }
@@ -2830,7 +2830,7 @@ export default {
           "repo": "backend",
           "path": "package.json",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero-backend/blob/ad65b1a2fed2f4612b113013787c107886c8eedc/package.json#L1",
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/2f9cba69f7f15e9ed4490214752e28942301156d/package.json#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2853,7 +2853,7 @@ export default {
           "repo": "web",
           "path": "src/contracts/http/v1/index.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/contracts/http/v1/index.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/contracts/http/v1/index.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2861,7 +2861,7 @@ export default {
           "repo": "web",
           "path": "src/contracts/http/v1/index.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/contracts/http/v1/index.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/contracts/http/v1/index.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2884,7 +2884,7 @@ export default {
           "repo": "web",
           "path": "src/lib/backend-api.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/backend-api.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/backend-api.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2892,7 +2892,7 @@ export default {
           "repo": "web",
           "path": "src/lib/backend-api.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/backend-api.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/backend-api.ts#L1",
           "match": null,
           "kind": "implementation"
         }
@@ -2915,7 +2915,7 @@ export default {
           "repo": "web",
           "path": "src/lib/session-bridge.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/session-bridge.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/session-bridge.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2923,7 +2923,7 @@ export default {
           "repo": "web",
           "path": "src/lib/session-bridge.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/session-bridge.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/session-bridge.ts#L1",
           "match": null,
           "kind": "absent"
         }
@@ -2946,7 +2946,7 @@ export default {
           "repo": "web",
           "path": "src/lib/backend-runtime.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/backend-runtime.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/backend-runtime.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -2954,7 +2954,7 @@ export default {
           "repo": "web",
           "path": "src/lib/backend-runtime.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/backend-runtime.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/backend-runtime.ts#L1",
           "match": null,
           "kind": "absent"
         }
@@ -2985,7 +2985,7 @@ export default {
           "repo": "backend",
           "path": "src/infrastructure/storage/r2-object-store.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero-backend/blob/ad65b1a2fed2f4612b113013787c107886c8eedc/src/infrastructure/storage/r2-object-store.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/2f9cba69f7f15e9ed4490214752e28942301156d/src/infrastructure/storage/r2-object-store.ts#L1",
           "match": null,
           "kind": "absent"
         }
@@ -3008,7 +3008,7 @@ export default {
           "repo": "web",
           "path": "scripts/migration-policy.mjs",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/scripts/migration-policy.mjs#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/scripts/migration-policy.mjs#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -3016,7 +3016,7 @@ export default {
           "repo": "web",
           "path": "scripts/migration-policy.mjs",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/scripts/migration-policy.mjs#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/scripts/migration-policy.mjs#L1",
           "match": null,
           "kind": "absent"
         }
@@ -3039,7 +3039,7 @@ export default {
           "repo": "web",
           "path": "src/contracts/http/v1/public-upcoming-raffles.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/contracts/http/v1/public-upcoming-raffles.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/contracts/http/v1/public-upcoming-raffles.ts#L1",
           "match": null,
           "kind": "implementation"
         },
@@ -3047,7 +3047,7 @@ export default {
           "repo": "web",
           "path": "src/contracts/http/v1/public-upcoming-raffles.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/contracts/http/v1/public-upcoming-raffles.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/contracts/http/v1/public-upcoming-raffles.ts#L1",
           "match": null,
           "kind": "absent"
         }
@@ -3070,7 +3070,7 @@ export default {
           "repo": "web",
           "path": "src/lib/private-reads.ts",
           "line": 30,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/src/lib/private-reads.ts#L30",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/src/lib/private-reads.ts#L30",
           "match": "fetchUserRaffleMembershipsReadFromBackend",
           "kind": "implementation"
         },
@@ -3078,7 +3078,7 @@ export default {
           "repo": "web",
           "path": "src/lib/private-reads.ts",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/src/lib/private-reads.ts#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/src/lib/private-reads.ts#L1",
           "match": "fetchUserRaffleMembershipsReadFromBackend",
           "kind": "absent"
         }
@@ -3101,7 +3101,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 351,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L351",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L351",
           "match": "A3",
           "kind": "plan"
         },
@@ -3109,7 +3109,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 356,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L356",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L356",
           "match": "A3",
           "kind": "plan"
         }
@@ -3131,8 +3131,8 @@ export default {
         "staging": {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
-          "line": 1782,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L1782",
+          "line": 1810,
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L1810",
           "match": "Inventario de persistencia",
           "kind": "plan"
         },
@@ -3140,7 +3140,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3163,7 +3163,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 369,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L369",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L369",
           "match": "A4",
           "kind": "plan"
         },
@@ -3171,7 +3171,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 363,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L363",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L363",
           "match": "A4",
           "kind": "plan"
         }
@@ -3194,7 +3194,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 12,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L12",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L12",
           "match": "Redis",
           "kind": "plan"
         },
@@ -3202,7 +3202,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 12,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L12",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L12",
           "match": "Redis",
           "kind": "plan"
         }
@@ -3225,7 +3225,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 571,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L571",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L571",
           "match": "Sentry",
           "kind": "plan"
         },
@@ -3233,7 +3233,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 555,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L555",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L555",
           "match": "Sentry",
           "kind": "plan"
         }
@@ -3256,7 +3256,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 18,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L18",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L18",
           "match": "Analytics",
           "kind": "plan"
         },
@@ -3264,7 +3264,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 18,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L18",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L18",
           "match": "Analytics",
           "kind": "plan"
         }
@@ -3287,7 +3287,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 18,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L18",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L18",
           "match": "Analytics",
           "kind": "plan"
         },
@@ -3295,7 +3295,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 18,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L18",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L18",
           "match": "Analytics",
           "kind": "plan"
         }
@@ -3318,7 +3318,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 484,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L484",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L484",
           "match": "AdSense",
           "kind": "plan"
         },
@@ -3326,7 +3326,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 468,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L468",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L468",
           "match": "AdSense",
           "kind": "plan"
         }
@@ -3349,7 +3349,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 22,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L22",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L22",
           "match": "Ads",
           "kind": "plan"
         },
@@ -3357,7 +3357,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 22,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L22",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L22",
           "match": "Ads",
           "kind": "plan"
         }
@@ -3380,7 +3380,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 508,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/ROADMAP_EXECUTION_PLAN.md#L508",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/ROADMAP_EXECUTION_PLAN.md#L508",
           "match": "consentimiento",
           "kind": "plan"
         },
@@ -3388,7 +3388,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 492,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L492",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L492",
           "match": "consentimiento",
           "kind": "plan"
         }
@@ -3411,7 +3411,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3419,7 +3419,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3442,7 +3442,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3450,7 +3450,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3473,7 +3473,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3481,7 +3481,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3504,7 +3504,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3512,7 +3512,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3535,7 +3535,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3543,7 +3543,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3566,7 +3566,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3574,7 +3574,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3597,7 +3597,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3605,7 +3605,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3628,7 +3628,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3636,7 +3636,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3659,7 +3659,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3667,7 +3667,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
@@ -3690,7 +3690,7 @@ export default {
           "repo": "web",
           "path": "docs/MERCADOPAGO_LOTTERY_SPEC.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/36dbef25a146aaeca90b2f16850de7ab0179b6f1/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/c1c7596c61166c909e7a07211a32a754c4bb1b45/docs/MERCADOPAGO_LOTTERY_SPEC.md#L1",
           "match": null,
           "kind": "plan"
         },
@@ -3698,7 +3698,7 @@ export default {
           "repo": "web",
           "path": "ROADMAP_EXECUTION_PLAN.md",
           "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/379ea05cb15ee0224a7f408306e6d2f654b45eac/ROADMAP_EXECUTION_PLAN.md#L1",
+          "url": "https://github.com/VictorManuel/rifero/blob/5da5add4f7fdc13bb86c1854df3f6c3867942d1a/ROADMAP_EXECUTION_PLAN.md#L1",
           "match": null,
           "kind": "general-plan"
         }
