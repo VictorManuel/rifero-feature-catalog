@@ -1,5 +1,5 @@
 export default {
-  "generatedAt": "2026-10-19T05:02:39.483488+00:00",
+  "generatedAt": "2026-10-19T05:06:32.130436+00:00",
   "refs": {
     "web": {
       "staging": "dea63fc3714cb71fc909dbdcd55da462b12f7ed4",
@@ -56,16 +56,16 @@ export default {
       "category": "Cuentas y acceso",
       "title": "Ingreso por correo o usuario",
       "note": "Autenticación con contraseña y sesión privada.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/auth-identity.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/auth-identity.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/infrastructure/prisma/auth-identity-repository.ts",
+          "line": 59,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/infrastructure/prisma/auth-identity-repository.ts#L59",
+          "match": "identifier.includes(\"@\") ? { email: identifier } : { username: identifier }",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -552,16 +552,16 @@ export default {
       "category": "Sorteos y publicación",
       "title": "Portada y fotos de premios",
       "note": "Carga y reemplazo de imágenes del sorteo.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/uploads.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/uploads.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/http/runtime-asset-responses.ts",
+          "line": 112,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/http/runtime-asset-responses.ts#L112",
+          "match": "const image = await prepareRaffleImage(candidate);",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -2009,16 +2009,16 @@ export default {
       "category": "Administración y seguridad",
       "title": "Restricción de sorteos rechazados",
       "note": "Sólo el propietario conserva acceso privado; inspección SUPERADMIN.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/raffle-inspection.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/raffle-inspection.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/core/raffles/moderation-policy.ts",
+          "line": 21,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/core/raffles/moderation-policy.ts#L21",
+          "match": "raffle.moderationStatus === \"REJECTED\" && raffle.createdById === actor.id",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -2071,16 +2071,16 @@ export default {
       "category": "Administración y seguridad",
       "title": "Auditoría persistente",
       "note": "AuditLog sanitizado; mutaciones sensibles auditadas en transacción.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/audit.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/audit.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/infrastructure/prisma/critical-raffle-operations-repository.ts",
+          "line": 175,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/infrastructure/prisma/critical-raffle-operations-repository.ts#L175",
+          "match": "await tx.auditLog.create({ data: {",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -2133,16 +2133,16 @@ export default {
       "category": "Administración y seguridad",
       "title": "Tokens de un solo uso",
       "note": "Hashes, expiración y consumo seguro para flujos de cuenta.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/tokens.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/tokens.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/infrastructure/prisma/identity-mutation-repository.ts",
+          "line": 178,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/infrastructure/prisma/identity-mutation-repository.ts#L178",
+          "match": "where: { id: resetToken.id, tokenHash, usedAt: null, expiresAt: { gt: now } }",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -2164,16 +2164,16 @@ export default {
       "category": "Administración y seguridad",
       "title": "Validación fuerte de imágenes",
       "note": "Tipo real, peso, dimensiones y normalización con Sharp.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/uploads.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/uploads.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/infrastructure/storage/image-processing.ts",
+          "line": 119,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/infrastructure/storage/image-processing.ts#L119",
+          "match": "export async function validateRaffleImageUpload(file: File)",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -2505,16 +2505,16 @@ export default {
       "category": "Emails transaccionales",
       "title": "Cola persistente EmailJob",
       "note": "Los flujos de cuenta encolan mensajes para no depender del envío inmediato.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/email-jobs.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/email-jobs.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/infrastructure/email/jobs.ts",
+          "line": 33,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/infrastructure/email/jobs.ts#L33",
+          "match": "await db.emailJob.upsert({",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -2536,16 +2536,16 @@ export default {
       "category": "Emails transaccionales",
       "title": "Proveedor Resend",
       "note": "Código de entrega real y proveedor console de desarrollo. La configuración activa no se inspeccionó.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/email/resend-provider.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/email/resend-provider.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "email-worker",
+          "path": "src/email/send-email.ts",
+          "line": 26,
+          "url": "https://github.com/VictorManuel/rifero-email-worker/blob/9d82e8c9dba845ce91f0d7b0cd408ab2b44d57b0/src/email/send-email.ts#L26",
+          "match": "const { data, error } = await resend.emails.send(",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
@@ -2567,16 +2567,16 @@ export default {
       "category": "Emails transaccionales",
       "title": "Plantillas seguras",
       "note": "Templates de cuenta y tokens; escape de contenido y validación de URLs.",
-      "staging": false,
+      "staging": true,
       "main": true,
       "evidence": {
         "staging": {
-          "repo": "web",
-          "path": "src/lib/email/templates.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero/blob/dea63fc3714cb71fc909dbdcd55da462b12f7ed4/src/lib/email/templates.ts#L1",
-          "match": null,
-          "kind": "absent"
+          "repo": "backend",
+          "path": "src/infrastructure/email/templates.ts",
+          "line": 35,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/b002ce2c256eb5c27e7083a880e88704154dd4ac/src/infrastructure/email/templates.ts#L35",
+          "match": "const safeHref = escapeHtml(validateTrustedAppUrl(href));",
+          "kind": "implementation"
         },
         "main": {
           "repo": "web",
