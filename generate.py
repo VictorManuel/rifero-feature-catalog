@@ -206,6 +206,26 @@ for title,note,timeline_key in [
 add('Arquitectura e infraestructura','Frontera de navegador verificada',
     'A3.0: gate estático de imports runtime cliente y entorno privado, integrado en test/build. Preparación de A3; no frontend independiente completo ni despliegue.',
     'scripts/verify-client-boundary.mjs',pattern='Client boundary PASS:',timeline_key='browser-runtime-boundary')
+# A3.1 additions remain distinct from the pending independent-frontend milestone.
+add('Arquitectura e infraestructura','Transporte JSON browser-safe',
+    'A3.1: same-origin, DTOs validados, abortos y errores controlados; sin firma servidor, redirects ni retries mutantes. No implica despliegue o cierre A3.',
+    'src/lib/browser/http.ts',pattern='export function createBrowserHttp',timeline_key='browser-json-transport')
+add('Arquitectura e infraestructura','Identidad con cliente tipado navegador',
+    'A3.1: registro, recuperación/reset, verificación/reenvío e invitaciones migrados; contrato público BFF y confirmaciones preservados. E2E local con datos sintéticos, no entrega de correo.',
+    'src/components/forms/register-form.tsx',pattern='createIdentityClient().register(values)',timeline_key='browser-identity-client')
+add('Arquitectura e infraestructura','Cuenta con cliente tipado navegador',
+    'A3.1: perfil, email, cambio y elección de contraseña inicial migrados; BFF conserva sesión/IP y backend autorización/SQL. Sin despliegue.',
+    'src/components/forms/account-profile-form.tsx',pattern='createAccountClient().updateProfile(values)',timeline_key='browser-account-client')
+add('Arquitectura e infraestructura','Disponibilidad con DTO validado en navegador',
+    'A3.1: refresco SSE consume disponibilidad validada; aborta al desmontar, conserva último DTO válido ante fallo y mantiene cierre/reload 403/404. No cambia ownership realtime.',
+    'src/components/availability-board.tsx',pattern='availability.get(raffleId, controller.signal)',timeline_key='browser-availability-client')
+# Explicit roadmap-only UX initiatives, never implementation detections.
+future('Landing y personalización','Personalización de colores del sorteo',
+    'UX-P1 planificada, no disponible: paletas y fondos prediseñados, vista previa y restablecer. SDD/Ready pendiente; no editor libre ni white-label.',
+    'ROADMAP.md',pattern='### UX-P1: Personalización visual de la landing del sorteo',timeline_key='raffle-visual-personalization')
+future('Landing y personalización','Compartir y descargar imágenes del sorteo',
+    'UX-P2 planificada, no disponible: templates con todos los números y vendidos tachados, sorteo completo o vendedor; descarga obligatoria, compartir nativo opcional. Sin publicación automática; SDD pendiente.',
+    'ROADMAP.md',pattern='### UX-P2: Imágenes de números para compartir en redes',timeline_key='raffle-share-images')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
