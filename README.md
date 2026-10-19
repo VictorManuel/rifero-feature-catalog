@@ -206,3 +206,11 @@ la solicitud autenticada, no confirmación ni notificación posterior ni invitac
 No implica entrega externa, despliegue o cierre operacional. Exige fuente
 web/backend verificada e integrada staging antes del snapshot oficial. Conservar
 los136 IDs/estados/fechas/eventos, baseline/A2.7, scroll y UX planificadas.
+
+## A4.3 — confirmación/notificación y resend de invitación
+F138 yF139 se agregan después de137 capacidades. Scope acotado ysource-only:
+confirmación notifica al correo anterior con audit anónimo; resend mantiene actor
+admin/raffleId. Worker console no acredita entrega externa ni entrega válida de
+un job previamente encolado tras revoke; lifecycle previo no corregido. Exigir
+fuente web/backend verificada e integrada staging antes del updater. Preservar
+137IDs/estados/fechas/eventos/baseline/A2.7/scroll y UX planes.
