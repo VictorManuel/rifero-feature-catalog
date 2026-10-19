@@ -252,6 +252,10 @@ add('Arquitectura e infraestructura','Configuración con cliente multipart tipad
 add('Arquitectura e infraestructura','E2E con email-worker real sin entrega externa',
     'A3.5: navegador/backend/DB e2e aislada y consumidor real compilado; console explícito,8 SENT simulados, redacción y estado idle comprobados. No entrega externa, imágenes remotas ni despliegue; A3 global aún abierta.',
     'scripts/a3-local-console-e2e.mjs','email-worker',pattern='export async function run',timeline_key='browser-backend-console-worker-e2e')
+# A3.7 append-only: source fix keeps existing public SSR privacy and seller scope.
+add('Arquitectura e infraestructura','Compradores públicos sincronizados por SSE',
+    'A3.7: venta/reversión desde otro navegador actualiza disponibilidad y compradores2→1 sin navegación completa. Evento público validado, refresh SSR coalescido y proyección existente de solo nombre/sellerScope; sin nuevo DTO/endpoint ni streams. Verificado localmente en una réplica; no Pub/Sub, deploy ni cierre operacional A3/A4.',
+    'src/lib/browser/public-raffle-refresh.ts',pattern='export function createPublicRaffleRefreshScheduler',timeline_key='public-buyers-native-sse-refresh')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
