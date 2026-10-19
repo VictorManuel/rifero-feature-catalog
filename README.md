@@ -76,3 +76,18 @@ No borrar manualmente el lock: el bloqueo del sistema se libera al salir.
 Pruebas: `pnpm test`, `pnpm build` y `bash -n scripts/update-status-in-place.sh`.
 Los tests del publicador usan repos temporales y un runner simulado: nunca red,
 push ni Pages. La comprobación operativa se realiza primero con `--dry-run`.
+
+## Hitos operacionales en la timeline
+
+Las fechas de primera detección de capacidades y los cierres operacionales son
+registros distintos. `operational_milestones.py` cura cierres con fecha evidenciada,
+entorno y recibos inmutables ya integrados; el generador verifica contenido, gates
+y ancestralidad de ambos recibos antes de publicar. No consulta infraestructura ni
+infiere despliegue por presencia de código. Los enlaces de evidencia requieren
+acceso a los repositorios privados. Un hito staging no marca producción ni A3.
+
+El cierre A2.7 corresponde al fin de observación documentado del 19oct2026 a
+01:43:55 ART, no al momento de refrescar el catálogo. Regenerar no cambia esa fecha,
+no duplica el hito ni altera baseline/fechas de capacidades. Para ampliar o corregir
+hitos se revisa/publica la fuente antes de ejecutar el updater oficial; nunca se
+edita `data.js` a mano. No se publica fuente privada, scripts ni capturas en `dist`.

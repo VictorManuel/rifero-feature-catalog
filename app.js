@@ -1,5 +1,5 @@
 import data from './data.js';
-import {filterFeatures,partitionFeaturesByImplementation,toCSV} from './model.mjs';
+import {filterFeatures,partitionFeaturesByImplementation,toCSV,timelineEntries} from './model.mjs';
 const $=id=>document.getElementById(id);
 const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
 const date=new Intl.DateTimeFormat('es-AR',{dateStyle:'long',timeStyle:'short',timeZone:'America/Argentina/Buenos_Aires'}).format(new Date(data.generatedAt));
@@ -36,12 +36,23 @@ for(const [repo,branches] of Object.entries(data.refs)){
 }
 function renderTimeline(){
  const started=$('timeline-start');started.textContent=formatTimelineDate(data.timeline.startedAt);started.dateTime=data.timeline.startedAt;
- const events=data.timeline.events;
- $('timeline-count').textContent=`${events.length} ${events.length===1?'fecha registrada':'fechas registradas'}`;
+ const events=timelineEntries(data.timeline);
+ $('timeline-count').textContent=`${events.length} ${events.length===1?'avance registrado':'avances registrados'}`;
  const empty=$('timeline-empty');empty.hidden=events.length>0;
- if(!events.length)empty.textContent='Todavía no hay cambios nuevos registrados. La próxima transición a “implementado” aparecerá aquí cuando se refresque el catálogo.';
+ if(!events.length)empty.textContent='Todavía no hay avances nuevos registrados. Aquí aparecerán nuevas implementaciones e hitos verificados al actualizar el catálogo.';
  const list=$('timeline-events');
  for(const event of events){
+  if(event.kind==='operational-milestone'){
+   const item=node('li',undefined,'timeline-item');item.id=`milestone-${event.key}`;
+   const time=node('time',formatTimelineDate(event.completedAt),'timeline-date');time.dateTime=event.completedAt;
+   const meta=node('div',undefined,'timeline-meta');meta.append(node('span',`${event.environment} · cierre verificado`,`timeline-branch ${event.environment}`),node('span',`Hito operacional · ${event.phase}`,'timeline-category'));
+   item.append(time,node('h3',event.title,'timeline-event-title'),meta,node('p',event.summary,'timeline-current'));
+   item.append(node('p','Fecha del cierre según los recibos versionados, no de publicación del catálogo.','timeline-current'));
+   for(const evidence of event.evidence){
+    const p=node('p',undefined,'source');const a=node('a',`Recibo ${evidence.repo} · ${evidence.sha.slice(0,7)}`);a.href=evidence.url;a.target='_blank';a.rel='noopener noreferrer';p.append(a);item.append(p);
+   }
+   list.append(item);continue;
+  }
   const feature=event.key?featureByTimelineKey.get(event.key):featureById.get(event.id);
   const item=node('li',undefined,'timeline-item');
   const time=node('time',formatTimelineDate(event.implementedAt),'timeline-date');time.dateTime=event.implementedAt;item.append(time);
