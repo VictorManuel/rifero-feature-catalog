@@ -190,3 +190,12 @@ comprobada por fuente exacta. La curación exige fuente de los tres repos integr
 solo staging y gates completos antes del snapshot oficial. No marca implementada
 la observabilidad centralizada, múltiples réplicas ni cutover/rollout A4. Preserva
 F001–F134, fechas, eventos, baseline/A2.7 y personalización/imágenes aún planificadas.
+
+## A4.1 — registro/reenvío y preparación del cierre conjunto
+
+F136 se añade después de135 capacidades; solo registro y reenvío de verificación.
+UUID respuesta/audit/job vigente/worker real console, no entrega externa. El job
+sustituido sigue redactado: su traza no justifica restaurar payloads. No se marca
+observabilidad global ni se inventa un cierre operacional por preparar el plan
+conjunto A2.7/A3/A4. Publicar snapshot solo después de fuente web/backend integrada
+staging y gates; preservar135IDs/estados/fechas/eventos/baseline/A2.7 y UX planes.

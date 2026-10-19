@@ -260,6 +260,10 @@ add('Arquitectura e infraestructura','Compradores públicos sincronizados por SS
 add('Arquitectura e infraestructura','Traza de recuperación entre request, auditoría y email',
     'A4.0 preparatoria: UUID seguro del BFF une respuesta, auditoría y EmailJob PASSWORD_RESET; worker registra solo UUID validado. Contrato v1 opcional compatible y E2E local con dos envíos console correlacionados, sin entrega externa. Solo recuperación; no observabilidad global, deploy ni cierre operacional A3/A4.',
     'src/infrastructure/prisma/identity-mutation-repository.ts','backend',pattern='resetUrl, correlationId: input.correlationId',timeline_key='recovery-request-audit-email-trace')
+# A4.1 append-only: registration/resend traces, not all producers/global observability.
+add('Arquitectura e infraestructura','Registro y reenvío con traza de email',
+    'A4.1: UUID nuevo del BFF une registro y reenvío de verificación con auditorías y job vigente; contexto interno validado y actor anónimo en resend. E2E local con registro independiente y worker console sin entrega externa; el job sustituido permanece redactado. No deploy, observabilidad global ni cierre operacional A3/A4.',
+    'src/infrastructure/prisma/identity-mutation-repository.ts','backend',pattern='action: "EMAIL_VERIFICATION_RESENT"',timeline_key='registration-verification-resend-trace')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
