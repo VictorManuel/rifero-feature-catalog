@@ -1,6 +1,7 @@
 """Snapshot local de refs ya descargadas. No fetch, red ni escritura a repos fuente."""
 import subprocess,json,pathlib,datetime
 from implementation_timeline import track_implementations
+from operational_milestones import operational_milestones
 from implementation_evidence import select_evidence
 ROOT=pathlib.Path(__file__).resolve().parent
 WORKSPACE=ROOT.parent
@@ -170,15 +171,15 @@ C='Arquitectura e infraestructura'
 add(C,'API backend independiente','Next.js API-only con dominio separado; su presencia no implica corte de tráfico productivo.','package.json','backend')
 add(C,'Contratos HTTP v1','Contratos versionados para lecturas y mutaciones entre servicios.','src/contracts/http/v1/index.ts')
 add(C,'Adaptadores legacy / shadow / backend','Selección por capacidad durante la transición; no se infiere activación a partir del código.','src/lib/backend-api.ts')
-add(C,'Bridge de sesión firmado','Emisión/validación delegable al backend, con legacy como default.','src/lib/session-bridge.ts')
+add(C,'Bridge de sesión firmado','Firma BFF → backend; staging backend-only, sin retorno a JWT o DB desde web.','src/lib/session-bridge.ts')
 add(C,'Proxy runtime de archivos y SSE','A2.6: backend puede poseer archivos, comprobantes y stream; web hace proxy.','src/lib/backend-runtime.ts')
 add(C,'Storage privado R2 en backend','Implementación A2.6 y evidencia de ensayo staging; no implica R2 productivo.','src/infrastructure/storage/r2-object-store.ts','backend')
 add(C,'Política CI de migrador único','A2.7: backend como único migrador en staging; presencia en la rama no implica despliegue productivo.','scripts/migration-policy.mjs','backend',pattern='Backend must remain the migration owner')
 add(C,'Lista pública de home vía backend','A2.7: adaptador de home; integración de rama no implica deploy ni flag activo.','src/contracts/http/v1/public-upcoming-raffles.ts')
 add(C,'Lista privada de sorteos vía backend','A2.7: contrato y adaptador de dashboard; no equivale a retirar Prisma del resto de web.','src/lib/private-reads.ts',pattern='fetchUserRaffleMembershipsReadFromBackend')
+future(C,'Frontend independiente sin Prisma','A3 pendiente: proyecto frontend y cliente HTTP por completar; web ya es BFF backend-only en staging.',pattern='A3')
+add(C,'Backend como único acceso a datos','A2.7: boundary BFF sin acceso DB ni migrador web; cierre operacional verificado solo staging. No implica producción ni A3.','scripts/verify-web-boundary.mjs',pattern='Web boundary PASS: no database/client/migrator authority',timeline_key='backend-data-ownership')
 for title,note,pattern,timeline_key in [
-('Frontend independiente sin Prisma','A3 pendiente: web conserva acceso directo a datos y dependencias servidor.','A3',None),
-('Backend como único acceso a datos','A2 no cerrada: faltan callers y ownership completos; no confundir con API independiente existente.','Inventario de persistencia','backend-data-ownership'),
 ('Corte productivo al VPS','A4: pendiente de gates A2/A3, migración de datos y autorización.','A4',None),
 ('Realtime entre múltiples réplicas','Redis/PubSub o equivalente pendiente; SSE actual usa memoria.','Redis',None),
 ('Observabilidad centralizada','Integración Sentry/pino y alertas unificadas aún pendiente.','Sentry',None)]:future(C,title,note,pattern=pattern,timeline_key=timeline_key)
@@ -212,6 +213,7 @@ except (OSError,ValueError):
     pass
 now=datetime.datetime.now(datetime.timezone.utc).isoformat()
 timeline=track_implementations(rows,previous,now)
+timeline['milestones']=operational_milestones(git,refs,repos)
 same_snapshot=(previous is not None and previous.get('refs')==refs and previous.get('repos')==repos and previous.get('features')==rows and previous.get('timeline')==timeline and previous.get('method')==method)
 generated_at=previous['generatedAt'] if same_snapshot else now
 payload={'generatedAt':generated_at,'refs':refs,'repos':repos,'features':rows,'timeline':timeline,'method':method}

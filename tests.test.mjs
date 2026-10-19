@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import data from './data.js';
-import {filterFeatures,partitionFeaturesByImplementation,toCSV} from './model.mjs';
+import {filterFeatures,partitionFeaturesByImplementation,toCSV,timelineEntries} from './model.mjs';
 test('snapshot consistente y sin IDs duplicados',()=>{
  assert.ok(data.features.length>100);assert.equal(new Set(data.features.map(f=>f.id)).size,data.features.length);
  for(const f of data.features){assert.ok(f.title&&f.note&&f.category);for(const b of ['staging','main']){assert.equal(typeof f[b],'boolean');assert.equal(f[b],f.evidence[b].kind==='implementation');assert.ok(f.evidence[b].url.startsWith('https://github.com/'));assert.ok(f.evidence[b].line>0);}}
@@ -86,4 +86,21 @@ test('build sólo publica los assets permitidos',async()=>{
  execFileSync(process.execPath,[new URL('./build.mjs',import.meta.url).pathname]);
  const names=await readdir(new URL('./dist/',import.meta.url));
  assert.deepEqual(names.sort(),['.nojekyll','app.js','data.js','index.html','model.mjs','styles.css'].sort());
+});
+
+test('timeline combina hitos e implementaciones sin reescribir fechas ni baseline',()=>{
+ const first={key:'login',id:'F001',branch:'staging',implementedAt:'2026-10-20T00:00:00Z'};
+ const milestone={key:'a27-staging-cutover',environment:'staging',completedAt:'2026-10-19T01:43:55-03:00',evidence:[{url:'https://github.com/VictorManuel/rifero/blob/sha/docs/A27_FINAL_CUTOVER.md'}]};
+ const timeline={events:[first],milestones:[milestone],baseline:[{key:'existing'}]};
+ const before=JSON.stringify(timeline);const entries=timelineEntries(timeline);
+ assert.equal(entries.length,2);assert.equal(entries[0].kind,'implementation');
+ assert.equal(entries[1].kind,'operational-milestone');
+ assert.equal(entries[1].occurredAt,milestone.completedAt);assert.equal(entries[1].environment,'staging');
+ assert.deepEqual(entries[1].evidence,milestone.evidence);assert.equal(JSON.stringify(timeline),before);
+ assert.deepEqual(timelineEntries(),[]);assert.equal(timelineEntries({events:[first]}).length,1);
+});
+
+test('etiquetas timeline distinguen detección y cierre operacional',async()=>{
+ const {readFile}=await import('node:fs/promises');const html=await readFile(new URL('./index.html',import.meta.url),'utf8');
+ assert.ok(html.includes('Timeline de avances'));assert.ok(html.includes('fecha de cierre documentada'));
 });
