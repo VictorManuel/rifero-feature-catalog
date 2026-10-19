@@ -214,3 +214,12 @@ admin/raffleId. Worker console no acredita entrega externa ni entrega válida de
 un job previamente encolado tras revoke; lifecycle previo no corregido. Exigir
 fuente web/backend verificada e integrada staging antes del updater. Preservar
 137IDs/estados/fechas/eventos/baseline/A2.7/scroll y UX planes.
+
+## Corrección pending de invitaciones — F140
+La nueva capacidad se agrega al inventario y timeline sin reemplazar eventos o
+hitos previos. Su marcador exige fuente integrada en la rama consultada; generar
+antes de integrar debe rechazar la ausencia, no simular un estado disponible.
+Es cancelación por hash del token vigente y elegibilidad pendiente, no recall de
+correo enviado/en vuelo ni purga global. E2E local y fuente staging no acreditan
+despliegue u observación; imágenes remotas están excluidas por aceptación expresa.
+El cierre histórico A2.7 y las funcionalidades UX planificadas se conservan.
