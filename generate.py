@@ -256,6 +256,10 @@ add('Arquitectura e infraestructura','E2E con email-worker real sin entrega exte
 add('Arquitectura e infraestructura','Compradores públicos sincronizados por SSE',
     'A3.7: venta/reversión desde otro navegador actualiza disponibilidad y compradores2→1 sin navegación completa. Evento público validado, refresh SSR coalescido y proyección existente de solo nombre/sellerScope; sin nuevo DTO/endpoint ni streams. Verificado localmente en una réplica; no Pub/Sub, deploy ni cierre operacional A3/A4.',
     'src/lib/browser/public-raffle-refresh.ts',pattern='export function createPublicRaffleRefreshScheduler',timeline_key='public-buyers-native-sse-refresh')
+# A4.0 append-only: bounded recovery trace, not global observability or cutover.
+add('Arquitectura e infraestructura','Traza de recuperación entre request, auditoría y email',
+    'A4.0 preparatoria: UUID seguro del BFF une respuesta, auditoría y EmailJob PASSWORD_RESET; worker registra solo UUID validado. Contrato v1 opcional compatible y E2E local con dos envíos console correlacionados, sin entrega externa. Solo recuperación; no observabilidad global, deploy ni cierre operacional A3/A4.',
+    'src/infrastructure/prisma/identity-mutation-repository.ts','backend',pattern='resetUrl, correlationId: input.correlationId',timeline_key='recovery-request-audit-email-trace')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
