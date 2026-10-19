@@ -180,3 +180,13 @@ tras venta/reversión validada, sin endpoint/DTO nuevo ni ampliar datos o seller
 La curación solo es publicable tras E2E reales desktop/móvil, SQL/worker/cleanup y
 los gates de fuente staging. Conserva IDs/fechas/eventos/baseline/A2.7 y UX-P1/P2
 planificadas; no cambia a implementado el realtime entre múltiples réplicas.
+
+## A4.0 — primera traza de recuperación
+
+F135 se añade después de las134 capacidades existentes. Solo recuperación de
+contraseña: respuesta BFF→audit→EmailJob→worker validados por E2E local y console,
+sin entrega externa. Campo v1 opcional; compatibilidad con consumidor anterior
+comprobada por fuente exacta. La curación exige fuente de los tres repos integrada
+solo staging y gates completos antes del snapshot oficial. No marca implementada
+la observabilidad centralizada, múltiples réplicas ni cutover/rollout A4. Preserva
+F001–F134, fechas, eventos, baseline/A2.7 y personalización/imágenes aún planificadas.
