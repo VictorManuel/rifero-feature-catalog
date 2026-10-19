@@ -162,3 +162,12 @@ fuentes ni alterar `data.js`. Versiona CSS y la cadena HTML→app→data/model c
 de contenido en sus URLs. Una publicación nueva invalida assets cacheados sin pedir
 al visitante vaciar caché ni cambiar datos/historia. El build repetido es determinista;
 solo una variación de contenido cambia su URL. El servidor local sigue sin caché.
+
+## A3.6 — aceptación fuente del frontend independiente
+
+F100 conserva ID/título/timelineKey y posición; pasa de plan a implementación
+solo cuando el gate de artefacto existe en la ref staging remota integrada y CI
+está verificado. Next.js+BFF same-origin sigue dependiendo del backend en runtime:
+no se afirma funcionamiento offline ni cierre operacional A3/A4 o despliegue.
+El snapshot oficial conserva las otras132 capacidades, fechas, eventos, baseline
+y A2.7; añade únicamente la primera detección staging de F100. Main no cambia.
