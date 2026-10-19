@@ -19,6 +19,25 @@ class ImplementationTimelineTests(unittest.TestCase):
             },
         }
 
+    def test_migrator_evidence_move_preserves_history(self):
+        previous_feature = {
+            **self.feature, "title": "Política CI de migrador único",
+            "timelineKey": "source-original-web-policy", "staging": True,
+            "implementationDates": {"staging": "2026-10-10T00:00:00+00:00", "main": None},
+        }
+        current = {
+            **previous_feature,
+            "evidence": {b: {"repo": "backend", "path": "scripts/migration-policy.mjs",
+                             "match": "Backend must remain the migration owner"}
+                         for b in ("staging", "main")},
+        }
+        current.pop("timelineKey")
+        timeline = track_implementations([current], {"timeline": {"startedAt": self.now, "baseline": []},
+                                                   "features": [previous_feature]}, self.now)
+        self.assertEqual(current["timelineKey"], "source-original-web-policy")
+        self.assertEqual(current["implementationDates"]["staging"], "2026-10-10T00:00:00+00:00")
+        self.assertFalse(any(e["implementedAt"] == self.now for e in timeline["events"]))
+
     def test_initial_snapshot_records_baseline_without_faking_old_dates(self):
         initial = {**self.feature, "staging": True, "main": False}
         timeline = track_implementations([initial], {"features": [initial]}, self.now)
