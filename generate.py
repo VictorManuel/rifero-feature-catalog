@@ -248,6 +248,10 @@ add('Arquitectura e infraestructura','Creación con cliente multipart tipado',
 add('Arquitectura e infraestructura','Configuración con cliente multipart tipado',
     'A3.4: metadata, focal y remociones conservados, errores controlados y backend sin dependencia de storage para guardar sin archivos. E2E local de metadata/permisos, sin storage remoto de imágenes.',
     'src/components/forms/raffle-settings-form.tsx',pattern='createRaffleMetadataClient().update(raffleId',timeline_key='browser-raffle-settings-client')
+# A3.5 append-only: local verification capability, never external delivery.
+add('Arquitectura e infraestructura','E2E con email-worker real sin entrega externa',
+    'A3.5: navegador/backend/DB e2e aislada y consumidor real compilado; console explícito,8 SENT simulados, redacción y estado idle comprobados. No entrega externa, imágenes remotas ni despliegue; A3 global aún abierta.',
+    'scripts/a3-local-console-e2e.mjs','email-worker',pattern='export async function run',timeline_key='browser-backend-console-worker-e2e')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))

@@ -141,3 +141,17 @@ F131/F132 se añaden después de130 capacidades, sin reiniciar historia. Código
 browser-safe conserva campos, cuatro slots, focal y remociones; E2E de metadata
 sin archivos y negativos locales. Usuario negó almacenamiento remoto de imágenes:
 no se reclama subida R2 ni deploy. Frontend independiente/A3 global siguen pendientes.
+
+
+### A3.5 — seam de consumidor y timeline desplazable
+F133 se añade tras132 capacidades, sin alterar IDs/fechas/orden histórico,
+baseline ni A2.7. Verifica consumidor real con console, no entrega externa.
+Fuente apps solo staging; snapshot oficial después de ambas integraciones.
+
+La lista de avances mantiene todos sus elementos, dentro de una región nombrada
+accesible por Tab con altura máxima min(34rem,65vh) y scroll vertical nativo
+(escritorio/móvil). Flechas/PageDown/End y touch/rueda permiten recorrerla;
+Tab sale normalmente y no se impide encadenar scroll a la página. Foco visible,
+scrollbar acorde a paleta y espacio para marcadores. Baseline y catálogo fuera de
+la región, sin truncar, paginar ni reiniciar datos o cambiar orden. Enlaces directos
+a hitos/funciones y exportación conservados. Sin dependencias nuevas.
