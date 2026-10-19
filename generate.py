@@ -268,6 +268,13 @@ add('Arquitectura e infraestructura','Registro y reenvío con traza de email',
 add('Arquitectura e infraestructura','Solicitud de cambio de correo con traza de email',
     'A4.2: UUID nuevo del BFF enlaza la solicitud autenticada con auditoría transaccional y job EMAIL_VERIFICATION; actor/entidad correctos y metadata sin PII. E2E local respuesta→audit→job→worker console sin entrega externa. No cubre confirmación/notificación posterior, invitaciones, despliegue ni cierre operacional A3/A4.',
     'src/infrastructure/prisma/account-mutation-repository.ts','backend',pattern='action: "ACCOUNT_EMAIL_CHANGE_REQUESTED"',timeline_key='account-email-request-audit-job-trace')
+# A4.3 bounded producer traces; never delivery-after-revoke or global observability.
+add('Arquitectura e infraestructura','Confirmación de correo con notificación trazada',
+    'A4.3: UUID BFF validado enlaza confirmación, auditoría anónima transaccional y notificación ACCOUNT_EMAIL_CHANGED al correo anterior. E2E local separado conserva verificación original y rechaza replay; worker console sin entrega externa. No deploy ni cierre operacional A3/A4.',
+    'src/infrastructure/prisma/identity-mutation-repository.ts','backend',pattern='newEmail: verification.targetEmail,\n            correlationId: input.correlationId,',timeline_key='email-confirmation-notification-trace')
+add('Arquitectura e infraestructura','Reenvío de invitación con traza de email',
+    'A4.3: UUID BFF validado enlaza resend autenticado, auditoría SELLER_INVITATION_RESENT y job SELLER_INVITATION; actor/raffleId preservados y E2E local console sin entrega externa. La revocación previa deja el job en cola: esta traza no acredita entrega válida tras revoke ni corrige lifecycle. Sin deploy/cierre operacional.',
+    'src/infrastructure/prisma/raffle-admin-mutation-repository.ts','backend',pattern='acceptUrl, correlationId: input.correlationId',timeline_key='seller-invitation-resend-audit-job-trace')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
