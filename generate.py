@@ -177,7 +177,7 @@ add(C,'Storage privado R2 en backend','Implementación A2.6 y evidencia de ensay
 add(C,'Política CI de migrador único','A2.7: backend como único migrador en staging; presencia en la rama no implica despliegue productivo.','scripts/migration-policy.mjs','backend',pattern='Backend must remain the migration owner')
 add(C,'Lista pública de home vía backend','A2.7: adaptador de home; integración de rama no implica deploy ni flag activo.','src/contracts/http/v1/public-upcoming-raffles.ts')
 add(C,'Lista privada de sorteos vía backend','A2.7: contrato y adaptador de dashboard; no equivale a retirar Prisma del resto de web.','src/lib/private-reads.ts',pattern='fetchUserRaffleMembershipsReadFromBackend')
-future(C,'Frontend independiente sin Prisma','A3 pendiente: proyecto frontend y cliente HTTP por completar; web ya es BFF backend-only en staging.',pattern='A3')
+add(C,'Frontend independiente sin Prisma','A3.6: Next.js+BFF same-origin conservado; clientes HTTP tipados, build/imagen sin Prisma ni credenciales DB/proveedor y middleware registrado verificados localmente. Fuente integrada solo staging; depende del backend en runtime, no prueba páginas offline ni cierre operacional A3/A4 o deploy.','scripts/verify-frontend-artifact.mjs',pattern='export function verifyFrontendArtifact')
 add(C,'Backend como único acceso a datos','A2.7: boundary BFF sin acceso DB ni migrador web; cierre operacional verificado solo staging. No implica producción ni A3.','scripts/verify-web-boundary.mjs',pattern='Web boundary PASS: no database/client/migrator authority',timeline_key='backend-data-ownership')
 for title,note,pattern,timeline_key in [
 ('Corte productivo al VPS','A4: pendiente de gates A2/A3, migración de datos y autorización.','A4',None),
