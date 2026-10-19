@@ -102,6 +102,10 @@ def track_implementations(rows, previous, now):
         if current_id:
             feature["id"] = current_id
 
+    # A corrected evidence path may restore a baseline capability after a false
+    # absence. Its historical first implementation is still undated, not "now".
+    baseline_known = {(entry.get("key"), branch) for entry in baseline
+                      for branch in entry.get("branches", [])}
     events = []
     for feature in rows:
         previous_feature = previous_rows.get(feature["timelineKey"])
@@ -113,6 +117,7 @@ def track_implementations(rows, previous, now):
             date = old_dates.get(branch)
             if (
                 not date
+                and (feature["timelineKey"], branch) not in baseline_known
                 and feature[branch]
                 and (
                     (previous_feature is not None and not previous_feature.get(branch, False))
