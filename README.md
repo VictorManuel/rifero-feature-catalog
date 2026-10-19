@@ -99,3 +99,19 @@ La capacidad `browser-runtime-boundary` representa únicamente el guard estátic
 apunta al código inmutable; primera detección no significa despliegue ni cierre
 de toda A3. La capacidad pendiente «Frontend independiente sin Prisma» conserva
 su estado. Nuevas capacidades se agregan al final para preservar IDs históricos.
+
+### A3.1 — clientes y consumidores navegador
+
+Cuatro capacidades distintas: transporte JSON validado, identidad, cuenta y
+disponibilidad pública. La fuente de cada una enlaza código versionado de web;
+ninguna representa cierre total de A3, despliegue o entrega de correo. La evidencia
+E2E local (desktop/mobile, DB sintética, sin delivery) se conserva en los PRs y
+handoff del bloque. Nuevas filas se añaden al final para preservar F001..F120.
+
+### UX-P1 / UX-P2 — solo planificadas
+
+Personalización de colores del sorteo e imágenes para compartir/descargar se
+incorporan como roadmap, no disponibles en ninguna rama. Sus enlaces apuntan
+a las secciones UX-P1/UX-P2 del roadmap versionado, nunca a código de una función
+que aún no existe. No generan eventos de implementación ni modifican baseline,
+orden/fechas/hitos previos de la timeline. SDD/Ready sigue pendiente.
