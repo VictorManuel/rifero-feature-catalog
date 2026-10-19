@@ -4,7 +4,7 @@ Tabla comparativa de funcionalidades y roadmap de Rifero, con columnas **staging
 
 **Web:** https://victormanuel.github.io/rifero-feature-catalog/
 
-Inventario curado en 10 categorías. Incluye búsqueda sin acentos, filtros combinados, evidencia fijada a commits, timeline y exportación CSV con fechas registradas.
+Inventario curado por categorías. Incluye búsqueda sin acentos, filtros combinados, evidencia fijada a commits, timeline y exportación CSV con fechas registradas.
 
 ## Leer los estados
 
@@ -134,3 +134,10 @@ timeline. Soporte/moderación y resize/cancel/draw consumen clientes navegador
 validados. Evidencia de permisos, persistencia y cooldown en pruebas locales y
 PRs del bloque; presencia en staging no es despliegue ni cierre global A3.
 Colores e imágenes para compartir siguen planificados, sin eventos de disponibilidad.
+
+
+### A3.4 — creación y configuración multipart tipadas
+F131/F132 se añaden después de130 capacidades, sin reiniciar historia. Código
+browser-safe conserva campos, cuatro slots, focal y remociones; E2E de metadata
+sin archivos y negativos locales. Usuario negó almacenamiento remoto de imágenes:
+no se reclama subida R2 ni deploy. Frontend independiente/A3 global siguen pendientes.
