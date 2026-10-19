@@ -241,6 +241,13 @@ add('Arquitectura e infraestructura','Ciclo de sorteo con cliente tipado navegad
     'A3.3: cantidad de números, cancelación y prueba/oficial/reemplazo con errores controlados y cooldown. Pruebas locales reales; no cambia reglas ni implica despliegue.',
     'src/components/forms/raffle-draw-form.tsx',pattern='createRaffleOperationsClient().draw(raffleId',timeline_key='browser-raffle-lifecycle-client')
 
+# A3.4 append-only; image storage was not accessed remotely for this verification.
+add('Arquitectura e infraestructura','Creación con cliente multipart tipado',
+    'A3.4: creación de sorteos usa DTO público validado y campos multipart; E2E local de metadata sin archivos. Archivos verificados en protocolo/unitarias locales, no R2 remoto. No despliegue ni cierre A3.',
+    'src/components/forms/create-raffle-form.tsx',pattern='createRaffleMetadataClient().create(',timeline_key='browser-raffle-create-client')
+add('Arquitectura e infraestructura','Configuración con cliente multipart tipado',
+    'A3.4: metadata, focal y remociones conservados, errores controlados y backend sin dependencia de storage para guardar sin archivos. E2E local de metadata/permisos, sin storage remoto de imágenes.',
+    'src/components/forms/raffle-settings-form.tsx',pattern='createRaffleMetadataClient().update(raffleId',timeline_key='browser-raffle-settings-client')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
