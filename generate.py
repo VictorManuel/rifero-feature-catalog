@@ -202,6 +202,10 @@ for title,note,timeline_key in [
 ('Extracto completo de 20 posiciones','Ingesta validada conservando ceros iniciales y evidencia oficial.','lottery-results-extract'),
 ('Adjudicación por lotería','Premios 1/2/3 con posiciones 1/2/3; número no vendido o fuera de rango deja vacante.','lottery-prize-awarding'),
 ('Tipo de sorteo inmutable tras venta','Bloqueo UI/API posterior a la primera venta; reglas exactas aún pendientes.','immutable-draw-type')]:future(C,title,note,'docs/MERCADOPAGO_LOTTERY_SPEC.md',timeline_key=timeline_key)
+# Append new capabilities: preserve the existing stable F001..F119 IDs.
+add('Arquitectura e infraestructura','Frontera de navegador verificada',
+    'A3.0: gate estático de imports runtime cliente y entorno privado, integrado en test/build. Preparación de A3; no frontend independiente completo ni despliegue.',
+    'scripts/verify-client-boundary.mjs',pattern='Client boundary PASS:',timeline_key='browser-runtime-boundary')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))

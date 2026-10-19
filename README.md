@@ -91,3 +91,11 @@ El cierre A2.7 corresponde al fin de observación documentado del 19oct2026 a
 no duplica el hito ni altera baseline/fechas de capacidades. Para ampliar o corregir
 hitos se revisa/publica la fuente antes de ejecutar el updater oficial; nunca se
 edita `data.js` a mano. No se publica fuente privada, scripts ni capturas en `dist`.
+
+### A3.0 — frontera navegador
+
+La capacidad `browser-runtime-boundary` representa únicamente el guard estático
+`web/scripts/verify-client-boundary.mjs` presente en la ref publicada. Su enlace
+apunta al código inmutable; primera detección no significa despliegue ni cierre
+de toda A3. La capacidad pendiente «Frontend independiente sin Prisma» conserva
+su estado. Nuevas capacidades se agregan al final para preservar IDs históricos.
