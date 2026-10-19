@@ -104,3 +104,14 @@ test('etiquetas timeline distinguen detección y cierre operacional',async()=>{
  const {readFile}=await import('node:fs/promises');const html=await readFile(new URL('./index.html',import.meta.url),'utf8');
  assert.ok(html.includes('Timeline de avances'));assert.ok(html.includes('fecha de cierre documentada'));
 });
+
+
+test('timeline larga conserva lista completa en región vertical accesible',async()=>{
+ const {readFile}=await import('node:fs/promises');
+ const html=await readFile(new URL('./index.html',import.meta.url),'utf8');
+ const css=await readFile(new URL('./styles.css',import.meta.url),'utf8');
+ assert.match(html,/class="timeline-scroll" role="region" aria-label="Historial de avances con desplazamiento vertical" tabindex="0"><ol id="timeline-events"/);
+ assert.match(css,/\.timeline-scroll\{[^}]*max-height:min\(34rem,65vh\)[^}]*overflow-y:auto/);
+ assert.match(css,/\.timeline-scroll:focus-visible/);
+ assert.ok(!css.includes('overscroll-behavior:contain'));
+});

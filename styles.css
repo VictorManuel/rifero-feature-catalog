@@ -16,6 +16,11 @@
 .timeline-heading time{color:var(--text);font-variant-numeric:tabular-nums}
 .timeline-count{flex-shrink:0;color:var(--brand);font-size:12px;font-variant-numeric:tabular-nums}
 .timeline-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,1fr);gap:54px;margin-top:28px}
+.timeline-scroll{max-height:min(34rem,65vh);overflow-y:auto;scrollbar-gutter:stable;scrollbar-color:#52677d var(--bg);padding:4px 16px 4px 8px}
+.timeline-scroll:focus-visible{outline:2px solid var(--brand);outline-offset:4px}
+.timeline-scroll::-webkit-scrollbar{width:10px}
+.timeline-scroll::-webkit-scrollbar-track{background:var(--bg)}
+.timeline-scroll::-webkit-scrollbar-thumb{background:#52677d;border:2px solid var(--bg);border-radius:5px}
 .timeline-list{list-style:none;margin:0;padding:3px 0 0 24px;border-left:1px solid #40536b}
 .timeline-item{position:relative;padding:0 0 25px 4px}
 .timeline-item:last-child{padding-bottom:0}
