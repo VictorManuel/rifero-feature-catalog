@@ -1,23 +1,39 @@
 """Snapshot local de refs ya descargadas. No fetch, red ni escritura a repos fuente."""
 import subprocess,json,pathlib,datetime
 from implementation_timeline import track_implementations
+from implementation_evidence import select_evidence
 ROOT=pathlib.Path(__file__).resolve().parent
 WORKSPACE=ROOT.parent
 repos={'web':'VictorManuel/rifero','backend':'VictorManuel/rifero-backend','email-worker':'VictorManuel/rifero-email-worker'}
 def git(repo,*args):
     return subprocess.check_output(['git','-C',str(WORKSPACE/repo),*args],text=True,stderr=subprocess.DEVNULL)
 refs={r:{b:git(r,'rev-parse',f'origin/{b}').strip() for b in ['staging','main']} for r in repos}
+# Explicit A2.7 relocations, not a generic search for similarly named files.
+# Original web evidence remains authoritative on branches where it still exists.
+RELOCATED_EVIDENCE = {
+    'Ingreso por correo o usuario': ('backend', 'src/infrastructure/prisma/auth-identity-repository.ts', 'identifier.includes("@") ? { email: identifier } : { username: identifier }'),
+    'Portada y fotos de premios': ('backend', 'src/http/runtime-asset-responses.ts', 'const image = await prepareRaffleImage(candidate);'),
+    'Restricción de sorteos rechazados': ('backend', 'src/core/raffles/moderation-policy.ts', 'raffle.moderationStatus === "REJECTED" && raffle.createdById === actor.id'),
+    'Auditoría persistente': ('backend', 'src/infrastructure/prisma/critical-raffle-operations-repository.ts', 'await tx.auditLog.create({ data: {'),
+    'Tokens de un solo uso': ('backend', 'src/infrastructure/prisma/identity-mutation-repository.ts', 'where: { id: resetToken.id, tokenHash, usedAt: null, expiresAt: { gt: now } }'),
+    'Validación fuerte de imágenes': ('backend', 'src/infrastructure/storage/image-processing.ts', 'export async function validateRaffleImageUpload(file: File)'),
+    'Cola persistente EmailJob': ('backend', 'src/infrastructure/email/jobs.ts', 'await db.emailJob.upsert({'),
+    'Proveedor Resend': ('email-worker', 'src/email/send-email.ts', 'const { data, error } = await resend.emails.send('),
+    'Plantillas seguras': ('backend', 'src/infrastructure/email/templates.ts', 'const safeHref = escapeHtml(validateTrustedAppUrl(href));'),
+}
 rows=[]
 def add(category,title,note,path,repo='web',pattern=None,timeline_key=None):
     statuses={}; evidence={}
-    for b,sha in refs[repo].items():
-        try: source=git(repo,'show',f'{sha}:{path}')
-        except subprocess.CalledProcessError: source=''
-        present=bool(source) and (pattern is None or pattern in source)
+    for b in refs[repo]:
+        def read(source_repo, source_path):
+            try: return git(source_repo,'show',f'{refs[source_repo][b]}:{source_path}')
+            except subprocess.CalledProcessError: return ''
+        source_repo,source_path,marker,source,present=select_evidence(
+            read,(repo,path,pattern),RELOCATED_EVIDENCE.get(title) if repo=='web' else None)
+        sha=refs[source_repo][b]
         statuses[b]=present
-        matched = pattern is None or pattern in source
-        line=next((i for i,s in enumerate(source.splitlines(),1) if pattern and pattern in s),1)
-        evidence[b]={'repo':repo,'path':path,'line':line,'url':f'https://github.com/{repos[repo]}/blob/{sha}/{path}#L{line}','match':pattern,'kind':'implementation' if present else 'absent'}
+        line=next((i for i,s in enumerate(source.splitlines(),1) if marker and marker in s),1)
+        evidence[b]={'repo':source_repo,'path':source_path,'line':line,'url':f'https://github.com/{repos[source_repo]}/blob/{sha}/{source_path}#L{line}','match':marker,'kind':'implementation' if present else 'absent'}
     row=dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,**statuses,evidence=evidence)
     if timeline_key: row['timelineKey']=timeline_key
     rows.append(row)

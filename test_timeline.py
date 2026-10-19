@@ -1,6 +1,47 @@
+from implementation_evidence import select_evidence
 import unittest
 
 from implementation_timeline import track_implementations
+
+
+class RelocatedEvidenceTests(unittest.TestCase):
+    def setUp(self):
+        self.primary = ("web", "old.ts", None)
+        self.relocated = ("backend", "new.ts", "realImplementation")
+
+    def test_original_branch_keeps_its_own_source(self):
+        calls = []
+        def read(repo, path):
+            calls.append((repo, path))
+            return "old implementation"
+        result = select_evidence(read, self.primary, self.relocated)
+        self.assertEqual(result[:3], self.primary)
+        self.assertTrue(result[-1])
+        self.assertEqual(calls, [("web", "old.ts")])
+
+    def test_moved_branch_uses_exact_reviewed_marker(self):
+        result = select_evidence(lambda repo, path: "realImplementation" if repo == "backend" else "",
+                                 self.primary, self.relocated)
+        self.assertEqual(result[:3], self.relocated)
+        self.assertTrue(result[-1])
+
+    def test_missing_or_wrong_marker_does_not_claim_implementation(self):
+        for source in ("", "unrelated implementation"):
+            result = select_evidence(lambda repo, path: source if repo == "backend" else "",
+                                     self.primary, self.relocated)
+            self.assertEqual(result[:3], self.primary)
+            self.assertFalse(result[-1])
+
+    def test_unmapped_source_has_no_implicit_fallback(self):
+        self.assertFalse(select_evidence(lambda repo, path: "", self.primary)[-1])
+
+    def test_primary_marker_mismatch_can_use_curated_worker_source(self):
+        primary = ("web", "old.ts", "required")
+        relocated = ("email-worker", "send.ts", "send(")
+        result = select_evidence(lambda repo, path: "send(" if repo == "email-worker" else "unrelated",
+                                 primary, relocated)
+        self.assertEqual(result[:3], relocated)
+        self.assertTrue(result[-1])
 
 
 class ImplementationTimelineTests(unittest.TestCase):
@@ -37,6 +78,23 @@ class ImplementationTimelineTests(unittest.TestCase):
         self.assertEqual(current["timelineKey"], "source-original-web-policy")
         self.assertEqual(current["implementationDates"]["staging"], "2026-10-10T00:00:00+00:00")
         self.assertFalse(any(e["implementedAt"] == self.now for e in timeline["events"]))
+
+    def test_restoring_moved_baseline_evidence_does_not_invent_new_date(self):
+        previous_feature = {**self.feature, "timelineKey": "baseline-login"}
+        previous = {
+            "timeline": {"startedAt": "2026-10-01T00:00:00+00:00", "baseline": [
+                {"key": "baseline-login", "id": "F001", "category": self.feature["category"],
+                 "title": self.feature["title"], "branches": ["staging"]}]},
+            "features": [previous_feature],
+        }
+        current = {**self.feature, "staging": True, "main": True,
+                   "evidence": {b: {"repo": "backend", "path": "moved.ts", "match": None}
+                                for b in ("staging", "main")}}
+        timeline = track_implementations([current], previous, self.now)
+        self.assertIsNone(current["implementationDates"]["staging"])
+        # Main was never in the baseline: a real first observation is still dated.
+        self.assertEqual(current["implementationDates"]["main"], self.now)
+        self.assertEqual([e["branch"] for e in timeline["events"]], ["main"])
 
     def test_initial_snapshot_records_baseline_without_faking_old_dates(self):
         initial = {**self.feature, "staging": True, "main": False}
