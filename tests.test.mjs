@@ -115,3 +115,18 @@ test('timeline larga conserva lista completa en región vertical accesible',asyn
  assert.match(css,/\.timeline-scroll:focus-visible/);
  assert.ok(!css.includes('overscroll-behavior:contain'));
 });
+
+test('build versiona toda la cadena sin alterar datos ni publicar fuentes',async()=>{
+ const {mkdtemp,writeFile,readFile,readdir,rm}=await import('node:fs/promises');const {tmpdir}=await import('node:os');const {join}=await import('node:path');const {buildSite}=await import('./build.mjs');
+ const root=await mkdtemp(join(tmpdir(),'rifero-catalog-build-'));
+ try {
+  const files={'index.html':'<link href="./styles.css"><script src="./app.js"></script>','styles.css':'body{}','app.js':"import data from './data.js';import {x} from './model.mjs';",'model.mjs':'export const x=1;','data.js':'export default {timeline:{events:[1,2]}};','private.md':'must not publish'};
+  for(const [name,value]of Object.entries(files))await writeFile(join(root,name),value);
+  const first=await buildSite(root);const html=await readFile(join(root,'dist/index.html'),'utf8');const app=await readFile(join(root,'dist/app.js'),'utf8');
+  assert.match(html,/styles\.css\?v=[a-f0-9]{64}/);assert.ok(html.includes('app.js?v='+first.appHash));assert.ok(app.includes('data.js?v='+first.dataHash));assert.match(app,/model\.mjs\?v=[a-f0-9]{64}/);
+  assert.equal(await readFile(join(root,'dist/data.js'),'utf8'),files['data.js']);assert.deepEqual((await readdir(join(root,'dist'))).sort(),['.nojekyll','app.js','data.js','index.html','model.mjs','styles.css']);
+  assert.deepEqual(await buildSite(root),first);
+  await writeFile(join(root,'data.js'),'export default {timeline:{events:[1,2,3]}};');const second=await buildSite(root);assert.notEqual(second.dataHash,first.dataHash);assert.notEqual(second.appHash,first.appHash);assert.ok((await readFile(join(root,'dist/index.html'),'utf8')).includes(second.appHash));
+  assert.equal(await readFile(join(root,'app.js'),'utf8'),files['app.js']);
+ }finally{await rm(root,{recursive:true,force:true});}
+});

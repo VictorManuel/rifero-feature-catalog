@@ -155,3 +155,10 @@ Tab sale normalmente y no se impide encadenar scroll a la página. Foco visible,
 scrollbar acorde a paleta y espacio para marcadores. Baseline y catálogo fuera de
 la región, sin truncar, paginar ni reiniciar datos o cambiar orden. Enlaces directos
 a hitos/funciones y exportación conservados. Sin dependencias nuevas.
+
+### Frescura de la publicación
+El build mantiene la allowlist de cinco assets públicos y `.nojekyll`, sin publicar
+fuentes ni alterar `data.js`. Versiona CSS y la cadena HTML→app→data/model con hashes
+de contenido en sus URLs. Una publicación nueva invalida assets cacheados sin pedir
+al visitante vaciar caché ni cambiar datos/historia. El build repetido es determinista;
+solo una variación de contenido cambia su URL. El servidor local sigue sin caché.
