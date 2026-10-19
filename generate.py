@@ -233,6 +233,14 @@ add('Arquitectura e infraestructura','Ventas con cliente HTTP tipado',
 add('Arquitectura e infraestructura','Vendedores con cliente HTTP tipado',
     'A3.2: altas, CSV, asignaciones/desasignaciones y modo de venta migrados; permisos/SQL en backend. E2E local sintético y sin entrega de correo. Invitaciones: cliente y endpoints; sin pantalla nueva.',
     'src/components/forms/seller-form.tsx',pattern='createSellersClient().create(raffleId',timeline_key='browser-sellers-client')
+# A3.3 append-only: preserve F001..F128 and existing timeline identities.
+add('Arquitectura e infraestructura','Administración con cliente tipado navegador',
+    'A3.3: soporte de contraseña y moderación migrados a DTO público validado; E2E local con permisos y revocación de sesión. Integración de rama, no despliegue ni cierre A3.',
+    'src/components/support-password-reset-form.tsx',pattern='createAdminClient().resetPassword(values)',timeline_key='browser-admin-client')
+add('Arquitectura e infraestructura','Ciclo de sorteo con cliente tipado navegador',
+    'A3.3: cantidad de números, cancelación y prueba/oficial/reemplazo con errores controlados y cooldown. Pruebas locales reales; no cambia reglas ni implica despliegue.',
+    'src/components/forms/raffle-draw-form.tsx',pattern='createRaffleOperationsClient().draw(raffleId',timeline_key='browser-raffle-lifecycle-client')
+
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
@@ -242,6 +250,7 @@ try:
     previous=json.loads((ROOT/'data.js').read_text().removeprefix('export default ').rstrip().removesuffix(';'))
 except (OSError,ValueError):
     pass
+
 now=datetime.datetime.now(datetime.timezone.utc).isoformat()
 timeline=track_implementations(rows,previous,now)
 timeline['milestones']=operational_milestones(git,refs,repos)

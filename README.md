@@ -4,7 +4,7 @@ Tabla comparativa de funcionalidades y roadmap de Rifero, con columnas **staging
 
 **Web:** https://victormanuel.github.io/rifero-feature-catalog/
 
-119 capacidades en 10 categorías. Incluye búsqueda sin acentos, filtros combinados, evidencia fijada a commits, timeline y exportación CSV con fechas registradas.
+Inventario curado en 10 categorías. Incluye búsqueda sin acentos, filtros combinados, evidencia fijada a commits, timeline y exportación CSV con fechas registradas.
 
 ## Leer los estados
 
@@ -125,3 +125,12 @@ nuevas, deploy ni cierre A3. El bloque verifica recibos sintéticos R2staging
 solo después de integrar los candidatos en las refs remotas staging. Se conservan
 baseline, fechas, orden relativo de eventos, hito A2.7 y UX-P1/P2 planificadas.
 La evidencia de navegador/DB sintética y limitaciones se conserva en PRs/handoff.
+
+
+### A3.3 — administración y ciclo de sorteo
+
+F129/F130 se añaden después de las128 capacidades existentes, sin reiniciar la
+timeline. Soporte/moderación y resize/cancel/draw consumen clientes navegador
+validados. Evidencia de permisos, persistencia y cooldown en pruebas locales y
+PRs del bloque; presencia en staging no es despliegue ni cierre global A3.
+Colores e imágenes para compartir siguen planificados, sin eventos de disponibilidad.
