@@ -264,6 +264,10 @@ add('Arquitectura e infraestructura','Traza de recuperación entre request, audi
 add('Arquitectura e infraestructura','Registro y reenvío con traza de email',
     'A4.1: UUID nuevo del BFF une registro y reenvío de verificación con auditorías y job vigente; contexto interno validado y actor anónimo en resend. E2E local con registro independiente y worker console sin entrega externa; el job sustituido permanece redactado. No deploy, observabilidad global ni cierre operacional A3/A4.',
     'src/infrastructure/prisma/identity-mutation-repository.ts','backend',pattern='action: "EMAIL_VERIFICATION_RESENT"',timeline_key='registration-verification-resend-trace')
+# A4.2 append-only: authenticated request, not confirmation/notification.
+add('Arquitectura e infraestructura','Solicitud de cambio de correo con traza de email',
+    'A4.2: UUID nuevo del BFF enlaza la solicitud autenticada con auditoría transaccional y job EMAIL_VERIFICATION; actor/entidad correctos y metadata sin PII. E2E local respuesta→audit→job→worker console sin entrega externa. No cubre confirmación/notificación posterior, invitaciones, despliegue ni cierre operacional A3/A4.',
+    'src/infrastructure/prisma/account-mutation-repository.ts','backend',pattern='action: "ACCOUNT_EMAIL_CHANGE_REQUESTED"',timeline_key='account-email-request-audit-job-trace')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))

@@ -199,3 +199,10 @@ sustituido sigue redactado: su traza no justifica restaurar payloads. No se marc
 observabilidad global ni se inventa un cierre operacional por preparar el plan
 conjunto A2.7/A3/A4. Publicar snapshot solo después de fuente web/backend integrada
 staging y gates; preservar135IDs/estados/fechas/eventos/baseline/A2.7 y UX planes.
+
+## A4.2 — solicitud autenticada de cambio de correo
+F137 se agrega después de136 capacidades. Solo respuesta/auditoría/job/worker de
+la solicitud autenticada, no confirmación ni notificación posterior ni invitación.
+No implica entrega externa, despliegue o cierre operacional. Exige fuente
+web/backend verificada e integrada staging antes del snapshot oficial. Conservar
+los136 IDs/estados/fechas/eventos, baseline/A2.7, scroll y UX planificadas.
