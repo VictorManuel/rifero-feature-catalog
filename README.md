@@ -115,3 +115,13 @@ incorporan como roadmap, no disponibles en ninguna rama. Sus enlaces apuntan
 a las secciones UX-P1/UX-P2 del roadmap versionado, nunca a código de una función
 que aún no existe. No generan eventos de implementación ni modifican baseline,
 orden/fechas/hitos previos de la timeline. SDD/Ready sigue pendiente.
+
+### A3.2 — ventas y vendedores tipados
+
+F127/F128 se agregan después de las126 capacidades previas, no entre ellas.
+Representan migración de consumidores al cliente HTTP, no capacidades de negocio
+nuevas, deploy ni cierre A3. El bloque verifica recibos sintéticos R2staging
+(attach/create/read/permisos), con cuatro claves retiradas y GET404, no producción. El snapshot se genera
+solo después de integrar los candidatos en las refs remotas staging. Se conservan
+baseline, fechas, orden relativo de eventos, hito A2.7 y UX-P1/P2 planificadas.
+La evidencia de navegador/DB sintética y limitaciones se conserva en PRs/handoff.

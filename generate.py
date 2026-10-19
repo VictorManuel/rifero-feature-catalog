@@ -226,6 +226,13 @@ future('Landing y personalización','Personalización de colores del sorteo',
 future('Landing y personalización','Compartir y descargar imágenes del sorteo',
     'UX-P2 planificada, no disponible: templates con todos los números y vendidos tachados, sorteo completo o vendedor; descarga obligatoria, compartir nativo opcional. Sin publicación automática; SDD pendiente.',
     'ROADMAP.md',pattern='### UX-P2: Imágenes de números para compartir en redes',timeline_key='raffle-share-images')
+# A3.2 appended after UX plans: stable F001..F126 and prior history untouched.
+add('Arquitectura e infraestructura','Ventas con cliente HTTP tipado',
+    'A3.2: reservas/liberación, venta multipart opcional, reversión e historial por vendedor usan DTOs públicos validados. E2E real local desktop/móvil; sin despliegue. Comprobantes sintéticos R2staging verificados (bytes/permisos y limpieza exacta); no producción.',
+    'src/components/sale-modal.tsx',pattern='createSalesClient().create(raffleId',timeline_key='browser-sales-client')
+add('Arquitectura e infraestructura','Vendedores con cliente HTTP tipado',
+    'A3.2: altas, CSV, asignaciones/desasignaciones y modo de venta migrados; permisos/SQL en backend. E2E local sintético y sin entrega de correo. Invitaciones: cliente y endpoints; sin pantalla nueva.',
+    'src/components/forms/seller-form.tsx',pattern='createSellersClient().create(raffleId',timeline_key='browser-sellers-client')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
