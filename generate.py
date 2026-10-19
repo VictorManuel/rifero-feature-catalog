@@ -275,6 +275,10 @@ add('Arquitectura e infraestructura','Confirmación de correo con notificación 
 add('Arquitectura e infraestructura','Reenvío de invitación con traza de email',
     'A4.3: UUID BFF validado enlaza resend autenticado, auditoría SELLER_INVITATION_RESENT y job SELLER_INVITATION; actor/raffleId preservados y E2E local console sin entrega externa. La revocación previa deja el job en cola: esta traza no acredita entrega válida tras revoke ni corrige lifecycle. Sin deploy/cierre operacional.',
     'src/infrastructure/prisma/raffle-admin-mutation-repository.ts','backend',pattern='acceptUrl, correlationId: input.correlationId',timeline_key='seller-invitation-resend-audit-job-trace')
+# Pending-only invitation correction: append-only F140; runtime gates are separate.
+add('Arquitectura e infraestructura','Cancelación precisa de invitaciones pendientes',
+    'Corrección A3/A4: resend y revoke cancelan jobs pendientes desbloqueados del token exacto, v1/legacy; otra rifa al mismo email queda intacta. E2E local SQL/worker console sin entrega externa. No retira emails en vuelo/enviados ni purga tokens históricos sin identidad demostrable. Imágenes remotas excluidas; despliegue y observación staging se acreditan por separado.',
+    'src/infrastructure/email/invitation-pending-jobs.ts','backend',pattern='export async function cancelPendingSellerInvitationJobs',timeline_key='seller-invitation-exact-pending-cancellation')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
