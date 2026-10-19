@@ -171,3 +171,12 @@ está verificado. Next.js+BFF same-origin sigue dependiendo del backend en runti
 no se afirma funcionamiento offline ni cierre operacional A3/A4 o despliegue.
 El snapshot oficial conserva las otras132 capacidades, fechas, eventos, baseline
 y A2.7; añade únicamente la primera detección staging de F100. Main no cambia.
+
+## A3.7 — compradores públicos y SSE nativo
+
+F134 se añade tras133 capacidades. El bug dejaba compradores SSR vacíos mientras
+la disponibilidad nativa ya cambiaba; se refresca la proyección pública existente
+tras venta/reversión validada, sin endpoint/DTO nuevo ni ampliar datos o sellerScope.
+La curación solo es publicable tras E2E reales desktop/móvil, SQL/worker/cleanup y
+los gates de fuente staging. Conserva IDs/fechas/eventos/baseline/A2.7 y UX-P1/P2
+planificadas; no cambia a implementado el realtime entre múltiples réplicas.
