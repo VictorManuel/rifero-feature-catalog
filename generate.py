@@ -157,7 +157,7 @@ add(C,'Adaptadores legacy / shadow / backend','Selección por capacidad durante 
 add(C,'Bridge de sesión firmado','Emisión/validación delegable al backend, con legacy como default.','src/lib/session-bridge.ts')
 add(C,'Proxy runtime de archivos y SSE','A2.6: backend puede poseer archivos, comprobantes y stream; web hace proxy.','src/lib/backend-runtime.ts')
 add(C,'Storage privado R2 en backend','Implementación A2.6 y evidencia de ensayo staging; no implica R2 productivo.','src/infrastructure/storage/r2-object-store.ts','backend')
-add(C,'Política CI de migrador único','A2.7: política y validación de schema/SQL; web aún conserva Prisma.','scripts/migration-policy.mjs')
+add(C,'Política CI de migrador único','A2.7: backend como único migrador en staging; presencia en la rama no implica despliegue productivo.','scripts/migration-policy.mjs','backend',pattern='Backend must remain the migration owner')
 add(C,'Lista pública de home vía backend','A2.7: adaptador de home; integración de rama no implica deploy ni flag activo.','src/contracts/http/v1/public-upcoming-raffles.ts')
 add(C,'Lista privada de sorteos vía backend','A2.7: contrato y adaptador de dashboard; no equivale a retirar Prisma del resto de web.','src/lib/private-reads.ts',pattern='fetchUserRaffleMembershipsReadFromBackend')
 for title,note,pattern,timeline_key in [
