@@ -185,9 +185,9 @@ for title,note,pattern,timeline_key in [
 ('Observabilidad centralizada','Integración Sentry/pino y alertas unificadas aún pendiente.','Sentry',None)]:future(C,title,note,pattern=pattern,timeline_key=timeline_key)
 C='Analytics y publicidad'
 for title,note,pattern,timeline_key in [
-('Analytics de navegación','Proveedor de métricas de uso pendiente; distinto de las métricas operativas ya visibles.','Analytics','navigation-analytics'),
-('Embudo y conversión','Eventos de visita, selección y conversión sin datos personales.','Analytics','conversion-funnel'),
-('Integración AdSense','Sin script/publisher activo; requiere aprobación y validación de políticas.','AdSense',None),
+('Analytics de navegación','GA4 elegido y planificado, aún sin integrar ni activar. Capa propia de eventos/proveedor; PostHog solo futuro cuando haya ganancias, no dependencia inicial.','Analytics','navigation-analytics'),
+('Embudo y conversión','Embudo de visita, selección y conversión planificado sin PII. Backend/DB conservan la verdad de ventas y pagos; GA4 no sustituye auditoría ni conciliación.','Analytics','conversion-funnel'),
+('Integración AdSense','AdSense con Auto ads elegido, aún sin implementar ni activar. Requiere aprobación/elegibilidad del sitio y contenido de rifas, privacidad y consentimiento; sin publisher configurado.','AdSense',None),
 ('Control de anuncios por ruta','Flags, exclusión de áreas privadas y apagado rápido pendientes.','Ads',None),
 ('Consentimiento publicitario','Política y consentimiento pendientes antes de publicidad.','consentimiento',None)]:future(C,title,note,pattern=pattern,timeline_key=timeline_key)
 C='Pagos y lotería · roadmap'
