@@ -223,3 +223,13 @@ Es cancelación por hash del token vigente y elegibilidad pendiente, no recall d
 correo enviado/en vuelo ni purga global. E2E local y fuente staging no acreditan
 despliegue u observación; imágenes remotas están excluidas por aceptación expresa.
 El cierre histórico A2.7 y las funcionalidades UX planificadas se conservan.
+
+### A3/A4 — corte operacional solo staging
+
+Hito separado de implementación, finalizado `2026-10-20T01:56:59-03:00`:21 muestras/84 HTTP
+durante 600.36s reales, HTTP+SQL, worker console por IDs y limpieza exacta.
+Requiere dos recibos inmutables integrados staging y sus siete gates PASS.
+A2.7 se conserva idéntico; no agrega capacidad/fecha de implementación ni reinicia
+la timeline. Imágenes remotas excluidas; sin entrega externa, producción ni retiro
+global A4. Notas F007/F009/F043/F100/F139/F140 se actualizan con ese alcance,
+sin cambiar IDs, estados, fechas, eventos anteriores o UX-P1/P2 planificadas.
