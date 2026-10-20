@@ -60,9 +60,9 @@ for title,note,path in [
 ('Agregar y verificar correo','El cambio de correo se confirma con un enlace.','src/app/api/account/email/route.ts'),
 ('Cambio de contraseña','Solicita contraseña actual y permite invalidar otras sesiones.','src/app/api/account/password/route.ts'),
 ('Decisión sobre contraseña inicial','En el primer ingreso se puede conservar o reemplazar la contraseña inicial.','src/components/initial-password-decision.tsx'),
-('Verificación de correo','Implementada; requiere EMAIL_VERIFICATION_ENABLED=true y entrega de emails. No se verificó el flag activo.','src/app/api/email-verification/verify/route.ts'),
+('Verificación de correo','Implementada; EMAIL_VERIFICATION_ENABLED=true verificado solo en staging en el corte A3/A4. Worker console sintético, no entrega externa acreditada ni activación productiva.','src/app/api/email-verification/verify/route.ts'),
 ('Reenvío de verificación','Enlace nuevo con respuesta genérica y límites de solicitudes.','src/app/api/email-verification/resend/route.ts'),
-('Recuperación de contraseña','Implementada; depende de PASSWORD_RECOVERY_ENABLED=true, correo y worker. No equivale a activación.','src/app/api/password/forgot/route.ts'),
+('Recuperación de contraseña','PASSWORD_RECOVERY_ENABLED=true y flujo HTTP+SQL verificados solo en staging en el corte A3/A4; depende de correo/worker. Sin entrega externa acreditada ni activación productiva.','src/app/api/password/forgot/route.ts'),
 ('Restablecer por enlace seguro','Token de un solo uso y expiración; condicionado por recuperación habilitada.','src/app/api/password/reset/route.ts'),
 ('Mis números comprados','Agrupa compras por el correo de la cuenta y excluye ventas revertidas.','src/app/app/my-numbers/page.tsx'),
 ('Roles y permisos por sorteo','ADMIN y SELLER con validación de acceso del lado servidor.','src/lib/permissions.ts'),
@@ -102,7 +102,7 @@ for title,note,path in [
 ('Ventas fuera de asignación','Señala ventas vigentes sobre números no asignados al vendedor actual.','src/lib/out-of-assignment-sales.ts'),
 ('Compartir mis números','Enlace propio con grilla y resultados filtrados a la asignación vigente.','src/components/share-seller-numbers-button.tsx'),
 ('Aceptar invitaciones por correo','Código existente; SELLER_INVITATIONS_ENABLED=false por defecto. No se afirma flujo activo.','src/app/api/invitations/accept/route.ts'),
-('Reenviar o revocar invitaciones','Código existente y condicionado por flag; no supone alta por invitación habilitada en UI.','src/components/invitation-actions.tsx')]:add(C,title,note,path)
+('Reenviar o revocar invitaciones','SELLER_INVITATIONS_ENABLED=true y resend/revoke exact-token verificados solo en staging en el corte A3/A4. Sin entrega externa ni activación productiva acreditadas.','src/components/invitation-actions.tsx')]:add(C,title,note,path)
 C='Ventas y comprobantes'
 for title,note,path in [
 ('Venta simple y múltiple','Una operación puede vender uno o varios números al mismo comprador.','src/components/forms/sale-form.tsx'),
@@ -177,7 +177,7 @@ add(C,'Storage privado R2 en backend','Implementación A2.6 y evidencia de ensay
 add(C,'Política CI de migrador único','A2.7: backend como único migrador en staging; presencia en la rama no implica despliegue productivo.','scripts/migration-policy.mjs','backend',pattern='Backend must remain the migration owner')
 add(C,'Lista pública de home vía backend','A2.7: adaptador de home; integración de rama no implica deploy ni flag activo.','src/contracts/http/v1/public-upcoming-raffles.ts')
 add(C,'Lista privada de sorteos vía backend','A2.7: contrato y adaptador de dashboard; no equivale a retirar Prisma del resto de web.','src/lib/private-reads.ts',pattern='fetchUserRaffleMembershipsReadFromBackend')
-add(C,'Frontend independiente sin Prisma','A3.6: Next.js+BFF same-origin conservado; clientes HTTP tipados, build/imagen sin Prisma ni credenciales DB/proveedor y middleware registrado verificados localmente. Fuente integrada solo staging; depende del backend en runtime, no prueba páginas offline ni cierre operacional A3/A4 o deploy.','scripts/verify-frontend-artifact.mjs',pattern='export function verifyFrontendArtifact')
+add(C,'Frontend independiente sin Prisma','A3.6: Next.js+BFF same-origin, clientes HTTP tipados y web sin Prisma/DB/proveedor. Aceptación local y corte HTTP+SQL staging verificados; depende del backend, no es web offline. Imágenes remotas excluidas; sin producción ni retiro global A4.','scripts/verify-frontend-artifact.mjs',pattern='export function verifyFrontendArtifact')
 add(C,'Backend como único acceso a datos','A2.7: boundary BFF sin acceso DB ni migrador web; cierre operacional verificado solo staging. No implica producción ni A3.','scripts/verify-web-boundary.mjs',pattern='Web boundary PASS: no database/client/migrator authority',timeline_key='backend-data-ownership')
 for title,note,pattern,timeline_key in [
 ('Corte productivo al VPS','A4: pendiente de gates A2/A3, migración de datos y autorización.','A4',None),
@@ -273,11 +273,11 @@ add('Arquitectura e infraestructura','Confirmación de correo con notificación 
     'A4.3: UUID BFF validado enlaza confirmación, auditoría anónima transaccional y notificación ACCOUNT_EMAIL_CHANGED al correo anterior. E2E local separado conserva verificación original y rechaza replay; worker console sin entrega externa. No deploy ni cierre operacional A3/A4.',
     'src/infrastructure/prisma/identity-mutation-repository.ts','backend',pattern='newEmail: verification.targetEmail,\n            correlationId: input.correlationId,',timeline_key='email-confirmation-notification-trace')
 add('Arquitectura e infraestructura','Reenvío de invitación con traza de email',
-    'A4.3: UUID BFF validado enlaza resend autenticado, auditoría SELLER_INVITATION_RESENT y job SELLER_INVITATION; actor/raffleId preservados y E2E local console sin entrega externa. La revocación previa deja el job en cola: esta traza no acredita entrega válida tras revoke ni corrige lifecycle. Sin deploy/cierre operacional.',
+    'A4.3: UUID BFF enlaza resend, auditoría y job SELLER_INVITATION. La traza original no corrigió lifecycle; F140 corrige después la cancelación exact-token pendiente. Corte staging acreditado por el hito A3/A4, worker console sin entrega externa; sin producción.',
     'src/infrastructure/prisma/raffle-admin-mutation-repository.ts','backend',pattern='acceptUrl, correlationId: input.correlationId',timeline_key='seller-invitation-resend-audit-job-trace')
 # Pending-only invitation correction: append-only F140; runtime gates are separate.
 add('Arquitectura e infraestructura','Cancelación precisa de invitaciones pendientes',
-    'Corrección A3/A4: resend y revoke cancelan jobs pendientes desbloqueados del token exacto, v1/legacy; otra rifa al mismo email queda intacta. E2E local SQL/worker console sin entrega externa. No retira emails en vuelo/enviados ni purga tokens históricos sin identidad demostrable. Imágenes remotas excluidas; despliegue y observación staging se acreditan por separado.',
+    'Corrección A3/A4: resend/revoke cancelan jobs pendientes desbloqueados del token exacto v1/legacy; otra rifa al mismo email queda intacta. SQL/worker console y corte staging con 10 minutos nuevos acreditados en su hito. No retira correos en vuelo/enviados ni purga tokens históricos no identificables. Imágenes remotas excluidas; sin producción.',
     'src/infrastructure/email/invitation-pending-jobs.ts','backend',pattern='export async function cancelPendingSellerInvitationJobs',timeline_key='seller-invitation-exact-pending-cancellation')
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
