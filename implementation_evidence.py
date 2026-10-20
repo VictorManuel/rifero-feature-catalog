@@ -15,3 +15,9 @@ def select_evidence(read, primary, relocated=None):
         if source and (relocated[2] is None or relocated[2] in source):
             return (*relocated, source, True)
     return (*primary, original, False)
+
+
+def evidence_line(source, marker):
+    """One-based start line for a curated marker, including multi-line markers."""
+    offset = source.find(marker) if marker else -1
+    return source.count("\n", 0, offset) + 1 if offset >= 0 else 1
