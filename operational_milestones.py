@@ -103,6 +103,52 @@ def _a34_milestone(git, refs, repos):
     }
 
 
+# Restricted, read-only application rehearsal; not production or full A4 closure.
+SNAPSHOT_COMPLETED_AT = '2026-10-20T12:18:39-03:00'
+SNAPSHOT_RECEIPTS = (
+    ('backend', 'aab52e68e2442cbd037176267ed7ac6dcc9686f7'),
+    ('web', '4f4da5e9a5c3146e93a2ff0c041e276b50b0610c'),
+)
+SNAPSHOT_PATH = 'docs/A4_PROTECTED_SNAPSHOT_REHEARSAL.md'
+SNAPSHOT_REQUIRED = (SNAPSHOT_COMPLETED_AT, 'lectura HTTP y limpieza verificadas solo en staging aislado',
+                     '16 tablas', '21 migraciones', '15 checks', '21 muestras/84 HTTP',
+                     '600.189s reales', 'browser E2E', 'PG16')
+
+
+def _snapshot_milestone(git, refs, repos):
+    if datetime.fromisoformat(SNAPSHOT_COMPLETED_AT).utcoffset() is None:
+        raise ValueError('Snapshot receipt needs a timezone')
+    evidence = []
+    for repo, sha in SNAPSHOT_RECEIPTS:
+        try:
+            git(repo, 'merge-base', '--is-ancestor', sha, refs[repo]['staging'])
+            source = git(repo, 'show', f'{sha}:{SNAPSHOT_PATH}')
+        except (subprocess.CalledProcessError, KeyError) as exc:
+            raise ValueError(f'Snapshot receipt not integrated in staging: {repo}') from exc
+        if not all(marker in source for marker in SNAPSHOT_REQUIRED):
+            raise ValueError(f'Snapshot receipt incomplete: {repo}')
+        if repo == 'backend':
+            for gate in range(1, 7):
+                lines = [line for line in source.splitlines() if line.startswith(f'| R{gate} ')]
+                if len(lines) != 1 or '| PASS:' not in lines[0]:
+                    raise ValueError(f'Snapshot gate R{gate} not passed')
+        else:
+            backend_sha = dict(SNAPSHOT_RECEIPTS)['backend']
+            if f'/blob/{backend_sha}/{SNAPSHOT_PATH}' not in source:
+                raise ValueError('Web snapshot receipt references a different backend candidate')
+        line = next(i for i, text in enumerate(source.splitlines(), 1)
+                    if 'lectura HTTP y limpieza verificadas solo en staging aislado' in text)
+        evidence.append({'repo': repo, 'sha': sha, 'path': SNAPSHOT_PATH, 'line': line,
+                         'url': f'https://github.com/{repos[repo]}/blob/{sha}/{SNAPSHOT_PATH}#L{line}'})
+    return {
+        'key': 'a4-protected-snapshot-read-rehearsal', 'kind': 'operational-milestone',
+        'title': 'A4: snapshot protegido, restauración y lecturas verificadas',
+        'phase': 'A4', 'environment': 'staging', 'completedAt': SNAPSHOT_COMPLETED_AT,
+        'summary': 'Copia aislada: 16 tablas conciliadas, 21 migraciones, datos personales sustituidos y credenciales invalidadas, migrador NOOP y 10 minutos de lecturas HTTP. Recursos temporales retirados. Sin pruebas de login real, browser E2E o escrituras mediante apps sobre la copia; sin producción ni cierre global A4.',
+        'evidence': evidence,
+    }
+
+
 def operational_milestones(git, refs, repos):
-    # Keep the historical A2.7 receipt/event byte-equivalent and append one event.
-    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos)]
+    # Append only; preserve both historical operational receipts exactly.
+    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos)]

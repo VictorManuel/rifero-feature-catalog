@@ -233,3 +233,13 @@ A2.7 se conserva idéntico; no agrega capacidad/fecha de implementación ni rein
 la timeline. Imágenes remotas excluidas; sin entrega externa, producción ni retiro
 global A4. Notas F007/F009/F043/F100/F139/F140 se actualizan con ese alcance,
 sin cambiar IDs, estados, fechas, eventos anteriores o UX-P1/P2 planificadas.
+
+### Ensayo protegido de snapshot — solo staging aislado
+
+Hito operacional adicional, sin reiniciar la timeline ni cambiar estados/fechas
+de implementación: requiere recibos inmutables integrados en staging de backend
+y web, seis gates PASS y referencia cruzada exacta. Acredita restauración y
+lecturas HTTP de copia restringida, NOOP del migrador y limpieza. No acredita
+login real, browser E2E ni escrituras mediante apps sobre la copia, migración de
+archivos, downgrade PG18→16, producción o cierre global A4. A2.7 y A3/A4
+conservan sus hitos completos; el generador no infiere despliegues de commits.
