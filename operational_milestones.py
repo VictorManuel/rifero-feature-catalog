@@ -150,5 +150,52 @@ def _snapshot_milestone(git, refs, repos):
 
 
 def operational_milestones(git, refs, repos):
-    # Append only; preserve both historical operational receipts exactly.
-    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos)]
+    # Append only; preserve all historical operational receipts exactly.
+    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos), _session_milestone(git, refs, repos)]
+
+
+# Finalized only from immutable, staging-integrated receipts after real cleanup.
+SESSION_RECEIPTS = (('backend', 'a09aada7ae5212197cb69fc239ec57ae57a01da0'),
+                    ('web', '1d9406a60ebf91b6c52d836743bffdada890483d'))
+SESSION_COMPLETED_AT = '2026-10-20T19:55:33-03:00'
+SESSION_PATH = 'docs/A4_SESSION_WRITE_REHEARSAL.md'
+SESSION_REQUIRED = (
+    'sesión y perfil verificados solo en staging aislado',
+    '16 checks HTTP', '9 denegaciones', '2 proyectos/2 escrituras',
+    'filas copiadas y cola intactas', 'sin cierre global A4',
+)
+
+
+def _session_milestone(git, refs, repos):
+    if (len(SESSION_RECEIPTS) != 2 or {repo for repo, _ in SESSION_RECEIPTS} != {'web', 'backend'}
+            or not isinstance(SESSION_COMPLETED_AT, str)):
+        raise ValueError('Session receipt metadata not finalized')
+    if datetime.fromisoformat(SESSION_COMPLETED_AT).utcoffset() is None:
+        raise ValueError('Session receipt needs a timezone')
+    evidence = []
+    for repo, sha in SESSION_RECEIPTS:
+        try:
+            git(repo, 'merge-base', '--is-ancestor', sha, refs[repo]['staging'])
+            source = git(repo, 'show', f'{sha}:{SESSION_PATH}')
+        except (subprocess.CalledProcessError, KeyError) as exc:
+            raise ValueError(f'Session receipt not integrated in staging: {repo}') from exc
+        if not all(marker in source for marker in (*SESSION_REQUIRED, SESSION_COMPLETED_AT)):
+            raise ValueError(f'Session receipt incomplete: {repo}')
+        if repo == 'backend':
+            for gate in range(1, 8):
+                lines = [line for line in source.splitlines() if line.startswith(f'| S{gate} ')]
+                if len(lines) != 1 or '| PASS:' not in lines[0]:
+                    raise ValueError(f'Session gate S{gate} not passed')
+        elif f"/blob/{dict(SESSION_RECEIPTS)['backend']}/{SESSION_PATH}" not in source:
+            raise ValueError('Web session receipt references another backend candidate')
+        line = next(i for i, text in enumerate(source.splitlines(), 1)
+                    if SESSION_REQUIRED[0] in text)
+        evidence.append({'repo': repo, 'sha': sha, 'path': SESSION_PATH, 'line': line,
+                         'url': f'https://github.com/{repos[repo]}/blob/{sha}/{SESSION_PATH}#L{line}'})
+    return {
+        'key': 'a4-protected-snapshot-session-profile', 'kind': 'operational-milestone',
+        'title': 'A4: sesión y perfil verificados en copia protegida',
+        'phase': 'A4', 'environment': 'staging', 'completedAt': SESSION_COMPLETED_AT,
+        'summary': 'Copia saneada aislada: login y sesión reales, perfil persistido en escritorio/móvil, 9 denegaciones de privilegios, filas copiadas/cola intactas y 10 minutos nuevos de observación. Recursos temporales retirados. Solo usuario sintético nuevo; sin rifas/ventas escritas en la copia, storage/correo externos, producción ni cierre global A4.',
+        'evidence': evidence,
+    }
