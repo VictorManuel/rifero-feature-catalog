@@ -2,7 +2,7 @@
 import subprocess,json,pathlib,datetime
 from implementation_timeline import track_implementations
 from operational_milestones import operational_milestones
-from implementation_evidence import select_evidence
+from implementation_evidence import select_evidence, evidence_line
 ROOT=pathlib.Path(__file__).resolve().parent
 WORKSPACE=ROOT.parent
 repos={'web':'VictorManuel/rifero','backend':'VictorManuel/rifero-backend','email-worker':'VictorManuel/rifero-email-worker'}
@@ -33,7 +33,7 @@ def add(category,title,note,path,repo='web',pattern=None,timeline_key=None):
             read,(repo,path,pattern),RELOCATED_EVIDENCE.get(title) if repo=='web' else None)
         sha=refs[source_repo][b]
         statuses[b]=present
-        line=next((i for i,s in enumerate(source.splitlines(),1) if marker and marker in s),1)
+        line=evidence_line(source, marker)
         evidence[b]={'repo':source_repo,'path':source_path,'line':line,'url':f'https://github.com/{repos[source_repo]}/blob/{sha}/{source_path}#L{line}','match':marker,'kind':'implementation' if present else 'absent'}
     row=dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,**statuses,evidence=evidence)
     if timeline_key: row['timelineKey']=timeline_key
@@ -46,7 +46,7 @@ def future(category,title,note,path='ROADMAP_EXECUTION_PLAN.md',pattern=None,tim
         except subprocess.CalledProcessError:
             actual='ROADMAP_EXECUTION_PLAN.md';source=git('web','show',f'{sha}:{actual}')
         matched = pattern is None or pattern in source
-        line=next((i for i,s in enumerate(source.splitlines(),1) if pattern and pattern in s),1)
+        line=evidence_line(source, pattern)
         evidence[b]={'repo':'web','path':actual,'line':line,'url':f'https://github.com/{repos["web"]}/blob/{sha}/{actual}#L{line}','match':pattern if matched else None,'kind':'plan' if matched and actual==path else 'general-plan'}
     row=dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,staging=False,main=False,evidence=evidence)
     if timeline_key: row['timelineKey']=timeline_key

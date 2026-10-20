@@ -1,4 +1,4 @@
-from implementation_evidence import select_evidence
+from implementation_evidence import select_evidence, evidence_line
 import unittest
 
 from implementation_timeline import track_implementations
@@ -340,6 +340,22 @@ class ImplementationTimelineTests(unittest.TestCase):
         self.assertEqual(timeline["baseline"][0]["key"], current["timelineKey"])
         self.assertIsNone(current["implementationDates"]["staging"])
         self.assertEqual(timeline["events"], [])
+
+
+
+
+class EvidenceLineTests(unittest.TestCase):
+    def test_multiline_marker_anchors_its_first_line(self):
+        source = 'header\n\n  newEmail: verification.targetEmail,\n            correlationId: input.correlationId,\nend'
+        marker = 'newEmail: verification.targetEmail,\n            correlationId: input.correlationId,'
+        self.assertEqual(evidence_line(source, marker), 3)
+
+    def test_singleline_first_occurrence_and_missing_fallback(self):
+        self.assertEqual(evidence_line('header\n  match\nmatch', 'match'), 2)
+        self.assertEqual(evidence_line('match', 'match'), 1)
+        self.assertEqual(evidence_line('header', 'missing'), 1)
+        self.assertEqual(evidence_line('header', None), 1)
+        self.assertEqual(evidence_line('', 'missing'), 1)
 
 
 if __name__ == "__main__":
