@@ -1,5 +1,5 @@
 export default {
-  "generatedAt": "2026-10-20T05:14:38.616240+00:00",
+  "generatedAt": "2026-10-20T05:18:55.332536+00:00",
   "refs": {
     "web": {
       "staging": "a6a373ed7c2266acb07e9885d326a42fe051ea07",
@@ -4278,8 +4278,8 @@ export default {
         "staging": {
           "repo": "backend",
           "path": "src/infrastructure/prisma/identity-mutation-repository.ts",
-          "line": 1,
-          "url": "https://github.com/VictorManuel/rifero-backend/blob/134273043ed4e5ecee4eedda76386ab66d9aa764/src/infrastructure/prisma/identity-mutation-repository.ts#L1",
+          "line": 254,
+          "url": "https://github.com/VictorManuel/rifero-backend/blob/134273043ed4e5ecee4eedda76386ab66d9aa764/src/infrastructure/prisma/identity-mutation-repository.ts#L254",
           "match": "newEmail: verification.targetEmail,\n            correlationId: input.correlationId,",
           "kind": "implementation"
         },
