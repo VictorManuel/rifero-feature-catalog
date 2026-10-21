@@ -252,3 +252,17 @@ sin falsear Actions ni gastar. Se añade un hito operacional, no una disponibili
 Purchase ni deploy/migración activa. Los cuatro hitos anteriores, baseline,
 estados y fechas de funcionalidades/avances permanecen intactos. La cancelación
 se limita a PR obsoletos; todos los controles/eventos siguen vigentes.
+
+## Purchase — código protegido por flags, no disponibilidad activa
+
+F057 conserva ID/título/posición. Por ahora conserva su referencia al plan y
+permanece pendiente. Tras la integración real, una curación revisada podrá detectar
+el adapter funcional backend y marcar código presente en la ref staging remota.
+No se cambia el schema Prisma para satisfacer al catálogo ni se usa SQL propuesto como implementación.
+Los flags continúan OFF, sin migración activa/deploy ni disponibilidad runtime.
+La nota de preparación puede publicarse antes de integrar las apps, pero el check
+permanece pendiente hasta detectar la fuente integrada remota. Conservar las otras
+139 capacidades, main, baseline/eventos y cinco hitos previos.
+
+[Preparación funcional y límites comprobados](docs/PURCHASE_FUNCTIONAL_PREPARATION_20261021.md).
+Un PR publicado no es un merge ni genera por sí solo un avance de implementación.
