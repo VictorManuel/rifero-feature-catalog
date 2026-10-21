@@ -243,3 +243,12 @@ lecturas HTTP de copia restringida, NOOP del migrador y limpieza. No acredita
 login real, browser E2E ni escrituras mediante apps sobre la copia, migración de
 archivos, downgrade PG18→16, producción o cierre global A4. A2.7 y A3/A4
 conservan sus hitos completos; el generador no infiere despliegues de commits.
+
+## 21oct2026 — contingencia local integrada solo en staging
+
+[Recibo de tooling y preparación Purchase](docs/LOCAL_APPROVAL_STAGING_20261021.md):
+tres candidatos exactos revisados e integrados con autorización humana excepcional,
+sin falsear Actions ni gastar. Se añade un hito operacional, no una disponibilidad
+Purchase ni deploy/migración activa. Los cuatro hitos anteriores, baseline,
+estados y fechas de funcionalidades/avances permanecen intactos. La cancelación
+se limita a PR obsoletos; todos los controles/eventos siguen vigentes.
