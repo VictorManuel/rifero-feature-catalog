@@ -282,3 +282,17 @@ detecciones de código son eventos adicionales, nunca pruebas de rollout.
 
 ### Recibo operacional: galería y colores en staging
 La nueva entrada histórica se separa de las primeras detecciones F125/F141: exige ambos recibos propietarios inmutables integrados en staging y sus ocho gates aprobados. Registra la aceptación real de2026-10-21 (600.939s/21 muestras y limpieza), no la hora de publicación del catálogo. No cambia fechas, baseline, eventos o hitos anteriores ni afirma producción, Purchase o cierre global A3/A4. El generador falla si falta un recibo o su integración; publicar este código en un PR no publica el hito ni autoriza su merge.
+
+
+## Purchase — fuente integrada, sin activación (21 October 2026)
+
+Entrada posterior: sustituye solo el estado pendiente de la preparación anterior,
+que se conserva intacta. Backend PR66 y web PR160 están integrados normalmente en
+staging con expedientes completos v2/revisión/auditor online y árboles exactos.
+[Recibo vigente de integración de fuente](docs/PURCHASE_SOURCE_INTEGRATION_20261021.md).
+F057 solo detecta código cuando productor/mantenimiento y consumidor/uso existen
+en la misma rama; conserva ID y key histórica. **NO disponible en runtime: flags
+OFF, sin SQL activo ni despliegue Purchase**, pagos nuevos, email o backfill. Imágenes
+activas de galería/colores y autoDeploy=false permanecen iguales.141 filas y los
+seis hitos anteriores se conservan; la primera detección oficial añade solo un
+evento de código, nunca un hito de activación ni cierre global A3/A4/UX-P2/producción.
