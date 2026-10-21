@@ -1,5 +1,5 @@
 export default {
-  "generatedAt": "2026-10-21T04:54:19.222253+00:00",
+  "generatedAt": "2026-10-21T05:54:26.010184+00:00",
   "refs": {
     "web": {
       "staging": "4e7f4994b00385e8c2192b1b4be36280c526ea03",
@@ -1760,7 +1760,7 @@ export default {
       "id": "F057",
       "category": "Ventas y comprobantes",
       "title": "Compra agrupada con Purchase",
-      "note": "La venta múltiple existe, pero aún no tiene una entidad Purchase para agrupar compras y pagos.",
+      "note": "Preparación funcional verificada localmente en backend PR66 y web PR160; integración staging pendiente de aprobación local. NO disponible: flags OFF, sin SQL activo, despliegue, pagos nuevos ni backfill. La venta múltiple actual se conserva.",
       "staging": false,
       "main": false,
       "evidence": {
