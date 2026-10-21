@@ -118,7 +118,7 @@ for title,note,path in [
 ('Ordenar ventas','Ordenamiento del historial de ventas.','src/lib/sale-sorting.ts'),
 ('Exportar ventas','Exportación textual con datos privados sólo para usuarios autorizados.','src/app/api/raffles/[raffleId]/sales/export/route.ts'),
 ('Revertir una venta','Preserva historial y libera el número con control de acceso.','src/app/api/raffles/[raffleId]/sales/[saleId]/cancel/route.ts')]:add(C,title,note,path)
-future(C,'Compra agrupada con Purchase','La venta múltiple existe, pero aún no tiene una entidad Purchase para agrupar compras y pagos.',pattern='Purchase')
+future(C,'Compra agrupada con Purchase','Preparación funcional verificada localmente en backend PR66 y web PR160; integración staging pendiente de aprobación local. NO disponible: flags OFF, sin SQL activo, despliegue, pagos nuevos ni backfill. La venta múltiple actual se conserva.',pattern='Purchase')
 C='Sorteo y resultados'
 for feature in [
 ('Sorteo de prueba y oficial','Distingue simulación de ejecución oficial y su estado.','src/components/forms/raffle-draw-form.tsx'),
