@@ -358,5 +358,34 @@ class EvidenceLineTests(unittest.TestCase):
         self.assertEqual(evidence_line('', 'missing'), 1)
 
 
+
+
+class PlannedCapabilityPromotionTests(unittest.TestCase):
+    def test_complete_same_branch_producer_consumer_code_required(self):
+        from implementation_evidence import all_markers_present
+        requirements = [('web', 'editor.tsx', 'Editor'), ('backend', 'save.ts', 'Save'),
+                        ('backend', 'migration.sql', 'CREATE TABLE')]
+        complete = {('web', 'editor.tsx'): 'Editor', ('backend', 'save.ts'): 'Save',
+                    ('backend', 'migration.sql'): 'CREATE TABLE'}
+        self.assertTrue(all_markers_present(lambda repo, path: complete.get((repo, path), ''), requirements))
+        for missing in complete:
+            self.assertFalse(all_markers_present(lambda repo, path: '' if (repo, path) == missing else complete.get((repo, path), ''), requirements))
+        self.assertFalse(all_markers_present(lambda repo, path: 'wrong marker', requirements))
+        self.assertFalse(all_markers_present(lambda repo, path: 'anything', []))
+        self.assertFalse(all_markers_present(lambda repo, path: 'anything', [('web', 'x', '')]))
+
+    def test_promoting_existing_key_appends_event_without_rewriting_history(self):
+        import copy
+        previous = {'features': [{'id': 'F125', 'category': 'Landing', 'title': 'UX-P1', 'timelineKey': 'raffle-visual-personalization', 'staging': False, 'main': False}],
+                    'timeline': {'startedAt': '2026-01-01T00:00:00+00:00', 'baseline': [], 'events': []}}
+        original = copy.deepcopy(previous)
+        rows = [{'id': 'F125', 'category': 'Landing', 'title': 'UX-P1', 'timelineKey': 'raffle-visual-personalization', 'staging': True, 'main': False}]
+        result = track_implementations(rows, previous, '2026-10-21T18:00:00+00:00')
+        self.assertEqual(previous, original)
+        self.assertEqual(result['startedAt'], original['timeline']['startedAt'])
+        self.assertEqual(result['baseline'], original['timeline']['baseline'])
+        self.assertEqual(len(result['events']), 1)
+        self.assertEqual(result['events'][0]['branch'], 'staging')
+
 if __name__ == "__main__":
     unittest.main()

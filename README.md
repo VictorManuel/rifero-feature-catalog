@@ -108,8 +108,9 @@ ninguna representa cierre total de A3, despliegue o entrega de correo. La eviden
 E2E local (desktop/mobile, DB sintética, sin delivery) se conserva en los PRs y
 handoff del bloque. Nuevas filas se añaden al final para preservar F001..F120.
 
-### UX-P1 / UX-P2 — solo planificadas
+### UX-P1 / UX-P2 — alta histórica como planificadas
 
+Estado al incorporarlas; la regla vigente de UX-P1 se detalla al final.
 Personalización de colores del sorteo e imágenes para compartir/descargar se
 incorporan como roadmap, no disponibles en ninguna rama. Sus enlaces apuntan
 a las secciones UX-P1/UX-P2 del roadmap versionado, nunca a código de una función
@@ -266,3 +267,15 @@ permanece pendiente hasta detectar la fuente integrada remota. Conservar las otr
 
 [Preparación funcional y límites comprobados](docs/PURCHASE_FUNCTIONAL_PREPARATION_20261021.md).
 Un PR publicado no es un merge ni genera por sí solo un avance de implementación.
+
+### UX-P1 y biblioteca SUPERADMIN — detección de código, no activación
+La fila existente de colores mantiene su ID, posición y `timelineKey`; deja de ser
+un futuro fijo solo cuando editor web, persistencia backend y migración canónica
+están presentes en la misma rama remota. La biblioteca interna se agrega al final
+como F141 únicamente cuando existen tanto el guard SUPERADMIN como su componente
+real en alguna rama comparada; no inventa evidencia de plan en un roadmap ajeno.
+Colores conserva el plan hasta completar sus requisitos. UX-P2 sigue pendiente.
+No se consultan DB ni flags, ni se infiere despliegue, disponibilidad pública o
+activación a partir de PRs/ramas locales. El updater oficial sigue publicando solo
+`data.js`; fechas/baseline/eventos/hitos previos se preservan. Las nuevas primeras
+detecciones de código son eventos adicionales, nunca pruebas de rollout.
