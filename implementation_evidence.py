@@ -21,3 +21,15 @@ def evidence_line(source, marker):
     """One-based start line for a curated marker, including multi-line markers."""
     offset = source.find(marker) if marker else -1
     return source.count("\n", 0, offset) + 1 if offset >= 0 else 1
+
+
+def all_markers_present(read, requirements):
+    """Require every explicitly curated producer/consumer marker on one branch.
+
+    This checks source presence only, never database migration, flags or deployment.
+    An empty list/marker must not promote a planned capability.
+    """
+    return bool(requirements) and all(
+        bool(marker) and marker in read(repo, path)
+        for repo, path, marker in requirements
+    )

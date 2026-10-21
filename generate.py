@@ -2,7 +2,7 @@
 import subprocess,json,pathlib,datetime
 from implementation_timeline import track_implementations
 from operational_milestones import operational_milestones
-from implementation_evidence import select_evidence, evidence_line
+from implementation_evidence import select_evidence, evidence_line, all_markers_present
 ROOT=pathlib.Path(__file__).resolve().parent
 WORKSPACE=ROOT.parent
 repos={'web':'VictorManuel/rifero','backend':'VictorManuel/rifero-backend','email-worker':'VictorManuel/rifero-email-worker'}
@@ -51,6 +51,21 @@ def future(category,title,note,path='ROADMAP_EXECUTION_PLAN.md',pattern=None,tim
     row=dict(id=f'F{len(rows)+1:03}',category=category,title=title,note=note,staging=False,main=False,evidence=evidence)
     if timeline_key: row['timelineKey']=timeline_key
     rows.append(row)
+def planned_or_implemented(category,title,note,path,pattern,requirements,timeline_key):
+    # Preserve the existing row position/id/timelineKey and plan evidence until
+    # every curated source requirement exists on the SAME named remote branch.
+    future(category,title,note,path,pattern=pattern,timeline_key=timeline_key)
+    row=rows[-1]
+    for branch in refs['web']:
+        def read(source_repo,source_path):
+            try: return git(source_repo,'show',f'{refs[source_repo][branch]}:{source_path}')
+            except subprocess.CalledProcessError: return ''
+        if all_markers_present(read,requirements):
+            source_repo,source_path,marker=requirements[0]
+            row[branch]=True
+            source=read(source_repo,source_path)
+            row['evidence'][branch]={'repo':source_repo,'path':source_path,'line':evidence_line(source,marker),'url':f'https://github.com/{repos[source_repo]}/blob/{refs[source_repo][branch]}/{source_path}#L{evidence_line(source,marker)}','match':marker,'kind':'implementation'}
+
 # Cada entrada representa una capacidad concreta, no una promesa del roadmap histórico.
 C='Cuentas y acceso'
 for title,note,path in [
@@ -219,10 +234,15 @@ add('Arquitectura e infraestructura','Cuenta con cliente tipado navegador',
 add('Arquitectura e infraestructura','Disponibilidad con DTO validado en navegador',
     'A3.1: refresco SSE consume disponibilidad validada; aborta al desmontar, conserva último DTO válido ante fallo y mantiene cierre/reload 403/404. No cambia ownership realtime.',
     'src/components/availability-board.tsx',pattern='availability.get(raffleId, controller.signal)',timeline_key='browser-availability-client')
-# Explicit roadmap-only UX initiatives, never implementation detections.
-future('Landing y personalización','Personalización de colores del sorteo',
-    'UX-P1 planificada, no disponible: paletas y fondos prediseñados, vista previa y restablecer. SDD/Ready pendiente; no editor libre ni white-label.',
-    'ROADMAP.md',pattern='### UX-P1: Personalización visual de la landing del sorteo',timeline_key='raffle-visual-personalization')
+# Promote the existing UX-P1 identity only from complete versioned code; never
+# infer active SQL/flags or deployment. UX-P2 remains roadmap-only.
+planned_or_implemented('Landing y personalización','Personalización de colores del sorteo',
+    'UX-P1: cuatro paletas y fondos sólido/degradado, vista previa y restablecer; propietario DRAFT/ACTIVE. El código requiere SQL y capability de apariencia; implementado no acredita activación ni despliegue. Sin colores libres, imágenes remotas ni white-label.',
+    'ROADMAP.md','### UX-P1: Personalización visual de la landing del sorteo',
+    [('web','src/components/raffle-appearance-editor.tsx','export function RaffleAppearanceEditor'),
+     ('backend','src/infrastructure/prisma/raffle-appearance-repository.ts','export async function saveRaffleAppearance'),
+     ('backend','prisma/migrations/20261021130000_add_raffle_appearance/migration.sql','CREATE TABLE "RaffleAppearance"')],
+    timeline_key='raffle-visual-personalization')
 future('Landing y personalización','Compartir y descargar imágenes del sorteo',
     'UX-P2 planificada, no disponible: templates con todos los números y vendidos tachados, sorteo completo o vendedor; descarga obligatoria, compartir nativo opcional. Sin publicación automática; SDD pendiente.',
     'ROADMAP.md',pattern='### UX-P2: Imágenes de números para compartir en redes',timeline_key='raffle-share-images')
@@ -279,6 +299,23 @@ add('Arquitectura e infraestructura','Reenvío de invitación con traza de email
 add('Arquitectura e infraestructura','Cancelación precisa de invitaciones pendientes',
     'Corrección A3/A4: resend/revoke cancelan jobs pendientes desbloqueados del token exacto v1/legacy; otra rifa al mismo email queda intacta. SQL/worker console y corte staging con 10 minutos nuevos acreditados en su hito. No retira correos en vuelo/enviados ni purga tokens históricos no identificables. Imágenes remotas excluidas; sin producción.',
     'src/infrastructure/email/invitation-pending-jobs.ts','backend',pattern='export async function cancelPendingSellerInvitationJobs',timeline_key='seller-invitation-exact-pending-cancellation')
+# Append F141 only after complete versioned gallery code exists on a compared
+# branch; do not invent gallery planning evidence in an unrelated old roadmap.
+gallery_requirements=[('web','src/app/app/admin/components/page.tsx','await requireSuperAdmin();'),
+                      ('web','src/components/ui-gallery.tsx','export function UiGallery')]
+gallery_complete={}
+for branch in refs['web']:
+    def read_gallery(source_repo,source_path):
+        try: return git(source_repo,'show',f'{refs[source_repo][branch]}:{source_path}')
+        except subprocess.CalledProcessError: return ''
+    gallery_complete[branch]=all_markers_present(read_gallery,gallery_requirements)
+if any(gallery_complete.values()):
+    add('Administración','Galería interna de componentes',
+        'Biblioteca exclusiva SUPERADMIN: componentes reales e interacciones sintéticas, sin acciones sobre datos reales. Presencia de código no acredita despliegue ni acceso público.',
+        'src/app/app/admin/components/page.tsx',pattern='await requireSuperAdmin();',timeline_key='superadmin-ui-component-gallery')
+    for branch,complete in gallery_complete.items():
+        rows[-1][branch]=complete
+        if not complete: rows[-1]['evidence'][branch]['kind']='absent'
 # Fallar si una capacidad de implementación no tiene evidencia en ninguna rama.
 invalid=[r['title'] for r in rows if all(e['kind']=='absent' for e in r['evidence'].values())]
 if invalid: raise SystemExit('Rutas de evidencia a corregir: '+repr(invalid))
