@@ -74,3 +74,15 @@ adapter funcional esté en la ref remota integrada; no se usa la mera propuesta 
 ni un modelo Prisma agregado para satisfacer el catálogo. Conservar las otras 139
 capacidades, estados main, baseline, eventos y cinco hitos anteriores. La primera
 detección de F057, cuando corresponda, añade un evento sin reescribir el historial.
+
+
+## Estado posterior — integración de fuente, 21 October 2026
+
+La preparación anterior permanece como recibo histórico. Sus candidatos/bases y
+runner fallido NO se reutilizaron como gates de los nuevos candidatos. Ver el
+[recibo posterior](PURCHASE_SOURCE_INTEGRATION_20261021.md): PR66/160 se integraron
+normalmente con fuentes renovadas y expedientes completos v2; se corrigió el runner
+TCP/cancelación y pasó un nuevo ensayo real de22 SQL. Ningún fallo histórico se
+convirtió en verde. Se conserva cada evento anterior y sus límites.
+Purchase sigue OFF, sin migración, despliegue ni disponibilidad runtime; la curación
+F057 solo detecta fuente realmente integrada. No implica pagos ni activación.

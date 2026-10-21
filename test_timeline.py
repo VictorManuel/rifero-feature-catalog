@@ -387,5 +387,61 @@ class PlannedCapabilityPromotionTests(unittest.TestCase):
         self.assertEqual(len(result['events']), 1)
         self.assertEqual(result['events'][0]['branch'], 'staging')
 
+class PurchasePromotionTests(unittest.TestCase):
+    def setUp(self):
+        import ast
+        from pathlib import Path
+        from implementation_evidence import all_markers_present
+        tree = ast.parse(Path(__file__).with_name('generate.py').read_text())
+        call = next(n for n in ast.walk(tree) if isinstance(n, ast.Call)
+                    and isinstance(n.func, ast.Name) and n.func.id == 'planned_or_implemented'
+                    and len(n.args) > 1 and isinstance(n.args[1], ast.Constant)
+                    and n.args[1].value == 'Compra agrupada con Purchase')
+        self.args = [None] + [ast.literal_eval(n) for n in call.args[1:]]
+        self.requirements = self.args[5]
+        self.refs = {r: {b: r + '-' + b for b in ('staging','main')} for r in ('web','backend')}
+        self.sources = {(r,self.refs[r]['staging'],path): '// synthetic\n'+marker for r,path,marker in self.requirements}
+        for branch,sha in self.refs['web'].items():
+            self.sources['web',sha,'ROADMAP_EXECUTION_PLAN.md'] = 'Purchase plan'
+        def git(repo,*args):
+            sha,path = args[1].split(':',1)
+            return self.sources.get((repo,sha,path),'')
+        namespace = {'rows':[{} for _ in range(56)], 'refs':self.refs, 'repos':{'web':'owner/web','backend':'owner/backend'},
+                     'git':git, 'evidence_line':evidence_line, 'all_markers_present':all_markers_present}
+        functions = [n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ('future','planned_or_implemented')]
+        exec(compile(ast.Module(body=functions,type_ignores=[]),'curated-functions','exec'),namespace)
+        self.namespace = namespace
+
+    def promote(self):
+        self.namespace['planned_or_implemented'](*(['Ventas y comprobantes'] + self.args[1:]))
+        return self.namespace['rows'][-1]
+
+    def test_exact_producer_consumer_same_branch_and_stable_identity(self):
+        row = self.promote()
+        self.assertEqual(row['id'],'F057')
+        self.assertEqual(row['timelineKey'],'source-4b78fef8a32e3a682e98')
+        self.assertTrue(row['staging']); self.assertFalse(row['main'])
+        self.assertEqual(row['evidence']['staging']['kind'],'implementation')
+        self.assertEqual(row['evidence']['staging']['repo'],'backend')
+        self.assertEqual(row['evidence']['main']['kind'],'plan')
+        self.assertIn('NO disponibilidad runtime',row['note'])
+        self.assertIn('flags OFF',row['note'])
+        self.assertTrue(all(path.startswith('src/') for _,path,_ in self.requirements))
+
+    def test_each_missing_marker_keeps_preparation_unimplemented(self):
+        for repo,path,marker in self.requirements:
+            key=(repo,self.refs[repo]['staging'],path); old=self.sources[key]
+            self.sources[key]='wrong marker'
+            with self.subTest(repo=repo,path=path):
+                row=self.promote();self.assertFalse(row['staging']);self.assertFalse(row['main'])
+                self.assertEqual(row['evidence']['staging']['kind'],'plan')
+            self.sources[key]=old
+
+    def test_cross_branch_fragments_do_not_promote_either_branch(self):
+        repo,path,_=self.requirements[-1]
+        source=self.sources.pop((repo,self.refs[repo]['staging'],path))
+        self.sources[repo,self.refs[repo]['main'],path]=source
+        row=self.promote();self.assertFalse(row['staging']);self.assertFalse(row['main'])
+
 if __name__ == "__main__":
     unittest.main()
