@@ -70,6 +70,7 @@ class A34OperationalMilestoneTests(unittest.TestCase):
     def git(self, repo, *args):
         if args[0] != 'show':
             return ''
+        if args[1].endswith(':' + milestone_module.APPEARANCE_PATH):return appearance_receipt()
         if args[1].endswith(':' + milestone_module.LOCAL_APPROVAL_PATH):return '\n'.join(milestone_module.LOCAL_APPROVAL_REQUIRED)
         if args[1].endswith(':' + milestone_module.PURCHASE_PREPARATION_PATH):return 'No es una funcionalidad disponible ni una migración aplicada.'
         if args[1].endswith(':' + SESSION_PATH):return session_receipt(repo)
@@ -79,7 +80,7 @@ class A34OperationalMilestoneTests(unittest.TestCase):
     def test_append_only_operational_event_does_not_change_a27(self):
         events = operational_milestones(self.git, self.refs, self.repos)
         self.assertEqual(events[:1], _a27_milestone(self.git, self.refs, self.repos))
-        self.assertEqual(len(events), 5)
+        self.assertEqual(len(events), 6)
         event = events[1]
         self.assertEqual(event['key'], 'a3-a4-staging-cutover')
         self.assertEqual(event['completedAt'], A34_COMPLETED_AT)
@@ -252,7 +253,7 @@ class SessionAppendHistoryTests(unittest.TestCase):
         events=operational_milestones(self.git,self.refs,self.repos)
         prior=_a27_milestone(self.git,self.refs,self.repos)+[_a34_milestone(self.git,self.refs,self.repos),_snapshot_milestone(self.git,self.refs,self.repos)]
         self.assertEqual(events[:3],prior)
-        self.assertEqual(len(events),5)
+        self.assertEqual(len(events),6)
         self.assertEqual(events[3],_session_milestone(self.git,self.refs,self.repos))
 
 
@@ -267,7 +268,7 @@ class LocalApprovalMilestoneTests(unittest.TestCase):
             _snapshot_milestone(self.git, self.refs, self.repos),
             _session_milestone(self.git, self.refs, self.repos)]
         self.assertEqual(events[:4], prior)
-        self.assertEqual(len(events), 5)
+        self.assertEqual(len(events), 6)
         event = events[4]
         self.assertEqual(event['key'], 'staging-local-approval-purchase-preparation')
         self.assertEqual(event['environment'], 'staging')
@@ -306,3 +307,49 @@ class LocalApprovalMilestoneTests(unittest.TestCase):
             return 'missing' if args[0] == 'show' and args[1].endswith(':'+milestone_module.PURCHASE_PREPARATION_PATH) else self.git(r, *args)
         with self.assertRaises(ValueError):
             milestone_module._local_approval_milestone(read, self.refs, self.repos)
+
+
+def appearance_receipt():
+    return '\n'.join(milestone_module.APPEARANCE_REQUIRED) + '\n' + '\n'.join(
+        f'| G{n} gate | PASS: verified |' for n in range(1, 9))
+
+
+class AppearanceMilestoneTests(unittest.TestCase):
+    setUp = A34OperationalMilestoneTests.setUp
+    git = A34OperationalMilestoneTests.git
+
+    def test_appends_runtime_event_without_changing_five_prior_events(self):
+        events = operational_milestones(self.git, self.refs, self.repos)
+        prior = _a27_milestone(self.git, self.refs, self.repos) + [
+            _a34_milestone(self.git, self.refs, self.repos),
+            _snapshot_milestone(self.git, self.refs, self.repos),
+            _session_milestone(self.git, self.refs, self.repos),
+            milestone_module._local_approval_milestone(self.git, self.refs, self.repos)]
+        self.assertEqual(events[:5], prior)
+        self.assertEqual(len(events), 6)
+        event = events[-1]
+        self.assertEqual(event['completedAt'], milestone_module.APPEARANCE_COMPLETED_AT)
+        self.assertEqual(event['environment'], 'staging')
+        self.assertEqual([x['sha'] for x in event['evidence']], [s for _, s in milestone_module.APPEARANCE_RECEIPTS])
+        self.assertNotIn('implementationDates', event)
+
+    def test_missing_unintegrated_or_main_only_receipt_is_rejected(self):
+        for role, sha in milestone_module.APPEARANCE_RECEIPTS:
+            for op in ['show', 'merge-base']:
+                def read(repo, *args):
+                    if repo == role and args[0] == op:
+                        raise subprocess.CalledProcessError(1, ['git', *args])
+                    return self.git(repo, *args)
+                with self.assertRaises(ValueError):milestone_module._appearance_milestone(read, self.refs, self.repos)
+            refs = {k: dict(v) for k, v in self.refs.items()}; del refs[role]['staging']
+            with self.assertRaises(ValueError):milestone_module._appearance_milestone(self.git, refs, self.repos)
+
+    def test_every_marker_and_each_single_passing_gate_required(self):
+        for marker in milestone_module.APPEARANCE_REQUIRED:
+            def read(repo, *args):
+                return appearance_receipt().replace(marker, 'missing') if args[0] == 'show' else ''
+            with self.subTest(marker=marker), self.assertRaises(ValueError):milestone_module._appearance_milestone(read, self.refs, self.repos)
+        for n in range(1, 9):
+            for source in [appearance_receipt().replace(f'| G{n} gate | PASS:', f'| G{n} gate | PENDING:'), appearance_receipt()+f'\n| G{n} duplicate | PASS: duplicate |']:
+                def read(repo, *args):return source if args[0] == 'show' else ''
+                with self.subTest(gate=n), self.assertRaises(ValueError):milestone_module._appearance_milestone(read, self.refs, self.repos)

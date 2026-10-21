@@ -151,7 +151,7 @@ def _snapshot_milestone(git, refs, repos):
 
 def operational_milestones(git, refs, repos):
     # Append only; preserve all historical operational receipts exactly.
-    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos), _session_milestone(git, refs, repos), _local_approval_milestone(git, refs, repos)]
+    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos), _session_milestone(git, refs, repos), _local_approval_milestone(git, refs, repos), _appearance_milestone(git, refs, repos)]
 
 
 # Finalized only from immutable, staging-integrated receipts after real cleanup.
@@ -251,5 +251,58 @@ def _local_approval_milestone(git, refs, repos):
         'phase': 'Tooling / Purchase', 'environment': 'staging',
         'completedAt': LOCAL_APPROVAL_COMPLETED_AT,
         'summary': 'Tres candidatos exactos verificados y revisados con aprobación humana excepcional: script local, auditor sin permisos de merge y cancelación solo de PR obsoletos. Actions sigue bloqueado por cuota; no se falsean checks ni se omiten controles. Purchase conserva estado planificado: solo SQL propuesto probado en e2e local, sin migración activa ni despliegue. Sin main de apps, producción, runner ni gasto adicional.',
+        'evidence': evidence,
+    }
+
+
+# Historical runtime acceptance, distinct from first code detection; exact owner
+# receipts must already be integrated in staging before any data publication.
+APPEARANCE_RECEIPTS = (
+    ('backend', 'dd3a40b7584ed4c0ddc46c5b7f7d41568fe16117'),
+    ('web', '66a8222bf627fa0de5f422e6aaa79f18e83b8bc8'),
+)
+APPEARANCE_COMPLETED_AT = '2026-10-21T15:32:24.674429-03:00'
+APPEARANCE_PATH = 'docs/APPEARANCE_STAGING_CLOSEOUT.md'
+APPEARANCE_REQUIRED = (
+    '**Galería y colores desplegados y verificados únicamente en staging.**',
+    APPEARANCE_COMPLETED_AT,
+    '600.939415439032s reales',
+    '21 muestras',
+    '4users/2raffles/16audits/9ownratebuckets',
+    'No free colors, remote images, real email/payment, app main, production or Purchase',
+    'fffd258e5114144b87348d349e054b647a72043a1e584bc48e1d0a5ec19a414c',
+    '80abf67a1b76a585b14fdb4f23363a1ba87d799d3ed4118a0021cc26ea55cf79',
+    '029471761e108e4cee7c44223ec8894905308a836c508ba55d8516eafcee6369',
+    'c7f0285df748d6daa5d8d99afc683e30f1129de4300e0b1e42591bba73a2f977',
+)
+
+
+def _appearance_milestone(git, refs, repos):
+    completed = datetime.fromisoformat(APPEARANCE_COMPLETED_AT)
+    if completed.utcoffset() is None or len(APPEARANCE_RECEIPTS) != 2 or {r for r, _ in APPEARANCE_RECEIPTS} != {'backend', 'web'}:
+        raise ValueError('Appearance receipt metadata not finalized')
+    evidence = []
+    for repo, sha in APPEARANCE_RECEIPTS:
+        try:
+            git(repo, 'merge-base', '--is-ancestor', sha, refs[repo]['staging'])
+            source = git(repo, 'show', f'{sha}:{APPEARANCE_PATH}')
+        except (subprocess.CalledProcessError, KeyError) as exc:
+            raise ValueError(f'Appearance runtime receipt not integrated in staging: {repo}') from exc
+        if not all(marker in source for marker in APPEARANCE_REQUIRED):
+            raise ValueError(f'Appearance runtime receipt incomplete: {repo}')
+        for gate in range(1, 9):
+            lines = [line for line in source.splitlines() if line.startswith(f'| G{gate} ')]
+            if len(lines) != 1 or '| PASS:' not in lines[0]:
+                raise ValueError(f'Appearance gate G{gate} not passed: {repo}')
+        line = next(i for i, text in enumerate(source.splitlines(), 1)
+                    if APPEARANCE_REQUIRED[0] in text)
+        evidence.append({'repo': repo, 'sha': sha, 'path': APPEARANCE_PATH, 'line': line,
+                         'url': f'https://github.com/{repos[repo]}/blob/{sha}/{APPEARANCE_PATH}#L{line}'})
+    return {
+        'key': 'gallery-appearance-staging-release', 'kind': 'operational-milestone',
+        'title': 'Galería y colores: staging desplegado y verificado',
+        'phase': 'Galería / UX-P1', 'environment': 'staging',
+        'completedAt': APPEARANCE_COMPLETED_AT,
+        'summary': 'Galería exclusiva SUPERADMIN y colores del propietario DRAFT/ACTIVE: SQL canónica22, imágenes exactas, sesión y pruebas sintéticas,600.939s reales/21 muestras y limpieza correlacionada, con revisión independiente. Historial conservado; sin producción, Purchase, correo externo, pagos reales ni imágenes remotas. No implica cierre global A3/A4 ni UX-P2.',
         'evidence': evidence,
     }

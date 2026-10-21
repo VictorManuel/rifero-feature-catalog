@@ -279,3 +279,6 @@ No se consultan DB ni flags, ni se infiere despliegue, disponibilidad pública o
 activación a partir de PRs/ramas locales. El updater oficial sigue publicando solo
 `data.js`; fechas/baseline/eventos/hitos previos se preservan. Las nuevas primeras
 detecciones de código son eventos adicionales, nunca pruebas de rollout.
+
+### Recibo operacional: galería y colores en staging
+La nueva entrada histórica se separa de las primeras detecciones F125/F141: exige ambos recibos propietarios inmutables integrados en staging y sus ocho gates aprobados. Registra la aceptación real de2026-10-21 (600.939s/21 muestras y limpieza), no la hora de publicación del catálogo. No cambia fechas, baseline, eventos o hitos anteriores ni afirma producción, Purchase o cierre global A3/A4. El generador falla si falta un recibo o su integración; publicar este código en un PR no publica el hito ni autoriza su merge.
