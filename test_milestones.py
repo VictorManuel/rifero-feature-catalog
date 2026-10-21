@@ -1,5 +1,6 @@
 import subprocess
 import unittest
+import operational_milestones as milestone_module
 from operational_milestones import (operational_milestones, _a27_milestone, COMPLETED_AT, RECEIPTS, REQUIRED, A34_COMPLETED_AT, A34_RECEIPTS, A34_PATH, A34_REQUIRED, _a34_milestone, _snapshot_milestone, SNAPSHOT_COMPLETED_AT, SNAPSHOT_RECEIPTS, SNAPSHOT_PATH, SNAPSHOT_REQUIRED, SESSION_PATH, SESSION_REQUIRED, SESSION_RECEIPTS, SESSION_COMPLETED_AT, _session_milestone)
 
 
@@ -69,6 +70,8 @@ class A34OperationalMilestoneTests(unittest.TestCase):
     def git(self, repo, *args):
         if args[0] != 'show':
             return ''
+        if args[1].endswith(':' + milestone_module.LOCAL_APPROVAL_PATH):return '\n'.join(milestone_module.LOCAL_APPROVAL_REQUIRED)
+        if args[1].endswith(':' + milestone_module.PURCHASE_PREPARATION_PATH):return 'No es una funcionalidad disponible ni una migración aplicada.'
         if args[1].endswith(':' + SESSION_PATH):return session_receipt(repo)
         if args[1].endswith(':' + SNAPSHOT_PATH):return snapshot_receipt(repo)
         return a34_receipt() if args[1].endswith(':' + A34_PATH) else receipt()
@@ -76,7 +79,7 @@ class A34OperationalMilestoneTests(unittest.TestCase):
     def test_append_only_operational_event_does_not_change_a27(self):
         events = operational_milestones(self.git, self.refs, self.repos)
         self.assertEqual(events[:1], _a27_milestone(self.git, self.refs, self.repos))
-        self.assertEqual(len(events), 4)
+        self.assertEqual(len(events), 5)
         event = events[1]
         self.assertEqual(event['key'], 'a3-a4-staging-cutover')
         self.assertEqual(event['completedAt'], A34_COMPLETED_AT)
@@ -249,5 +252,57 @@ class SessionAppendHistoryTests(unittest.TestCase):
         events=operational_milestones(self.git,self.refs,self.repos)
         prior=_a27_milestone(self.git,self.refs,self.repos)+[_a34_milestone(self.git,self.refs,self.repos),_snapshot_milestone(self.git,self.refs,self.repos)]
         self.assertEqual(events[:3],prior)
-        self.assertEqual(len(events),4)
+        self.assertEqual(len(events),5)
         self.assertEqual(events[3],_session_milestone(self.git,self.refs,self.repos))
+
+
+class LocalApprovalMilestoneTests(unittest.TestCase):
+    setUp = A34OperationalMilestoneTests.setUp
+    git = A34OperationalMilestoneTests.git
+
+    def test_append_only_preserves_all_four_prior_milestones(self):
+        events = operational_milestones(self.git, self.refs, self.repos)
+        prior = _a27_milestone(self.git, self.refs, self.repos) + [
+            _a34_milestone(self.git, self.refs, self.repos),
+            _snapshot_milestone(self.git, self.refs, self.repos),
+            _session_milestone(self.git, self.refs, self.repos)]
+        self.assertEqual(events[:4], prior)
+        self.assertEqual(len(events), 5)
+        event = events[4]
+        self.assertEqual(event['key'], 'staging-local-approval-purchase-preparation')
+        self.assertEqual(event['environment'], 'staging')
+        self.assertEqual(event['completedAt'], milestone_module.LOCAL_APPROVAL_COMPLETED_AT)
+        self.assertNotIn('implementationDates', event)
+        self.assertIn('estado planificado', event['summary'])
+        self.assertIn('sin migración activa ni despliegue', event['summary'])
+        self.assertEqual([x['sha'] for x in event['evidence']],
+                         [s for _, s in milestone_module.LOCAL_APPROVAL_RECEIPTS] +
+                         [milestone_module.PURCHASE_PREPARATION_SHA])
+
+    def test_each_source_must_exist_and_be_integrated_only_staging(self):
+        receipts = (*milestone_module.LOCAL_APPROVAL_RECEIPTS,
+                    ('backend', milestone_module.PURCHASE_PREPARATION_SHA))
+        for repo, sha in receipts:
+            for operation in ('show', 'merge-base'):
+                def read(r, *args):
+                    if r == repo and args[0] == operation and (sha in args or any(a.startswith(sha+':') for a in args)):
+                        raise subprocess.CalledProcessError(1, ['git', *args])
+                    return self.git(r, *args)
+                with self.subTest(repo=repo, operation=operation), self.assertRaises(ValueError):
+                    milestone_module._local_approval_milestone(read, self.refs, self.repos)
+            refs = {r: dict(v) for r, v in self.refs.items()}; del refs[repo]['staging']
+            with self.assertRaises(ValueError):
+                milestone_module._local_approval_milestone(self.git, refs, self.repos)
+
+    def test_missing_tooling_marker_or_purchase_exclusion_fails_closed(self):
+        for repo, _ in milestone_module.LOCAL_APPROVAL_RECEIPTS:
+            for marker in milestone_module.LOCAL_APPROVAL_REQUIRED:
+                def read(r, *args):
+                    source = self.git(r, *args)
+                    return source.replace(marker, 'missing') if r == repo and args[0] == 'show' else source
+                with self.subTest(repo=repo, marker=marker), self.assertRaises(ValueError):
+                    milestone_module._local_approval_milestone(read, self.refs, self.repos)
+        def read(r, *args):
+            return 'missing' if args[0] == 'show' and args[1].endswith(':'+milestone_module.PURCHASE_PREPARATION_PATH) else self.git(r, *args)
+        with self.assertRaises(ValueError):
+            milestone_module._local_approval_milestone(read, self.refs, self.repos)

@@ -151,7 +151,7 @@ def _snapshot_milestone(git, refs, repos):
 
 def operational_milestones(git, refs, repos):
     # Append only; preserve all historical operational receipts exactly.
-    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos), _session_milestone(git, refs, repos)]
+    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos), _session_milestone(git, refs, repos), _local_approval_milestone(git, refs, repos)]
 
 
 # Finalized only from immutable, staging-integrated receipts after real cleanup.
@@ -197,5 +197,59 @@ def _session_milestone(git, refs, repos):
         'title': 'A4: sesión y perfil verificados en copia protegida',
         'phase': 'A4', 'environment': 'staging', 'completedAt': SESSION_COMPLETED_AT,
         'summary': 'Copia saneada aislada: login y sesión reales, perfil persistido en escritorio/móvil, 9 denegaciones de privilegios, filas copiadas/cola intactas y 10 minutos nuevos de observación. Recursos temporales retirados. Solo usuario sintético nuevo; sin rifas/ventas escritas en la copia, storage/correo externos, producción ni cierre global A4.',
+        'evidence': evidence,
+    }
+
+
+# Source integration only, explicitly not a deploy, migration or CI-green claim.
+LOCAL_APPROVAL_COMPLETED_AT = '2026-10-21T01:48:51-03:00'
+LOCAL_APPROVAL_RECEIPTS = (
+    ('backend', '063054183347bfd11c95a15c67849d24888d4a90'),
+    ('web', 'c678f08f79bbe807c856e40d995f99b976bfbd93'),
+)
+LOCAL_APPROVAL_PATH = 'scripts/local-approval.py'
+LOCAL_APPROVAL_REQUIRED = (
+    'evidence-structure-valid-awaiting-human-authorization',
+    "'mergeAuthorized': False", 'github-runner-billing',
+    'Required controls missing:', 'Independent exact review required',
+)
+PURCHASE_PREPARATION_SHA = 'c0e2ecf4a52ffbacd82d16ebb6b01fb7e1e83e34'
+PURCHASE_PREPARATION_PATH = 'docs/PURCHASE_PREPARATION.md'
+
+
+def _local_approval_milestone(git, refs, repos):
+    if datetime.fromisoformat(LOCAL_APPROVAL_COMPLETED_AT).utcoffset() is None:
+        raise ValueError('Local approval receipt needs a timezone')
+    evidence = []
+    for repo, sha in LOCAL_APPROVAL_RECEIPTS:
+        try:
+            git(repo, 'merge-base', '--is-ancestor', sha, refs[repo]['staging'])
+            source = git(repo, 'show', f'{sha}:{LOCAL_APPROVAL_PATH}')
+        except (subprocess.CalledProcessError, KeyError) as exc:
+            raise ValueError(f'Local approval source not integrated in staging: {repo}') from exc
+        if not all(marker in source for marker in LOCAL_APPROVAL_REQUIRED):
+            raise ValueError(f'Local approval source incomplete: {repo}')
+        line = next(i for i, text in enumerate(source.splitlines(), 1)
+                    if LOCAL_APPROVAL_REQUIRED[0] in text)
+        evidence.append({'repo': repo, 'sha': sha, 'path': LOCAL_APPROVAL_PATH, 'line': line,
+                         'url': f'https://github.com/{repos[repo]}/blob/{sha}/{LOCAL_APPROVAL_PATH}#L{line}'})
+    try:
+        git('backend', 'merge-base', '--is-ancestor', PURCHASE_PREPARATION_SHA, refs['backend']['staging'])
+        source = git('backend', 'show', f'{PURCHASE_PREPARATION_SHA}:{PURCHASE_PREPARATION_PATH}')
+    except (subprocess.CalledProcessError, KeyError) as exc:
+        raise ValueError('Purchase preparation not integrated in staging') from exc
+    marker = 'No es una funcionalidad disponible ni una migración aplicada.'
+    if marker not in source:
+        raise ValueError('Purchase preparation limits missing')
+    line = next(i for i, text in enumerate(source.splitlines(), 1) if marker in text)
+    evidence.append({'repo': 'backend', 'sha': PURCHASE_PREPARATION_SHA,
+                     'path': PURCHASE_PREPARATION_PATH, 'line': line,
+                     'url': f'https://github.com/{repos["backend"]}/blob/{PURCHASE_PREPARATION_SHA}/{PURCHASE_PREPARATION_PATH}#L{line}'})
+    return {
+        'key': 'staging-local-approval-purchase-preparation', 'kind': 'operational-milestone',
+        'title': 'Staging: aprobación local y preparación de compra agrupada integradas',
+        'phase': 'Tooling / Purchase', 'environment': 'staging',
+        'completedAt': LOCAL_APPROVAL_COMPLETED_AT,
+        'summary': 'Tres candidatos exactos verificados y revisados con aprobación humana excepcional: script local, auditor sin permisos de merge y cancelación solo de PR obsoletos. Actions sigue bloqueado por cuota; no se falsean checks ni se omiten controles. Purchase conserva estado planificado: solo SQL propuesto probado en e2e local, sin migración activa ni despliegue. Sin main de apps, producción, runner ni gasto adicional.',
         'evidence': evidence,
     }
