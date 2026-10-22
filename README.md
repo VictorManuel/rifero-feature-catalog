@@ -296,3 +296,10 @@ OFF, sin SQL activo ni despliegue Purchase**, pagos nuevos, email o backfill. Im
 activas de galería/colores y autoDeploy=false permanecen iguales.141 filas y los
 seis hitos anteriores se conservan; la primera detección oficial añade solo un
 evento de código, nunca un hito de activación ni cierre global A3/A4/UX-P2/producción.
+
+
+## Purchase — activación verificada solo en staging (22 octubre 2026)
+
+Esta entrada posterior actualiza el estado vigente; conserva sin reescribir las notas históricas de preparación y fuente integrada. Purchase quedó activo y aceptado en staging: esquema canónico23, backend/web exactos, compras1/2/500, permisos y SSE sin datos privados, mantenimiento/reversión con creación OFF,602.197261s/21 muestras y cleanup propio. Aceptación independiente final22/10/2026 a las19:09:52.361117−03:00, no fecha de publicación del catálogo.
+
+[Recibo de activación y permisos](docs/PURCHASE_STAGING_ACTIVATION_20261022.md). Se añade un séptimo hito operacional con ambos recibos propietarios inmutables ya integrados; F057 conserva ID/posición/key/estados/fechas de primera detección. El check sigue significando código, no entorno vivo. Los seis hitos anteriores, baseline y eventos se preservan exactamente. Sin aplicaciones main/producción, pagos, email nuevo ni backfill; UX-P2 sigue pendiente. Solo catálogo y Pages gratuito, sin redespliegue de apps.

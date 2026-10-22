@@ -151,7 +151,7 @@ def _snapshot_milestone(git, refs, repos):
 
 def operational_milestones(git, refs, repos):
     # Append only; preserve all historical operational receipts exactly.
-    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos), _session_milestone(git, refs, repos), _local_approval_milestone(git, refs, repos), _appearance_milestone(git, refs, repos)]
+    return _a27_milestone(git, refs, repos) + [_a34_milestone(git, refs, repos), _snapshot_milestone(git, refs, repos), _session_milestone(git, refs, repos), _local_approval_milestone(git, refs, repos), _appearance_milestone(git, refs, repos), _purchase_milestone(git, refs, repos)]
 
 
 # Finalized only from immutable, staging-integrated receipts after real cleanup.
@@ -304,5 +304,66 @@ def _appearance_milestone(git, refs, repos):
         'phase': 'Galería / UX-P1', 'environment': 'staging',
         'completedAt': APPEARANCE_COMPLETED_AT,
         'summary': 'Galería exclusiva SUPERADMIN y colores del propietario DRAFT/ACTIVE: SQL canónica22, imágenes exactas, sesión y pruebas sintéticas,600.939s reales/21 muestras y limpieza correlacionada, con revisión independiente. Historial conservado; sin producción, Purchase, correo externo, pagos reales ni imágenes remotas. No implica cierre global A3/A4 ni UX-P2.',
+        'evidence': evidence,
+    }
+
+
+# Historical verified activation, not inferred from a feature check or a live poll.
+PURCHASE_COMPLETED_AT = '2026-10-22T19:09:52.361117-03:00'
+PURCHASE_RECEIPTS = (
+    ('backend', '91841c7a4c6bd3cc1208162e459c8e5bac017653', 'docs/PURCHASE_STAGING_ACTIVATION.md'),
+    ('web', '0452dfdb55b43a9f0acf04e415235195965624ed', 'docs/PAGE_FLOWS.md'),
+)
+PURCHASE_REQUIRED = {
+    'backend': (
+        '### Aceptación final', 'revisión independiente finalPASS22:09:52.361117UTC',
+        '602.197261s / 21 muestras',
+        '`PURCHASE_SCHEMA_ENABLED=true`, `PURCHASE_GROUPING_ENABLED=true`',
+        'ledger23 vivo/checksums',
+        'Limpieza exacta PASS: 5 usuarios, 1 rifa y 8 compradores propios',
+        'schema ON/grouping OFF', 'CONFIRMED/final CANCELED',
+        'HTTP real con rol API limitado: grupos1/2/500',
+        '26c3c97d93c5ad8754c6cfc9576777f01162de1b',
+        '50e0064a4a8bb4033e8352eaf62f31a924e4edd6',
+        'sha256:9c9056454ff2b65fda2f064197a1bff799305b7fd69b43347d6d5f891b59c7a1',
+        'sha256:6fafc2deda304d5941293a98007d04ab3f1785fc953800844f14956cfe3cec8e',
+        'Producción y `main` de las aplicaciones no se modificaron.',
+    ),
+    'web': (
+        '## Purchase — activación real solo staging (22 octubre 2026)',
+        '`PURCHASE_SCHEMA_ENABLED=true`/`PURCHASE_GROUPING_ENABLED=true`',
+        'web continúa BFF sin DB/migrador',
+        'observación real602.197261s/21 muestras',
+        'cleanup propio y readback final PASS',
+        'Sin pagos/reembolsos/correos nuevos/storage remoto/producción',
+    ),
+}
+
+
+def _purchase_milestone(git, refs, repos):
+    if (len(PURCHASE_RECEIPTS) != 2
+            or {r for r, _, _ in PURCHASE_RECEIPTS} != {'backend', 'web'}
+            or not isinstance(PURCHASE_COMPLETED_AT, str)
+            or datetime.fromisoformat(PURCHASE_COMPLETED_AT).utcoffset() is None):
+        raise ValueError('Purchase receipt metadata not finalized with timezone')
+    evidence = []
+    for repo, sha, path in PURCHASE_RECEIPTS:
+        try:
+            git(repo, 'merge-base', '--is-ancestor', sha, refs[repo]['staging'])
+            source = git(repo, 'show', f'{sha}:{path}')
+        except (subprocess.CalledProcessError, KeyError) as exc:
+            raise ValueError(f'Purchase runtime receipt not integrated in staging: {repo}') from exc
+        if not all(marker in source for marker in PURCHASE_REQUIRED[repo]):
+            raise ValueError(f'Purchase runtime receipt incomplete: {repo}')
+        line = next(i for i, text in enumerate(source.splitlines(), 1)
+                    if PURCHASE_REQUIRED[repo][0] in text)
+        evidence.append({'repo': repo, 'sha': sha, 'path': path, 'line': line,
+                         'url': f'https://github.com/{repos[repo]}/blob/{sha}/{path}#L{line}'})
+    return {
+        'key': 'purchase-staging-activation', 'kind': 'operational-milestone',
+        'title': 'Purchase: compras agrupadas activas y verificadas en staging',
+        'phase': 'Purchase', 'environment': 'staging',
+        'completedAt': PURCHASE_COMPLETED_AT,
+        'summary': 'Esquema canónico23 y backend/web exactos: compras1/2/500, permisos/SSE sin PII, mantenimiento y reversión con creación OFF,602s reales/21 muestras y limpieza propia verificados con revisión independiente. Sin backfill, pagos, correo nuevo ni producción. Hito histórico de aceptación, no monitoreo vivo ni cierre global A3/A4 o UX-P2.',
         'evidence': evidence,
     }
