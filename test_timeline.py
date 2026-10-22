@@ -424,8 +424,9 @@ class PurchasePromotionTests(unittest.TestCase):
         self.assertEqual(row['evidence']['staging']['kind'],'implementation')
         self.assertEqual(row['evidence']['staging']['repo'],'backend')
         self.assertEqual(row['evidence']['main']['kind'],'plan')
-        self.assertIn('NO disponibilidad runtime',row['note'])
-        self.assertIn('flags OFF',row['note'])
+        self.assertIn('Activación verificada SOLO en staging',row['note'])
+        self.assertIn('Los checks de rama siguen indicando código',row['note'])
+        self.assertIn('Sin pagos, emails nuevos ni backfill',row['note'])
         self.assertTrue(all(path.startswith('src/') for _,path,_ in self.requirements))
 
     def test_each_missing_marker_keeps_preparation_unimplemented(self):

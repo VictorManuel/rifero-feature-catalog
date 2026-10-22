@@ -136,7 +136,7 @@ for title,note,path in [
 # Preserve F057's historical plan-derived key; require producer AND consumer on
 # the same named branch. This detects code only, never SQL/flags/deployment.
 planned_or_implemented(C,'Compra agrupada con Purchase',
-    'Agrupación atómica de 1–500 números con importe original, reversión parcial e historial propietario, verificada en e2e local. El check solo acredita fuente integrada en la rama comparada, NO disponibilidad runtime: flags OFF, sin SQL activo ni despliegue de Purchase, pagos nuevos, emails o backfill.',
+    'Agrupación atómica de 1–500 números, importe original, reversión parcial e historial propietario. Activación verificada SOLO en staging el22/10/2026 según recibo operacional: esquema canónico23,602s/21 muestras y limpieza. Los checks de rama siguen indicando código, no monitoreo vivo ni producción. Sin pagos, emails nuevos ni backfill.',
     'ROADMAP_EXECUTION_PLAN.md','Purchase',
     [('backend','src/infrastructure/prisma/purchase-repository.ts','export async function createPurchase'),
      ('backend','src/infrastructure/prisma/critical-raffle-operations-repository.ts','await maintainCanceledPurchase(tx, raffleId, saleId);'),
